@@ -141,6 +141,31 @@ class Title(Item):
         if 0 <= land < 0.22: return 4 * (1 - land/0.22)
         return 0
 
+class Hook(Item):
+    """Gancho da abertura: frase grande, inteira na tela desde o primeiro quadro (sem animação de entrada).
+    Palavras entre *asteriscos* ficam na cor de destaque."""
+    def __init__(s, text, th):
+        s.th = th; s.text = text
+        size = 64
+        while size > 40:
+            s.f = font(PIX, size)
+            s.lines = layout_lines(text, s.f, 480, (255,255,255), th['acc'])
+            if len(s.lines) <= 4: break
+            size -= 6
+        s.size = size; s.lh = size + 4
+        s.h = len(s.lines)*s.lh + 12; s.dur = 0.35
+    def setup(s): ev('thud', s.start + 0.02)
+    def draw(s, cv, d, tl):
+        t0 = tl - s.start
+        if t0 < 0: return
+        bob = q(math.sin(t0*5)*3) if t0 < 2.5 else 0   # leve pulsar para não ficar parado
+        for li, (chars, cw) in enumerate(s.lines):
+            x0 = (CW - cw)/2; y = s.y + li*s.lh + bob
+            for ch, x, c in chars:
+                for k in (4, 3, 2):
+                    d.text((x0 + x + k, y + k), ch, font=s.f, fill=(20,16,30))
+                d.text((x0 + x, y), ch, font=s.f, fill=c)
+
 class Panel(Item):
     def __init__(s, texts, th, maxw=440):
         s.th = th; s.f = font(PIX, 34); s.lh = 36
@@ -372,7 +397,8 @@ def build_card(spec, th, dur):
         k = it[0]
         if k == 'text': texts.append(it[1]); continue
         flush()
-        if k == 'kicker': items.append(Kicker(it[1], th))
+        if k == 'hook': items.append(Hook(it[1], th))
+        elif k == 'kicker': items.append(Kicker(it[1], th))
         elif k == 'title': items.append(Title(it[1], th))
         elif k == 'icons': items.append(Icons(it[1], th))
         elif k == 'special':
@@ -399,7 +425,7 @@ def build_card(spec, th, dur):
         avail = max(1.0, dur - 0.7 - fixed)
         rate = clamp(chars / (avail * 0.85), 26, 60)
         for p in panels: p.rate = rate
-    t = 0.3
+    t = 0.0 if items and isinstance(items[0], Hook) else 0.3   # gancho já aparece no quadro 0
     for i in items:
         i.start = t; t += i.dur + (0.12 if isinstance(i, Kicker) else 0.25)
     return items

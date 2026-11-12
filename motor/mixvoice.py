@@ -7,7 +7,7 @@ bg = rd(f'/tmp/pix/audio_{name}.wav')[:N]
 bg = np.pad(bg, ((0, max(0, N-len(bg))), (0,0)))
 V = np.zeros((N,2),np.float32)
 for i,c in enumerate(tl['cards']):
-    a = rd(f'{vdir}/{i:02d}.wav'); s=int((c['start']+0.2)*SR); e=min(N,s+len(a)); V[s:e]+=a[:e-s]
+    a = rd(f'{vdir}/{i:02d}.wav'); s=int((c['start']+(0.0 if i==0 else 0.2))*SR)  # 1a fala começa no segundo zero; e=min(N,s+len(a)); V[s:e]+=a[:e-s]
 env = np.convolve((np.abs(V[:,0])>0.02).astype(np.float32), np.ones(int(0.3*SR))/(0.3*SR), 'same')
 duck = 1 - 0.45*np.clip(env*3,0,1)
 mix = V + bg*duck[:,None]*0.8
