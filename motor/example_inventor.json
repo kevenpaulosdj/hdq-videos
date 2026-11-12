@@ -1,0 +1,289 @@
+{
+ "name": "2026-11-12-inventor",
+ "theme": "inventor",
+ "label": "DIA NACIONAL DO INVENTOR",
+ "cards": [
+  [
+   "Hoje, 12 de novembro, é o Dia Nacional do Inventor. E o motivo dessa data é um voo de vinte e um segundos e meio, que entrou pra história.",
+   [
+    [
+     "kicker",
+     "12 DE NOVEMBRO"
+    ],
+    [
+     "kicker",
+     "DIA NACIONAL DO"
+    ],
+    [
+     "title",
+     "INVENTOR"
+    ],
+    [
+     "text",
+     "O motivo: um voo de *21,5 segundos*."
+    ],
+    [
+     "icons",
+     [
+      "💡"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Antes, um aquecimento: em 23 de outubro de 1906, Santos Dumont já tinha voado sessenta metros em Paris, a uns três metros de altura, e levado a Taça Archdeacon.",
+   [
+    [
+     "text",
+     "Aquecimento: *23/10/1906*."
+    ],
+    [
+     "title",
+     "60 METROS"
+    ],
+    [
+     "text",
+     "a 3 metros de altura: ganhou a *Taça Archdeacon*."
+    ],
+    [
+     "icons",
+     [
+      "🥉"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Mas ele queria mais. Doze de novembro de 1906, Campo de Bagatelle, em Paris. Uma multidão e a comissão do Aeroclube da França de olho.",
+   [
+    [
+     "title",
+     "12/11/1906"
+    ],
+    [
+     "text",
+     "Campo de Bagatelle, *Paris*."
+    ],
+    [
+     "text",
+     "Multidão e a comissão do *Aeroclube da França* de olho."
+    ],
+    [
+     "icons",
+     [
+      "🇫🇷"
+     ]
+    ]
+   ]
+  ],
+  [
+   "No comando, o brasileiro Alberto Santos Dumont, com o 14-Bis, um avião que parecia um monte de pipas de caixa amarradas.",
+   [
+    [
+     "text",
+     "No comando: o brasileiro *Alberto Santos Dumont*, com o"
+    ],
+    [
+     "title",
+     "14-BIS"
+    ],
+    [
+     "text",
+     "que parecia um monte de *pipas de caixa*."
+    ],
+    [
+     "icons",
+     [
+      "🪁"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E o nome? Os primeiros testes do avião foram feitos com ele pendurado no dirigível número 14 do próprio Santos Dumont. Por isso, 14-Bis.",
+   [
+    [
+     "text",
+     "E por que *14-Bis*?"
+    ],
+    [
+     "text",
+     "Os primeiros testes foram com ele *pendurado no dirigível número 14*!"
+    ],
+    [
+     "icons",
+     [
+      "🎈",
+      "🛩️"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Ele acelera e decola sem rampa e sem catapulta, só com a força do motor. Coisa que outros pioneiros da época ainda não faziam.",
+   [
+    [
+     "text",
+     "Decolou *sem rampa e sem catapulta*!"
+    ],
+    [
+     "special",
+     "plane"
+    ]
+   ]
+  ],
+  [
+   "Duzentos e vinte metros, em vinte e um segundos e meio, a uns seis metros de altura. Recorde!",
+   [
+    [
+     "special",
+     "stats",
+     [
+      [
+       220,
+       0,
+       "metros"
+      ],
+      [
+       21.5,
+       1,
+       "segundos"
+      ]
+     ]
+    ],
+    [
+     "text",
+     "a uns *6 metros* de altura"
+    ],
+    [
+     "icons",
+     [
+      "✈️"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Foi o voo que levou o prêmio do Aeroclube da França para o primeiro aparelho que voasse mais de cem metros.",
+   [
+    [
+     "text",
+     "Prêmio do *Aeroclube da França* pra quem voasse mais de..."
+    ],
+    [
+     "title",
+     "100 METROS"
+    ],
+    [
+     "icons",
+     [
+      "🏆"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E o 14-Bis tinha até apelido: Oiseau de Proie, que significa ave de rapina, em francês.",
+   [
+    [
+     "text",
+     "O 14-Bis tinha até apelido:"
+    ],
+    [
+     "title",
+     "OISEAU DE PROIE"
+    ],
+    [
+     "text",
+     "= *ave de rapina*, em francês"
+    ],
+    [
+     "icons",
+     [
+      "🦅"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Bônus: em 1904, ele pediu ao amigo Louis Cartier um relógio que desse pra ver as horas sem soltar os comandos. Daí veio o famoso relógio de pulso Santos, vendido até hoje.",
+   [
+    [
+     "text",
+     "Bônus: em 1904, ele pediu ao amigo *Louis Cartier* um relógio pra ver a hora *sem soltar os comandos*."
+    ],
+    [
+     "icons",
+     [
+      "⌚"
+     ]
+    ],
+    [
+     "text",
+     "Daí veio o relógio de pulso *Santos*."
+    ]
+   ]
+  ],
+  [
+   "E o avião Demoiselle, feito de bambu e seda, ele não patenteou. Em 1909, disse à imprensa francesa que qualquer um podia construir o dele.",
+   [
+    [
+     "text",
+     "E o *Demoiselle*, de bambu e seda..."
+    ],
+    [
+     "title",
+     "SEM PATENTE"
+    ],
+    [
+     "text",
+     "Projeto *liberado pra todo mundo* construir."
+    ],
+    [
+     "icons",
+     [
+      "🤝"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Por isso, a Lei 12.070, de 29 de outubro de 2009, escolheu o 12 de novembro como o Dia Nacional do Inventor.",
+   [
+    [
+     "text",
+     "Lei *12.070*, de 2009:"
+    ],
+    [
+     "text",
+     "12 de novembro = *Dia Nacional do Inventor*."
+    ],
+    [
+     "icons",
+     [
+      "💡"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E pra você, qual é a invenção brasileira mais genial? Comenta aí, e segue o perfil pra descobrir o que se comemora amanhã.",
+   [
+    [
+     "text",
+     "Qual é a invenção brasileira *mais genial*? *Comenta aí!*"
+    ],
+    [
+     "icons",
+     [
+      "🇧🇷"
+     ]
+    ],
+    [
+     "text",
+     "Segue pra descobrir *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}

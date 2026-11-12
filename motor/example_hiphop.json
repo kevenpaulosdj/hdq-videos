@@ -1,0 +1,295 @@
+{
+ "name": "2026-11-12-hiphop",
+ "theme": "hiphop",
+ "label": "DIA MUNDIAL DO HIP HOP",
+ "cards": [
+  [
+   "Hoje, 12 de novembro, é o Dia Mundial do Hip Hop. E a história desse movimento, que hoje domina o mundo, começou de um jeito bem simples: numa festinha no salão de um prédio. Bora entender?",
+   [
+    [
+     "kicker",
+     "12 DE NOVEMBRO"
+    ],
+    [
+     "kicker",
+     "DIA MUNDIAL DO"
+    ],
+    [
+     "title",
+     "HIP HOP"
+    ],
+    [
+     "text",
+     "...e tudo começou numa *festinha de prédio*!"
+    ],
+    [
+     "special",
+     "vinyl"
+    ]
+   ]
+  ],
+  [
+   "Onze de agosto de 1973. Bronx, Nova York, um bairro marcado pela pobreza. No prédio número 1520 da Sedgwick Avenue, tinha um salão de festas no térreo.",
+   [
+    [
+     "title",
+     "1973"
+    ],
+    [
+     "text",
+     "*11 de agosto*. Bronx, Nova York."
+    ],
+    [
+     "text",
+     "Prédio número *1520* da Sedgwick Avenue."
+    ],
+    [
+     "icons",
+     [
+      "🏢",
+      "🗽"
+     ]
+    ]
+   ]
+  ],
+  [
+   "A dona da festa era a Cindy Campbell. Ela queria juntar um dinheiro pra comprar roupa nova pra volta às aulas, então fez uma festa no salão do prédio e chamou a galera.",
+   [
+    [
+     "text",
+     "A festa era da *Cindy Campbell*."
+    ],
+    [
+     "text",
+     "Objetivo: juntar grana pras *roupas da volta às aulas*."
+    ],
+    [
+     "icons",
+     [
+      "🎒",
+      "💸"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Quem cuidava do som era o irmão dela, Clive Campbell, de 18 anos. Ele tinha vindo da Jamaica ainda adolescente e trouxe de lá a cultura dos sound systems. Você conhece ele como DJ Kool Herc.",
+   [
+    [
+     "text",
+     "No som: o irmão dela, *Clive Campbell*, 18 anos, vindo da *Jamaica*."
+    ],
+    [
+     "title",
+     "DJ KOOL HERC"
+    ],
+    [
+     "icons",
+     [
+      "🇯🇲",
+      "🎧"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Ele percebeu que a galera ia à loucura numa parte específica da música: o trecho só de batida, o break. Só que esse trecho durava poucos segundos.",
+   [
+    [
+     "text",
+     "A galera pirava na parte *só de batida*: o *break*."
+    ],
+    [
+     "text",
+     "O problema: ele durava *poucos segundos*."
+    ],
+    [
+     "icons",
+     [
+      "🥁",
+      "⏱️"
+     ]
+    ]
+   ]
+  ],
+  [
+   "A solução foi genial: dois discos iguais, em dois toca-discos. Quando o break acabava num, ele soltava o mesmo trecho no outro. Ele chamava esse truque de Merry-Go-Round, o carrossel.",
+   [
+    [
+     "text",
+     "A solução: *2 discos iguais*!"
+    ],
+    [
+     "special",
+     "vinyl2"
+    ],
+    [
+     "text",
+     "O nome do truque: *Merry-Go-Round*, o carrossel."
+    ]
+   ]
+  ],
+  [
+   "Com isso, o break podia durar o tempo que ele quisesse, e a pista não parava nunca. Tinha nascido o breakbeat, a base de todo o hip hop.",
+   [
+    [
+     "text",
+     "O break agora durava *o tempo que ele quisesse*."
+    ],
+    [
+     "title",
+     "BREAKBEAT"
+    ],
+    [
+     "icons",
+     [
+      "🔁",
+      "🕺"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Tá, mas e o 12 de novembro? Nesse dia, também em 1973, nasceu a Universal Zulu Nation, considerada a primeira organização do hip hop.",
+   [
+    [
+     "text",
+     "E o *12 de novembro*?"
+    ],
+    [
+     "title",
+     "ZULU NATION"
+    ],
+    [
+     "text",
+     "Em 1973 nasce a *Universal Zulu Nation*, a primeira organização do hip hop."
+    ],
+    [
+     "icons",
+     [
+      "🌍"
+     ]
+    ]
+   ]
+  ],
+  [
+   "A ideia era tirar a juventude da briga de gangue e da violência, e canalizar essa energia em rima, dança e arte. Tanto que parte dos integrantes veio de uma gangue do próprio Bronx.",
+   [
+    [
+     "text",
+     "A missão: tirar a juventude da *briga de gangue*..."
+    ],
+    [
+     "text",
+     "...e trocar tudo por *rima, dança e arte*."
+    ],
+    [
+     "icons",
+     [
+      "✊"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Ela ajudou a organizar os quatro elementos da cultura: o DJ nos toca-discos, o MC na rima, o breaking na dança e o grafite nos muros.",
+   [
+    [
+     "text",
+     "Os *quatro elementos*:"
+    ],
+    [
+     "special",
+     "grid4"
+    ]
+   ]
+  ],
+  [
+   "E ainda somou um quinto elemento, que muita gente esquece: o conhecimento. Saber de onde a cultura veio, por que veio e pra quê.",
+   [
+    [
+     "text",
+     "E tem um *quinto elemento*, que muita gente esquece..."
+    ],
+    [
+     "title",
+     "CONHECIMENTO"
+    ],
+    [
+     "icons",
+     [
+      "🧠"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Mais de cinquenta anos depois, aquela dança de rua chegou às Olimpíadas. O breaking estreou nos Jogos de Paris, em 2024, mas já ficou de fora da edição de Los Angeles, em 2028.",
+   [
+    [
+     "text",
+     "Do Bronx às *Olimpíadas*:"
+    ],
+    [
+     "text",
+     "o breaking estreou em *Paris 2024*..."
+    ],
+    [
+     "text",
+     "...mas ficou *fora de Los Angeles 2028*."
+    ],
+    [
+     "icons",
+     [
+      "🏅"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E aqui no Brasil, o Dia Nacional do Hip Hop é comemorado em 11 de agosto. Exatamente a data daquela festinha no Bronx.",
+   [
+    [
+     "text",
+     "No Brasil, o Dia *Nacional* do Hip Hop é..."
+    ],
+    [
+     "title",
+     "11 DE AGOSTO"
+    ],
+    [
+     "text",
+     "a data daquela festa no Bronx!"
+    ],
+    [
+     "icons",
+     [
+      "🇧🇷"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E aí, qual dos elementos é o seu favorito? Comenta aí, e segue o perfil pra descobrir o que se comemora amanhã.",
+   [
+    [
+     "text",
+     "Qual é o *seu* elemento favorito? *Comenta aí!*"
+    ],
+    [
+     "icons",
+     [
+      "🎧",
+      "🎤",
+      "🕺",
+      "🎨"
+     ]
+    ],
+    [
+     "text",
+     "Segue pra descobrir *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}

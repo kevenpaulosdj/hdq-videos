@@ -1,0 +1,306 @@
+{
+ "name": "2026-11-12-flu",
+ "theme": "flu",
+ "label": "DIA DO FLUMINENSE",
+ "cards": [
+  [
+   "Hoje, 12 de novembro, é Dia do Fluminense. Mas peraí: o aniversário do Flu não é em julho? Então por que hoje?",
+   [
+    [
+     "kicker",
+     "12 DE NOVEMBRO"
+    ],
+    [
+     "kicker",
+     "DIA DO"
+    ],
+    [
+     "title",
+     "FLUMINENSE"
+    ],
+    [
+     "text",
+     "...mas o aniversário do Flu *não é em julho?*"
+    ],
+    [
+     "icons",
+     [
+      "🤔"
+     ]
+    ]
+   ]
+  ],
+  [
+   "O clube foi fundado em 21 de julho de 1902, e essa data também é homenageada pela cidade do Rio. Mas o 12 de novembro tem outro motivo, e esse motivo tem nome e sobrenome.",
+   [
+    [
+     "text",
+     "Fundação: *21/07/1902*."
+    ],
+    [
+     "text",
+     "Mas o 12/11 tem outro motivo... com *nome e sobrenome*."
+    ],
+    [
+     "icons",
+     [
+      "🕵️"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Benedito de Assis da Silva. O Assis. Nascido em 12 de novembro de 1952. Antes do Flu, ele passou por São Paulo, Internacional e Athletico Paranaense, e chegou às Laranjeiras em 1983.",
+   [
+    [
+     "title",
+     "ASSIS"
+    ],
+    [
+     "text",
+     "Benedito de Assis da Silva, nascido em *12/11/1952*."
+    ],
+    [
+     "text",
+     "Passou por *São Paulo, Inter e Athletico* antes do Flu."
+    ],
+    [
+     "icons",
+     [
+      "🎂"
+     ]
+    ]
+   ]
+  ],
+  [
+   "No Flu, ele formou com o centroavante Washington uma dupla tão entrosada que ganhou o apelido de Casal 20, nome de uma série de TV que fazia sucesso na época.",
+   [
+    [
+     "text",
+     "Ao lado de *Washington*, formou o..."
+    ],
+    [
+     "title",
+     "CASAL 20"
+    ],
+    [
+     "text",
+     "(nome de uma série de TV da época)"
+    ],
+    [
+     "icons",
+     [
+      "📺"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Primeiro grande momento: Fla-Flu decisivo do Carioca de 1983. Quarenta e cinco do segundo tempo. Assis recebe e toca por entre as pernas do goleiro Raul.",
+   [
+    [
+     "text",
+     "*1983* • Fla-Flu decisivo do Carioca."
+    ],
+    [
+     "text",
+     "45 do segundo tempo... entre as pernas do goleiro *Raul*..."
+    ],
+    [
+     "title",
+     "GOOOL!"
+    ],
+    [
+     "icons",
+     [
+      "⚽"
+     ]
+    ]
+   ]
+  ],
+  [
+   "O gol eliminou o Flamengo. E o Flu ainda dependia de uma vitória do próprio rival contra o Bangu pra ficar com a taça. O Flamengo venceu, e o título foi tricolor.",
+   [
+    [
+     "text",
+     "O gol *eliminou o Flamengo*..."
+    ],
+    [
+     "text",
+     "...e o Flu levou a taça depois que o Fla *venceu o Bangu*!"
+    ],
+    [
+     "icons",
+     [
+      "🏆",
+      "😅"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Um ano depois, a história se repetiu. Dezesseis de dezembro de 1984, final no Maracanã lotado, Fla-Flu de novo. A bola morre no ângulo do goleiro Fillol. Fluminense 1 a 0. Gol de quem? Do Assis!",
+   [
+    [
+     "text",
+     "*16/12/1984* • final no Maracanã lotado."
+    ],
+    [
+     "title",
+     "1 X 0"
+    ],
+    [
+     "text",
+     "No ângulo do goleiro Fillol. Gol de quem? *Do Assis, de novo!*"
+    ],
+    [
+     "icons",
+     [
+      "⚽",
+      "⚽"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Aí não teve jeito: ele virou o Carrasco. E a torcida criou o grito que é cantado até hoje: recordar é viver, Assis acabou com você!",
+   [
+    [
+     "text",
+     "Aí não teve jeito, ele virou o"
+    ],
+    [
+     "title",
+     "CARRASCO"
+    ],
+    [
+     "text",
+     "“Recordar é viver, *Assis acabou com você!*”"
+    ],
+    [
+     "icons",
+     [
+      "📣"
+     ]
+    ]
+   ]
+  ],
+  [
+   "No Flu, foram 179 jogos e 55 gols. Ele foi tricampeão carioca em 83, 84 e 85, e campeão brasileiro em 1984, numa final contra o Vasco.",
+   [
+    [
+     "special",
+     "stats",
+     [
+      [
+       179,
+       0,
+       "jogos"
+      ],
+      [
+       55,
+       0,
+       "gols"
+      ]
+     ]
+    ],
+    [
+     "text",
+     "Tri Carioca *83 • 84 • 85*"
+    ],
+    [
+     "text",
+     "Campeão Brasileiro *1984*, contra o Vasco"
+    ],
+    [
+     "icons",
+     [
+      "🏆"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Assis morreu em 2014, aos 61 anos, cerca de dois meses depois do parceiro Washington. O Casal 20 se despediu praticamente junto.",
+   [
+    [
+     "text",
+     "Assis morreu em *2014*, aos 61 anos..."
+    ],
+    [
+     "text",
+     "...cerca de dois meses depois do parceiro *Washington*."
+    ],
+    [
+     "icons",
+     [
+      "🕊️"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Em 2007, uma lei estadual do Rio transformou o aniversário dele no Dia do Fluminense Football Club. Uma homenagem eterna ao Carrasco.",
+   [
+    [
+     "title",
+     "2007"
+    ],
+    [
+     "text",
+     "Lei Estadual *5.094* (RJ): aniversário do Assis = *Dia do Fluminense*."
+    ],
+    [
+     "icons",
+     [
+      "📜"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E um bônus pra provocar o rival: o time de futebol do Flamengo nasceu em 1912, criado por jogadores que saíram do Fluminense depois de uma briga interna, em 1911.",
+   [
+    [
+     "text",
+     "Bônus pra provocar o rival: o futebol do *Flamengo* nasceu em 1912..."
+    ],
+    [
+     "text",
+     "...criado por *ex-jogadores do Fluminense!*"
+    ],
+    [
+     "icons",
+     [
+      "👀"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Tricolor, completa aí nos comentários: recordar é... E segue o perfil pra descobrir o que se comemora amanhã.",
+   [
+    [
+     "text",
+     "Tricolor, completa aí nos comentários:"
+    ],
+    [
+     "text",
+     "“*Recordar é...*”"
+    ],
+    [
+     "icons",
+     [
+      "💚",
+      "❤️",
+      "🤍"
+     ]
+    ],
+    [
+     "text",
+     "Segue pra descobrir *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}
