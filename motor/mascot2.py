@@ -4,7 +4,7 @@ from engine import *
 def face_sprite(base, t, talking):
     im = base.copy(); d = ImageDraw.Draw(im)
     fx, fy = 20, 44
-    blink = (t % 3.3) < 0.12
+    blink = (t % 3.3) < 0.12 and t > 1   # olhos abertos no quadro 0 (capa)
     for ex in (fx+12, fx+34):
         if blink: d.rectangle((ex, fy+2, ex+9, fy+4), fill=(20,16,30))
         else: d.rectangle((ex, fy-6, ex+9, fy+7), fill=(255,255,255)); d.rectangle((ex+4, fy-4, ex+9, fy+3), fill=(20,16,30))
@@ -162,3 +162,162 @@ def _generic_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
 def generic_setup(ctx): pass
 generic_mascot = wrap(_generic_mascot)
 hiphop_mascot = wrap(_hiphop_mascot); flu_mascot = wrap(_flu_mascot); inv_mascot = wrap(_inv_mascot)
+
+# ---------- GENTILEZA: rega um jardim que cresce aos poucos; corações sobem do mascote ----------
+GARDEN = [(150, (255, 120, 170)), (172, (255, 200, 60)), (194, (170, 120, 255)), (216, (255, 90, 90)), (238, (255, 255, 255)), (160, (255, 160, 60)), (205, (120, 200, 255)), (228, (255, 120, 170))]
+def gentil_setup(ctx):
+    T = ctx['total']*0.85; n = len(GARDEN)
+    ctx['bloom'] = [(i+1)*T/n for i in range(n)]
+    for t in ctx['bloom']: ev('chime', t)
+    ctx['jumps'] = []
+    for s0, du, its in ctx['cards']:
+        for i in its:
+            if isinstance(i, Title) and i.text in ('MITO!', 'GENTILEZA', 'RESTAURADAS'):
+                tt = i.start + 0.05*len(i.text) + 0.3; ctx['jumps'].append(tt); ev('applause', tt)
+
+def _gentil_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    # jardim (x >= 148, longe do mascote)
+    for k, (gx, col) in enumerate(GARDEN):
+        age = t - ctx['bloom'][k]
+        hgt = 10 if k < 5 else 6
+        d.rectangle((gx - 6, G - 4, gx + 10, G), fill=(110, 70, 40))
+        if age < -3: continue
+        grow = clamp((age + 3) / 3)
+        stem = q(8 + (22 + hgt)*grow, 2); sway = q(math.sin(t*2 + k)*2*grow)
+        d.rectangle((gx + 1, G - 4 - stem, gx + 3, G - 4), fill=(60, 150, 60))
+        if grow > 0.5: d.rectangle((gx + 4, G - 4 - stem//2, gx + 8, G - 2 - stem//2), fill=(80, 170, 70))
+        if age >= 0:
+            pp = clamp(age/0.25); r = q(2 + 4*pp, 2); cx, cy = gx + 2 + sway, G - 6 - stem
+            for ox, oy in ((-r, 0), (r, 0), (0, -r), (0, r)): d.rectangle((cx + ox - 3, cy + oy - 3, cx + ox + 3, cy + oy + 3), fill=col)
+            d.rectangle((cx - 2, cy - 2, cx + 2, cy + 2), fill=(255, 220, 60))
+    beat = t*th['bpm']/60
+    hop = 0
+    for jt in ctx['jumps']:
+        if 0 <= t - jt < 0.9: hop = q(-abs(math.sin((t - jt)*math.pi*3.3))*22)
+    spr = face_sprite(base, t, talking)
+    sway = q(math.sin(beat*math.pi/2)*3)
+    place(cv, d, spr, MX + sway, G - 80 + hop + jumpoff(jump))
+    # regador na mão do mascote, inclinando no ritmo; gotas caem perto do regador (não no mascote)
+    wx, wy = MX + 76 + sway, G - 40 + hop
+    tilt = (beat % 2) < 1
+    can = (90, 160, 220)
+    d.rectangle((wx, wy, wx + 18, wy + 14), fill=can); d.rectangle((wx + 2, wy + 2, wx + 16, wy + 4), fill=light(can, .4))
+    d.rectangle((wx - 4, wy + 2, wx, wy + 10), fill=dark(can, .7))
+    if tilt: d.rectangle((wx + 18, wy - 2, wx + 30, wy + 2), fill=can)
+    else: d.rectangle((wx + 18, wy + 2, wx + 28, wy + 6), fill=can)
+    if tilt:
+        for k in range(4):
+            ph = (beat*2 + k/4) % 1; d.rectangle((wx + 30 + k*2, wy + 2 + q(ph*34), wx + 32 + k*2, wy + 6 + q(ph*34)), fill=(120, 200, 255))
+    # corações sobem acima da cabeça
+    for k in range(3):
+        ph = (t*0.5 + k/3) % 1
+        if ph > 0.8: continue
+        hx = q(MX + 28 + math.sin((t + k)*2)*10 + sway); hy = q(G - 96 - ph*70)
+        c = (255, 90, 130)
+        d.rectangle((hx, hy, hx + 3, hy + 3), fill=c); d.rectangle((hx + 5, hy, hx + 8, hy + 3), fill=c); d.rectangle((hx, hy + 2, hx + 8, hy + 5), fill=c); d.rectangle((hx + 2, hy + 6, hx + 6, hy + 8), fill=c)
+
+# ---------- F1: kart que acelera e freia; bandeira quadriculada longe, à direita ----------
+def f1_setup(ctx):
+    P = 2.4; k = 0
+    while k*P < ctx['total'] - 1: ev('rev', k*P); k += 1
+    ctx['wins'] = []
+    for s0, du, its in ctx['cards']:
+        for i in its:
+            if isinstance(i, Title) and i.text in ('CAMPEÃO MUNDIAL', '17 ANOS', 'LANDO NORRIS'):
+                tt = i.start + 0.05*len(i.text) + 0.3; ctx['wins'].append((tt, tt + 2.2)); ev('applause', tt); ev('horn', tt)
+            if isinstance(i, Stats): ctx['wins'].append((i.start + 1.7, i.start + 3.2)); ev('applause', i.start + 1.7)
+
+def _f1_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    win = any(a <= t < b for a, b in ctx['wins'])
+    # pista
+    for x in range(0, LW, 24): d.rectangle((x + q((-t*120) % 24), G + 2, x + 11 + q((-t*120) % 24), G + 5), fill=(240, 240, 240))
+    # bandeira quadriculada (x ~ 228)
+    fx = 232; d.rectangle((fx, G - 92, fx + 2, G), fill=(200, 200, 210))
+    for r in range(4):
+        for c in range(5):
+            wv = q(math.sin(t*6 + c*0.8)*3)
+            col = (20, 20, 24) if (r + c) % 2 else (250, 250, 250)
+            d.rectangle((fx + 3 + c*6, G - 92 + r*6 + wv, fx + 8 + c*6, G - 87 + r*6 + wv), fill=col)
+    # kart: anda pra frente e volta (x 10..92) num ciclo de 2,4 s
+    cyc = (t % 2.4) / 2.4
+    off = q((math.sin(cyc*2*math.pi - math.pi/2) + 1)/2 * 70)
+    bump = 2 if int(t*14) % 2 else 0
+    kx = 8 + off; ky = G - 26
+    spr = face_sprite(base, t, True if win else talking)
+    hop = q(-abs(math.sin(t*math.pi*3))*16) if win else 0
+    cv.alpha_composite(spr.resize((60, 60), Image.NEAREST), (kx + 14, ky - 48 + bump + hop))
+    body = (255, 140, 0)
+    d.rectangle((kx, ky, kx + 96, ky + 12), fill=body); d.rectangle((kx + 84, ky - 6, kx + 100, ky + 4), fill=dark(body, .7))
+    d.rectangle((kx - 6, ky - 10, kx + 4, ky + 4), fill=(30, 30, 36)); d.rectangle((kx + 4, ky + 4, kx + 92, ky + 6), fill=(250, 220, 40))
+    for wx in (kx + 10, kx + 76):
+        d.rectangle((wx - 9, ky + 8, wx + 9, ky + 26), fill=(20, 20, 24)); d.rectangle((wx - 3, ky + 14, wx + 3, ky + 20), fill=(140, 140, 150))
+    # fumaça/velocidade atrás
+    for k in range(3):
+        ph = (t*3 + k/3) % 1; sx = kx - 10 - q(ph*30); sy = ky + 14 - k*6
+        d.rectangle((sx, sy, sx + 5 - int(ph*4), sy + 3), fill=(200, 200, 210))
+    if win:
+        r = random.Random(3); d2 = md
+        for k in range(40):
+            sp = r.uniform(60, 140); x0 = r.uniform(0, CW); ph = r.uniform(0, 8)
+            yy = ((t*sp + ph*100) % (CH + 40)) - 40; xx = x0 + math.sin(t*3 + k)*10
+            col = [(255, 140, 0), (250, 250, 250), (20, 20, 24), (250, 220, 40)][k % 4]
+            d2.rectangle((q(xx), q(yy), q(xx)+5, q(yy)+3 + (k % 2)*2), fill=col)
+
+# ---------- ESPARTA: escudo e lança no ritmo dos tambores; no bônus, microfone e notas ----------
+def sparta_setup(ctx):
+    P = 60/92; k = 0; n = len(ctx['cards']); bonus = ctx['cards'][n-2][0], ctx['cards'][n-2][0] + ctx['cards'][n-2][1]
+    ctx['sing'] = bonus
+    while k*P < ctx['total'] - 1:
+        tt = k*P
+        if not (bonus[0] <= tt < bonus[1]): ev('drum', tt, k=k)
+        k += 1
+    for s0, du, its in ctx['cards']:
+        for i in its:
+            if isinstance(i, Title) and i.text in ('300', 'GERARD BUTLER', 'DEMITIDO!', 'CORIOLANO'):
+                tt = i.start + 0.05*len(i.text) + 0.3; ev('clank', tt); ev('clank', tt + 0.12)
+                if i.text != 'DEMITIDO!': ev('applause', tt)
+    ev('applause', bonus[0] + 1.0)
+
+def _sparta_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    # coluna grega ao fundo, à direita (parada)
+    cx = 222; st = (235, 225, 205)
+    d.rectangle((cx - 4, G - 112, cx + 34, G - 104), fill=st); d.rectangle((cx, G - 104, cx + 30, G - 6), fill=st)
+    for k in range(5): d.rectangle((cx + 3 + k*6, G - 100, cx + 4 + k*6, G - 10), fill=dark(st, .85))
+    d.rectangle((cx - 4, G - 6, cx + 34, G), fill=st)
+    sing = ctx['sing'][0] <= t < ctx['sing'][1]
+    P = 60/th['bpm']; u = (t/P) % 1; hit = u < 0.18 and not sing
+    spr = face_sprite(base, t, True if sing else talking)
+    y0 = G - 80 + jumpoff(jump) + (3 if hit else 0)
+    place(cv, d, spr, MX, y0)
+    if sing:
+        mx, my = MX + 74, y0 + 46
+        d.rectangle((mx - 2, my + 6, mx + 3, my + 26), fill=(30, 30, 36)); d.rectangle((mx - 6, my - 6, mx + 7, my + 7), fill=(170, 170, 180))
+        for k in range(3):
+            ph = (t*0.8 + k/3) % 1
+            if ph > 0.85: continue
+            nx = q(mx + 24 + math.sin((t + k)*3)*10); ny = q(my - 10 - ph*70)
+            col = [th['acc'], (255, 230, 150), (255, 255, 255)][k]
+            d.rectangle((nx, ny, nx + 5, ny + 4), fill=col); d.rectangle((nx + 4, ny - 12, nx + 5, ny), fill=col); d.rectangle((nx + 5, ny - 12, nx + 9, ny - 10), fill=col)
+        return
+    # lança (sobe no ritmo) atrás do mascote
+    sx = MX + 70; lift = 8 if hit else 0
+    d.rectangle((sx, G - 120 - lift, sx + 3, G - 6 - lift), fill=(120, 80, 40))
+    d.polygon([(sx - 4, G - 120 - lift), (sx + 1, G - 134 - lift), (sx + 7, G - 120 - lift)], fill=(200, 200, 210))
+    # escudo redondo (bronze) na frente, à direita do mascote
+    bx, by = MX + 78, y0 + 30; br = (205, 150, 60); r = 22
+    for yy in range(-r, r + 1, 2):
+        w = int(math.sqrt(max(0, r*r - yy*yy))); d.rectangle((bx + 22 - w, by + 22 + yy, bx + 22 + w, by + 23 + yy), fill=br if yy < r - 6 else dark(br, .75))
+    for yy in range(-r + 4, r - 3, 2):
+        w = int(math.sqrt(max(0, (r-4)**2 - yy*yy))); d.rectangle((bx + 22 - w, by + 22 + yy, bx + 22 + w, by + 23 + yy), fill=light(br, .15))
+    # lambda vermelho
+    lc = (200, 30, 40)
+    for k in range(14):
+        d.rectangle((bx + 22 - k//2 - 1, by + 12 + k, bx + 22 - k//2 + 1, by + 13 + k), fill=lc); d.rectangle((bx + 22 + k//2 - 1, by + 12 + k, bx + 22 + k//2 + 1, by + 13 + k), fill=lc)
+    if hit:
+        rr = random.Random(int(t/P))
+        for _ in range(5):
+            a = rr.uniform(-1.2, 1.2); dist = 10 + u/0.18*14
+            px, py = bx + 46 + math.cos(a)*dist, by + 22 + math.sin(a)*dist
+            d.rectangle((q(px), q(py), q(px) + 3, q(py) + 3), fill=(255, 230, 120))
+
+KINDS = {'gentileza': (wrap(_gentil_mascot), gentil_setup), 'f1': (wrap(_f1_mascot), f1_setup), 'sparta': (wrap(_sparta_mascot), sparta_setup)}

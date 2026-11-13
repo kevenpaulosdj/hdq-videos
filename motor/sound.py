@@ -7,6 +7,9 @@ def env(n, d): return np.exp(-np.arange(n)/SR/d)
 rng = np.random.default_rng(1)
 CH = {'hiphop': (90, [(55.0,[220,261.63,329.63]),(43.65,[174.61,220,261.63]),(65.41,[196,261.63,329.63]),(49.0,[196,246.94,293.66])]),
       'flu': (100, [(65.41,[261.63,329.63,392]),(55.0,[220,261.63,329.63]),(43.65,[174.61,220,261.63]),(49.0,[196,246.94,293.66])]),
+      'gentileza': (96, [(65.41,[261.63,329.63,392]),(55.0,[220,261.63,329.63]),(43.65,[174.61,220,261.63]),(49.0,[196,246.94,293.66])]),
+      'f1': (120, [(55.0,[220,261.63,329.63]),(43.65,[174.61,220,261.63]),(65.41,[261.63,329.63,392]),(49.0,[196,246.94,293.66])]),
+      'sparta': (92, [(55.0,[220,261.63,329.63]),(43.65,[174.61,220,261.63]),(49.0,[196,246.94,293.66]),(41.2,[164.81,207.65,246.94])]),
       'inventor': (108, [(49.0,[196,246.94,293.66]),(73.42,[293.66,369.99,440]),(41.2,[164.81,196,246.94]),(65.41,[261.63,329.63,392])])}
 def build(name, theme, bpm=None):
     tl = json.load(open(f'{WORK}/tl_{name}.json')); TOT = tl['dur']; N = int(SR*TOT)
@@ -74,6 +77,25 @@ def build(name, theme, bpm=None):
                 add(X, (band*0.8 + voices*0.35)*envl, t - 0.05, 0.42)
             if theme == 'inventor' and tx in ('INVENTOR',):
                 pass
+        elif k == 'chime':
+            for j, f in enumerate((1046.5, 1318.5, 1568.0)):
+                n = int(0.6*SR); tt = np.arange(n)/SR; add(X, np.sin(2*np.pi*f*tt)*np.exp(-tt*5), t + j*0.07, 0.07)
+        elif k == 'rev':
+            n = int(1.6*SR); tt = np.arange(n)/SR
+            f = 70 + 160*np.minimum(1, tt/0.9) - 120*np.maximum(0, tt - 1.0)/0.6
+            sig = sq(1, n)*0; ph = np.cumsum(f)/SR
+            sig = np.sign(np.sin(2*np.pi*ph))*0.6 + np.sin(2*np.pi*ph*2)*0.4
+            sig *= np.minimum(1, tt/0.05)*np.minimum(1, (1.6 - tt)/0.3)*(0.8 + 0.2*np.sin(2*np.pi*30*tt))
+            add(X, sig, t, 0.045)
+        elif k == 'horn':
+            for dt, ln in ((0, .18), (.24, .5)):
+                n = int(ln*SR); tt = np.arange(n)/SR
+                sig = sum(np.sign(np.sin(2*np.pi*f*tt))*a for f, a in ((440, .5), (554.4, .3), (659.3, .2)))*np.minimum(1, tt/0.01)*np.minimum(1, (ln-tt)/0.03)
+                add(X, sig, t + dt, 0.06)
+        elif k == 'drum':
+            n = int(0.35*SR); tt = np.arange(n)/SR; acc = 1.0 if e.get('k', 0) % 4 == 0 else 0.6
+            sig = np.sin(2*np.pi*np.cumsum(55 + 70*np.exp(-tt*18))/SR)*np.exp(-tt*7) + 0.3*rng.standard_normal(n)*np.exp(-tt*40)
+            add(X, sig, t, 0.32*acc)
         elif k == 'tap':
             n = int(0.06*SR); tt = np.arange(n)/SR; add(X, np.sin(2*np.pi*np.cumsum(220 - 1200*tt)/SR)*env(n, .02) + rng.standard_normal(n)*env(n, .004)*0.3, t, 0.07)
         elif k == 'whistle':

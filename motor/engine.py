@@ -362,6 +362,22 @@ def mascot_base(th):
     elif acc == 'headband':
         cols = [(122, 16, 48), (240, 240, 240), (0, 97, 60)]
         for i in range(0, s, 8): d.rectangle((x+i, y+4, x+i+7, y+9), fill=cols[(i//8) % 3])
+    elif acc == 'flower':
+        sx, sy = x+s-8, y-dp-10
+        d.rectangle((sx+3, sy+8, sx+5, sy+16), fill=(60,150,60))
+        for ox, oy in ((0,4),(8,4),(4,0),(4,8)): d.rectangle((sx+ox-2, sy+oy-2, sx+ox+4, sy+oy+4), fill=(255,120,170))
+        d.rectangle((sx+2, sy+2, sx+6, sy+6), fill=(255,220,60))
+    elif acc == 'racehelmet':
+        hc = (255, 140, 0); d.polygon([(x-2, y+4), (x+dp-2, y-dp-4), (x+s+dp+2, y-dp-4), (x+s+2, y+4)], fill=light(hc, .2))
+        d.rectangle((x-2, y-2, x+s+2, y+12), fill=hc); d.rectangle((x+s, y-dp+2, x+s+dp+2, y+8), fill=dark(hc, .7))
+        d.rectangle((x+8, y+2, x+s-8, y+6), fill=(250, 220, 40)); d.rectangle((x-2, y+10, x+s+2, y+12), fill=(40, 40, 50))
+    elif acc == 'spartan':
+        br = (205, 160, 70); d.polygon([(x-2, y+4), (x+dp-2, y-dp-4), (x+s+dp+2, y-dp-4), (x+s+2, y+4)], fill=light(br, .2))
+        d.rectangle((x-2, y-2, x+s+2, y+12), fill=br); d.rectangle((x-2, y+12, x+6, y+40), fill=br); d.rectangle((x+s-6, y+12, x+s+2, y+40), fill=dark(br, .8))
+        cr = (200, 30, 40)
+        for i in range(0, s+dp, 4):
+            hh = 22 - abs(i - (s+dp)//2)//3
+            d.rectangle((x+i, y-dp-4-hh, x+i+3, y-dp-4), fill=cr if (i//4) % 2 else dark(cr, .8))
     elif acc == 'goggles':
         d.rectangle((x, y+6, x+s, y+9), fill=(90, 60, 30))
         for gx in (x+10, x+32):

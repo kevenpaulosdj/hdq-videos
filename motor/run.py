@@ -14,7 +14,9 @@ if theme == 'generic':
     c = spec['theme_cfg']
     th = dict(acc=tuple(c['acc']), kick=tuple(c.get('kick', (255,255,255))), panel=tuple(c.get('panel', (14,20,40,205))), border=tuple(c.get('border', (255,255,255))),
               mascot=tuple(c['mascot']), accessory=c.get('accessory', 'none'), bpm=c.get('bpm', 104), ped=tuple(c.get('ped', (90,90,110))), brand=tuple(c.get('brand', (255,255,255))))
-    th['bg'] = generic_bg(c); th['mascot_fn'], th['setup'] = generic_mascot, generic_setup
+    th['bg'] = generic_bg(c)
+    mk = spec.get('mkind', 'generic')
+    th['mascot_fn'], th['setup'] = KINDS.get(mk, (generic_mascot, generic_setup))
 else:
     th = dict(THEMES[theme]); th['bg'] = BG[theme]()
     th['mascot_fn'], th['setup'] = {'hiphop': (hiphop_mascot, hiphop_setup), 'flu': (flu_mascot, flu_setup), 'inventor': (inv_mascot, inv_setup)}[theme]
@@ -22,13 +24,16 @@ th['label'] = spec.get('label', th.get('label', ''))
 cards = []; t = 0
 for nar, items in spec['cards']:
     d = max(4.0, round(len(nar.split())/WPS + 0.7, 1)); cards.append(dict(start=round(t, 1), dur=d, nar=nar)); t += d
-tl = dict(name=name, dur=round(t, 1), cards=cards); json.dump(tl, open(f'{WORK}/tl_{name}.json', 'w'), ensure_ascii=False, indent=1)
+tl = dict(name=name, dur=round(t, 1), cards=cards)
+if os.environ.get('TL_OVERRIDE'):   # tempos finais vindos da narração (prep.sh -> tl_voice.json)
+    tl = json.load(open(os.environ['TL_OVERRIDE'])); assert len(tl['cards']) == len(spec['cards'])
+json.dump(tl, open(f'{WORK}/tl_{name}.json', 'w'), ensure_ascii=False, indent=1)
 items = [[tuple(i) for i in it] for _, it in spec['cards']]
 if '--stills' in sys.argv:
     os.environ['STILLS'] = sys.argv[sys.argv.index('--stills')+1]
     import engine; engine.render_video.__globals__['os'].environ['STILLS'] = os.environ['STILLS']
 render_video(name, th, items, f'{WORK}/{name}_video.mp4', tl)
 if '--stills' in sys.argv: sys.exit()
-sound.build(name, theme, th['bpm'])
+sound.build(name, spec.get('mkind', theme) if theme == 'generic' else theme, th['bpm'])
 subprocess.run(['ffmpeg','-y','-loglevel','error','-i',f'{WORK}/{name}_video.mp4','-i',f'{WORK}/audio_{name}.wav','-map','0:v','-map','1:a','-c:v','copy','-c:a','aac','-b:a','192k','-shortest','-movflags','+faststart',f'{WORK}/{name}.mp4'], check=True)
 print('OK', f'{WORK}/{name}.mp4', tl['dur'])
