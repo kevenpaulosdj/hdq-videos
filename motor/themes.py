@@ -166,11 +166,18 @@ BG = {'hiphop': hiphop_bg, 'flu': flu_bg, 'inventor': inventor_bg}
 def generic_bg(cfg):
     rnd = random.Random(9)
     S = sky(tuple(cfg['sky_top']), tuple(cfg['sky_bot'])); T = 1080
+    cc = tuple(cfg.get('cloud', (250, 252, 255)))
+    if cfg.get('stars'):
+        ds = ImageDraw.Draw(S); sr = random.Random(4)
+        for _ in range(110):
+            sx_, sy_ = sr.randrange(0, CW, 2), sr.randrange(0, 480, 2); ds.rectangle((sx_, sy_, sx_+1, sy_+1), fill=(200, 210, 255))
+        for yy in range(-30, 31, 2):
+            w_ = int(math.sqrt(max(0, 30*30 - yy*yy))); ds.rectangle((410-w_, 170+yy, 410+w_, 171+yy), fill=(240, 236, 200))
     def clouds(seed, n, ys, sc):
         im = Image.new('RGBA', (T, CH), (0,0,0,0)); d = ImageDraw.Draw(im); r = random.Random(seed)
         for _ in range(n):
             x = r.randrange(0, T-160, 4); y = r.randrange(*ys, 4); w = q(r.randrange(60, 140)*sc, 4); h = q(r.randrange(18, 34)*sc, 4)
-            d.rectangle((x, y, x+w, y+h), fill=(250, 252, 255, 220)); d.rectangle((x, y+h-6, x+w, y+h), fill=(210, 222, 238, 220))
+            d.rectangle((x, y, x+w, y+h), fill=cc + (220,)); d.rectangle((x, y+h-6, x+w, y+h), fill=dark(cc, .85) + (220,))
         return im
     cA = clouds(21, 7, (120, 420), 0.8)
     hills = Image.new('RGBA', (T, CH), (0,0,0,0)); d = ImageDraw.Draw(hills); x = 0

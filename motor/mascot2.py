@@ -320,4 +320,57 @@ def _sparta_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
             px, py = bx + 46 + math.cos(a)*dist, by + 22 + math.sin(a)*dist
             d.rectangle((q(px), q(py), q(px) + 3, q(py) + 3), fill=(255, 230, 120))
 
-KINDS = {'gentileza': (wrap(_gentil_mascot), gentil_setup), 'f1': (wrap(_f1_mascot), f1_setup), 'sparta': (wrap(_sparta_mascot), sparta_setup)}
+# ---------- ACAMPAMENTO (Sexta-feira 13): lanterna, fogueira, barraca e vaga-lumes ----------
+SCARE = ('SEXTA-FEIRA 13', 'A MÃE!', 'SÓ NO TERCEIRO', 'CAMP BLOOD', 'KI KI KI MA MA MA')
+def camp_setup(ctx):
+    ctx['scares'] = []
+    for s0, du, its in ctx['cards']:
+        for i in its:
+            if isinstance(i, Title) and i.text in SCARE:
+                tt = i.start + 0.05*len(i.text) + 0.3; ctx['scares'].append(tt); ev('owl', tt)
+            if isinstance(i, Stats): ev('chime', i.start + 1.7)
+    k = 0
+    while k*3.1 < ctx['total'] - 1: ev('crackle', k*3.1); k += 1
+
+def _camp_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    # barraca (x 214..262) e fogueira (x ~176), longe do mascote
+    tc = (196, 120, 50); tx = 214
+    for r in range(0, 36, 2):
+        half = 24 - int(r*24/36)
+        d.rectangle((tx + 24 - half, G - 4 - r - 2, tx + 24 + half, G - 4 - r), fill=tc if (r//6) % 2 else dark(tc, .85))
+    d.rectangle((tx + 20, G - 22, tx + 28, G - 4), fill=(30, 22, 18))
+    fx = 176
+    d.rectangle((fx - 14, G - 6, fx + 14, G - 1), fill=(90, 56, 30)); d.rectangle((fx - 10, G - 10, fx + 10, G - 6), fill=(120, 74, 38))
+    for k in range(5):
+        fl = 8 + 6*abs(math.sin(t*9 + k*1.7)); ox = (k - 2)*5
+        col = [(255, 80, 20), (255, 140, 30), (255, 210, 70)][k % 3]
+        d.rectangle((fx + ox - 2, q(G - 10 - fl), fx + ox + 2, G - 10), fill=col)
+    for k in range(4):
+        ph = (t*0.9 + k/4) % 1; d.rectangle((q(fx + math.sin(k*3 + t*2)*10), q(G - 20 - ph*50), q(fx + math.sin(k*3 + t*2)*10) + 1, q(G - 20 - ph*50) + 1), fill=(255, 200, 80))
+    # vaga-lumes (acima do chão, longe da cabeça do mascote)
+    for k in range(7):
+        bx = 120 + ((k*37) % 140) + math.sin(t*0.8 + k)*8; by = 110 + ((k*53) % 80) + math.cos(t*0.7 + k*2)*6
+        if math.sin(t*2.2 + k*1.9) > 0.2: d.rectangle((q(bx), q(by), q(bx) + 1, q(by) + 1), fill=(220, 255, 120))
+    scared = any(0 <= t - st < 0.9 for st in ctx['scares'])
+    hop = 0
+    for st in ctx['scares']:
+        if 0 <= t - st < 0.9: hop = q(-abs(math.sin((t - st)*math.pi*3.3))*20)
+    beat = t*th['bpm']/60
+    spr = face_sprite(base, t, True if scared else talking)
+    place(cv, d, spr, MX, G - 80 + hop + jumpoff(jump))
+    # motosserra na mão do mascote: motor laranja, sabre cinza, corrente girando e vibração
+    vib = 1 if int(t*30) % 2 else 0
+    lx, ly = MX + 74, G - 48 + hop + vib
+    d.rectangle((lx, ly - 2, lx + 16, ly + 12), fill=(230, 110, 20)); d.rectangle((lx + 2, ly, lx + 14, ly + 3), fill=(40, 40, 46))
+    d.rectangle((lx + 4, ly - 6, lx + 12, ly - 2), fill=(40, 40, 46))
+    d.rectangle((lx + 16, ly + 2, lx + 46, ly + 8), fill=(170, 175, 185)); d.rectangle((lx + 46, ly + 3, lx + 48, ly + 7), fill=(170, 175, 185))
+    off = int(t*40) % 4
+    for x in range(lx + 16 + off, lx + 46, 4):
+        d.rectangle((x, ly + 1, x + 1, ly + 1), fill=(60, 60, 66)); d.rectangle((x, ly + 9, x + 1, ly + 9), fill=(60, 60, 66))
+    for k in range(3):
+        ph = (t*1.6 + k/3) % 1
+        g = int(150 - ph*80); d.rectangle((q(lx - 2 - ph*10), q(ly - 6 - ph*22), q(lx - 2 - ph*10) + 2, q(ly - 6 - ph*22) + 2), fill=(g, g, g))
+    if scared:
+        d.rectangle((MX + 34, G - 120 + hop, MX + 38, G - 106 + hop), fill=(255, 220, 60)); d.rectangle((MX + 34, G - 102 + hop, MX + 38, G - 98 + hop), fill=(255, 220, 60))
+
+KINDS = {'camp': (wrap(_camp_mascot), camp_setup), 'gentileza': (wrap(_gentil_mascot), gentil_setup), 'f1': (wrap(_f1_mascot), f1_setup), 'sparta': (wrap(_sparta_mascot), sparta_setup)}

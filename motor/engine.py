@@ -367,6 +367,10 @@ def mascot_base(th):
         d.rectangle((sx+3, sy+8, sx+5, sy+16), fill=(60,150,60))
         for ox, oy in ((0,4),(8,4),(4,0),(4,8)): d.rectangle((sx+ox-2, sy+oy-2, sx+ox+4, sy+oy+4), fill=(255,120,170))
         d.rectangle((sx+2, sy+2, sx+6, sy+6), fill=(255,220,60))
+    elif acc == 'scout':
+        gc = (50, 120, 60); d.polygon([(x, y-4), (x+dp, y-dp-6), (x+s+dp, y-dp-6), (x+s, y-4)], fill=light(gc, .2))
+        d.rectangle((x, y-4, x+s, y+6), fill=gc); d.rectangle((x+s-10, y+4, x+s+18, y+8), fill=dark(gc, .7))
+        d.rectangle((x+22, y-2, x+34, y+4), fill=(255, 200, 60))
     elif acc == 'racehelmet':
         hc = (255, 140, 0); d.polygon([(x-2, y+4), (x+dp-2, y-dp-4), (x+s+dp+2, y-dp-4), (x+s+2, y+4)], fill=light(hc, .2))
         d.rectangle((x-2, y-2, x+s+2, y+12), fill=hc); d.rectangle((x+s, y-dp+2, x+s+dp+2, y+8), fill=dark(hc, .7))

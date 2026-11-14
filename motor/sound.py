@@ -10,6 +10,7 @@ CH = {'hiphop': (90, [(55.0,[220,261.63,329.63]),(43.65,[174.61,220,261.63]),(65
       'gentileza': (96, [(65.41,[261.63,329.63,392]),(55.0,[220,261.63,329.63]),(43.65,[174.61,220,261.63]),(49.0,[196,246.94,293.66])]),
       'f1': (120, [(55.0,[220,261.63,329.63]),(43.65,[174.61,220,261.63]),(65.41,[261.63,329.63,392]),(49.0,[196,246.94,293.66])]),
       'sparta': (92, [(55.0,[220,261.63,329.63]),(43.65,[174.61,220,261.63]),(49.0,[196,246.94,293.66]),(41.2,[164.81,207.65,246.94])]),
+      'camp': (84, [(55.0,[220,261.63,311.13]),(43.65,[174.61,207.65,261.63]),(49.0,[196,233.08,293.66]),(41.2,[164.81,196,233.08])]),
       'inventor': (108, [(49.0,[196,246.94,293.66]),(73.42,[293.66,369.99,440]),(41.2,[164.81,196,246.94]),(65.41,[261.63,329.63,392])])}
 def build(name, theme, bpm=None):
     tl = json.load(open(f'{WORK}/tl_{name}.json')); TOT = tl['dur']; N = int(SR*TOT)
@@ -96,6 +97,13 @@ def build(name, theme, bpm=None):
             n = int(0.35*SR); tt = np.arange(n)/SR; acc = 1.0 if e.get('k', 0) % 4 == 0 else 0.6
             sig = np.sin(2*np.pi*np.cumsum(55 + 70*np.exp(-tt*18))/SR)*np.exp(-tt*7) + 0.3*rng.standard_normal(n)*np.exp(-tt*40)
             add(X, sig, t, 0.32*acc)
+        elif k == 'owl':
+            for dt, f0 in ((0, 430), (0.55, 380)):
+                n = int(0.42*SR); tt = np.arange(n)/SR
+                add(X, np.sin(2*np.pi*np.cumsum(f0 - 40*tt/0.42)/SR)*np.minimum(1, tt/0.05)*np.minimum(1, (0.42-tt)/0.1), t + dt, 0.16)
+        elif k == 'crackle':
+            for _ in range(14):
+                n = int(0.012*SR); add(X, rng.standard_normal(n)*env(n, .004), t + rng.uniform(0, 2.6), 0.05)
         elif k == 'tap':
             n = int(0.06*SR); tt = np.arange(n)/SR; add(X, np.sin(2*np.pi*np.cumsum(220 - 1200*tt)/SR)*env(n, .02) + rng.standard_normal(n)*env(n, .004)*0.3, t, 0.07)
         elif k == 'whistle':
@@ -116,6 +124,10 @@ def build(name, theme, bpm=None):
             n = int(e['dur']*SR); tt = np.arange(n)/SR
             s = sq(70 + 30*np.minimum(tt, 2), n, 0.3) * (0.6 + 0.4*np.sin(2*np.pi*14*tt)); s[:2000] *= np.linspace(0, 1, 2000); s[-4000:] *= np.linspace(1, 0, 4000)
             add(X, s, t, 0.06)
+    if theme == 'camp':
+        tt = np.arange(N)/SR
+        gate = (np.sin(2*np.pi*7*tt) > 0.55) * (np.sin(2*np.pi*0.45*tt) > -0.3)
+        X += np.sin(2*np.pi*4300*tt)*gate*0.018
     if theme == 'flu':
         nz = rng.standard_normal(N); F = np.fft.rfft(nz); fr = np.fft.rfftfreq(N, 1/SR); F[(fr < 200) | (fr > 1800)] = 0
         bed = np.fft.irfft(F, N); bed /= np.max(np.abs(bed)); tt = np.arange(N)/SR
