@@ -1,0 +1,238 @@
+{
+ "name": "republica",
+ "theme": "generic",
+ "mkind": "republica",
+ "label": "PROCLAMAÇÃO DA REPÚBLICA",
+ "theme_cfg": {
+  "acc": [
+   255,
+   210,
+   40
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   10,
+   60,
+   35,
+   215
+  ],
+  "border": [
+   255,
+   210,
+   40
+  ],
+  "mascot": [
+   80,
+   190,
+   190
+  ],
+  "accessory": "bicorne",
+  "bpm": 100,
+  "ped": [
+   210,
+   190,
+   150
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   90,
+   170,
+   235
+  ],
+  "sky_bot": [
+   200,
+   230,
+   250
+  ],
+  "hills": [
+   90,
+   150,
+   120
+  ],
+  "ground": [
+   230,
+   210,
+   160
+  ]
+ },
+ "cards": [
+  [
+   "A República do Brasil foi proclamada por um monarquista que estava doente. Hoje, 15 de novembro, é o dia da Proclamação da República.",
+   [
+    [
+     "hook",
+     "A República foi proclamada por *um monarquista doente*."
+    ],
+    [
+     "kicker",
+     "15 DE NOVEMBRO"
+    ],
+    [
+     "kicker",
+     "PROCLAMAÇÃO DA"
+    ],
+    [
+     "title",
+     "REPÚBLICA"
+    ]
+   ]
+  ],
+  [
+   "Em 1889, o marechal Deodoro da Fonseca era amigo pessoal de Dom Pedro II. E estava em casa, doente, com crises de falta de ar.",
+   [
+    [
+     "text",
+     "*Deodoro da Fonseca*: amigo pessoal de *Dom Pedro II*."
+    ],
+    [
+     "text",
+     "Em casa, doente, com *crises de falta de ar*."
+    ],
+    [
+     "icons",
+     [
+      "🤒"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Na tarde de 14 de novembro, o major Sólon espalhou na Rua do Ouvidor que Deodoro e Benjamin Constant tinham sido presos. Era boato: ninguém tinha sido preso.",
+   [
+    [
+     "text",
+     "*14/11*, Rua do Ouvidor: o *major Sólon* diz que Deodoro e Benjamin Constant *foram presos*."
+    ],
+    [
+     "title",
+     "BOATO!"
+    ]
+   ]
+  ],
+  [
+   "Na manhã de 15 de novembro, Deodoro saiu de casa, montou num cavalo e foi até o quartel-general, no Campo de Santana, onde tropas republicanas esperavam.",
+   [
+    [
+     "text",
+     "*15/11, de manhã*: Deodoro monta num *cavalo* e vai ao *Campo de Santana*."
+    ],
+    [
+     "icons",
+     [
+      "🐎"
+     ]
+    ]
+   ]
+  ],
+  [
+   "O chefe do gabinete, o Visconde de Ouro Preto, foi preso. E até hoje há versões diferentes: Deodoro gritou viva a República ou só prometeu derrubar o ministério?",
+   [
+    [
+     "text",
+     "O *Visconde de Ouro Preto*, chefe do gabinete, é preso."
+    ],
+    [
+     "text",
+     "Gritou *viva a República* ou só prometeu *derrubar o ministério*? Há versões."
+    ]
+   ]
+  ],
+  [
+   "À tarde, na Câmara Municipal, oficiais e líderes republicanos proclamaram a República. À noite, Deodoro virou chefe do Governo Provisório.",
+   [
+    [
+     "text",
+     "*À tarde*: a República é proclamada na *Câmara Municipal*."
+    ],
+    [
+     "text",
+     "*À noite*: Deodoro vira chefe do *Governo Provisório*."
+    ],
+    [
+     "icons",
+     [
+      "🏛️"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Dom Pedro II, que estava em Petrópolis, não resistiu. Na madrugada de 17 de novembro, a família imperial embarcou para o exílio na Europa.",
+   [
+    [
+     "text",
+     "*Dom Pedro II*, em Petrópolis, não resiste."
+    ],
+    [
+     "text",
+     "Madrugada de *17/11*: a família parte para o *exílio*."
+    ],
+    [
+     "icons",
+     [
+      "⛵"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E a primeira bandeira da República? Treze listras verdes e amarelas e vinte e uma estrelas num canto azul. Uma cópia da bandeira dos Estados Unidos.",
+   [
+    [
+     "text",
+     "Primeira bandeira: *13 listras* verdes e amarelas e *21 estrelas*."
+    ],
+    [
+     "title",
+     "CÓPIA DOS EUA"
+    ]
+   ]
+  ],
+  [
+   "Ela durou só quatro dias. Em 19 de novembro, um decreto criou a bandeira com Ordem e Progresso. Por isso, 19 de novembro é o Dia da Bandeira.",
+   [
+    [
+     "text",
+     "Durou *4 dias*. Em *19/11*, nasce a bandeira com *Ordem e Progresso*."
+    ],
+    [
+     "text",
+     "Por isso *19/11* é o *Dia da Bandeira*."
+    ],
+    [
+     "icons",
+     [
+      "🇧🇷"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Se fosse hoje: você ficava com a bandeira listrada ou com a de Ordem e Progresso? Comenta aqui, manda pra quem ama história e segue o perfil pra descobrir o que se comemora amanhã.",
+   [
+    [
+     "text",
+     "Bandeira *listrada* ou *Ordem e Progresso*?"
+    ],
+    [
+     "icons",
+     [
+      "🇧🇷"
+     ]
+    ],
+    [
+     "text",
+     "Comenta, manda pra quem ama história! Segue pra saber *o que se comemora amanhã*."
+    ]
+   ]
+  ]
+ ]
+}

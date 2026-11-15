@@ -374,3 +374,171 @@ def _camp_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
         d.rectangle((MX + 34, G - 120 + hop, MX + 38, G - 106 + hop), fill=(255, 220, 60)); d.rectangle((MX + 34, G - 102 + hop, MX + 38, G - 98 + hop), fill=(255, 220, 60))
 
 KINDS = {'camp': (wrap(_camp_mascot), camp_setup), 'gentileza': (wrap(_gentil_mascot), gentil_setup), 'f1': (wrap(_f1_mascot), f1_setup), 'sparta': (wrap(_sparta_mascot), sparta_setup)}
+
+def _title_times(ctx, names):
+    out = []
+    for s0, du, its in ctx['cards']:
+        for i in its:
+            if isinstance(i, Title) and i.text in names: out.append(i.start + 0.05*len(i.text) + 0.3)
+    return out
+
+# ---------- REPÚBLICA: bicorne, sabre no ritmo da marcha; bandeira provisória (EUA) vira a atual na tela 9 ----------
+def rep_setup(ctx):
+    n = len(ctx['cards']); ctx['flag_t'] = ctx['cards'][min(8, n-1)][0] + 0.6
+    ctx['hits'] = _title_times(ctx, ('REPÚBLICA', 'BOATO!', 'CÓPIA DOS EUA'))
+    for tt in ctx['hits']: ev('horn', tt)
+    ev('horn', ctx['flag_t']); ev('applause', ctx['flag_t'] + 0.2); ctx['hits'].append(ctx['flag_t'])
+    P = 60/100*2; k = 0
+    while k*P < ctx['total'] - 1: ev('drum', k*P, k=k); k += 1
+
+def _rep_flag(d, fx, fy, t, new):
+    W_, H_ = 52, 34
+    for cx in range(0, W_, 2):
+        wv = q(math.sin(t*5 - cx*0.18)*3*(cx/W_))
+        for cy in range(0, H_, 2):
+            if not new:
+                if cx < 22 and cy < 18: col = (255, 255, 255) if (cx % 6 == 2 and cy % 6 == 2) else (20, 50, 140)
+                else: col = (0, 150, 60) if int(cy*13/H_) % 2 == 0 else (250, 215, 0)
+            else:
+                ux, uy = (cx - W_/2)/(W_/2), (cy - H_/2)/(H_/2)
+                col = (0, 150, 60)
+                if abs(ux)*0.95 + abs(uy)*0.95 < 0.95: col = (250, 215, 0)
+                r = math.hypot(ux*W_/2, uy*H_/2)
+                if r < 10: col = (20, 50, 140)
+                if r < 10 and abs((cy - H_/2) + (cx - W_/2)*0.18) < 2: col = (255, 255, 255)
+            d.rectangle((fx + cx, fy + cy + wv, fx + cx + 1, fy + cy + wv + 1), fill=col)
+
+def _rep_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    px = 214; d.rectangle((px, G - 132, px + 3, G), fill=(200, 200, 210)); d.rectangle((px - 1, G - 136, px + 4, G - 132), fill=(230, 190, 60))
+    new = t >= ctx['flag_t']
+    _rep_flag(d, px + 4, G - 130, t, new)
+    if new and t - ctx['flag_t'] < 0.4:
+        a = 1 - (t - ctx['flag_t'])/0.4
+        for k in range(10):
+            ang = k*0.63; r = 30*(1-a) + 6
+            d.rectangle((q(px + 30 + math.cos(ang)*r), q(G - 113 + math.sin(ang)*r), q(px + 30 + math.cos(ang)*r) + 3, q(G - 113 + math.sin(ang)*r) + 3), fill=(255, 230, 120))
+    beat = t*th['bpm']/60; step = int(beat) % 2
+    hop = 0; raise_ = False
+    for ht in ctx['hits']:
+        if 0 <= t - ht < 1.0: hop = q(-abs(math.sin((t - ht)*math.pi*3))*18); raise_ = True
+    spr = face_sprite(base, t, True if raise_ else talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if step else 0)
+    place(cv, d, spr, MX, y0)
+    hx, hy = MX + 74, y0 + 50
+    d.rectangle((hx - 2, hy - 2, hx + 8, hy + 4), fill=(230, 190, 60))
+    if raise_:
+        for k in range(14): d.rectangle((hx + 2, hy - 6 - k*4, hx + 5, hy - 2 - k*4), fill=(210, 215, 225))
+        d.rectangle((hx + 2, hy - 64, hx + 5, hy - 58), fill=(255, 255, 255))
+    else:
+        for k in range(10): d.rectangle((hx + 6 + k*3, hy + 4 + k*3, hx + 9 + k*3, hy + 7 + k*3), fill=(210, 215, 225))
+
+# ---------- XBOX: headset, controle Duke com botões piscando, TV de tubo com o X verde; HALO na tela ----------
+def xbox_setup(ctx):
+    ev('boot', 0.2)
+    ctx['halo'] = _title_times(ctx, ('HALO',)); ctx['hits'] = _title_times(ctx, ('XBOX', 'HALO'))
+    for tt in ctx['hits']: ev('ding', tt)
+    for tt in ctx['halo']: ev('applause', tt + 0.1)
+    P = 60/112; k = 0
+    while k*P < ctx['total'] - 1:
+        if k % 2 == 0: ev('blip', k*P, k=k//2)
+        k += 1
+
+def _xbox_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    G_ = (120, 220, 60)
+    tx, ty, tw, th_ = 168, G - 78, 86, 70
+    d.rectangle((tx, ty, tx + tw, ty + th_), fill=(52, 52, 60)); d.rectangle((tx + 4, ty + th_, tx + tw - 4, ty + th_ + 4), fill=(30, 30, 36))
+    d.rectangle((tx + tw - 14, ty + 10, tx + tw - 6, ty + 14), fill=(90, 90, 100)); d.rectangle((tx + tw - 14, ty + 20, tx + tw - 6, ty + 24), fill=(90, 90, 100))
+    sx, sy, sw, sh = tx + 6, ty + 6, tw - 26, th_ - 12
+    halo = any(0 <= t - h < 3.0 for h in ctx['halo'])
+    beat = t*th['bpm']/60; pulse = 0.6 + 0.4*abs(math.sin(beat*math.pi))
+    d.rectangle((sx, sy, sx + sw, sy + sh), fill=(10, 24, 12))
+    for yy in range(sy, sy + sh, 4): d.rectangle((sx, yy, sx + sw, yy), fill=(18, 40, 20))
+    cx_, cy_ = sx + sw//2, sy + sh//2
+    if halo:
+        for a in range(0, 360, 8):
+            r = math.radians(a); px_, py_ = cx_ + math.cos(r)*22, cy_ + math.sin(r)*8
+            col = (200, 230, 255) if math.sin(r) < 0 else (120, 170, 230)
+            d.rectangle((q(px_), q(py_), q(px_) + 2, q(py_) + 2), fill=col)
+        d.rectangle((cx_ - 3, cy_ - 3, cx_ + 3, cy_ + 3), fill=(90, 130, 220))
+    else:
+        c = lerp((40, 90, 30), G_, pulse)
+        for k in range(-10, 11, 2):
+            d.rectangle((cx_ + k - 1, cy_ + k - 1, cx_ + k + 2, cy_ + k + 2), fill=c); d.rectangle((cx_ + k - 1, cy_ - k - 1, cx_ + k + 2, cy_ - k + 2), fill=c)
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*20)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump)
+    place(cv, d, spr, MX, y0)
+    bx, by = MX + 46, y0 + 52
+    d.rectangle((bx, by, bx + 46, by + 20), fill=(30, 30, 34)); d.rectangle((bx - 4, by + 6, bx + 4, by + 26), fill=(30, 30, 34)); d.rectangle((bx + 42, by + 6, bx + 50, by + 26), fill=(30, 30, 34))
+    d.rectangle((bx + 19, by + 6, bx + 27, by + 14), fill=lerp((60, 110, 40), G_, pulse))
+    d.rectangle((bx + 5, by + 6, bx + 11, by + 12), fill=(70, 70, 80))
+    btn = int(beat*2) % 4
+    for j, (ox, oy, col) in enumerate(((34, 4, (250, 210, 40)), (30, 9, (40, 110, 230)), (38, 9, (220, 40, 40)), (34, 13, (60, 190, 60)))):
+        c = light(col, .5) if j == btn else dark(col, .8)
+        d.rectangle((bx + ox, by + oy, bx + ox + 3, by + oy + 3), fill=c)
+
+# ---------- FLAMENGO: faixa e barco azul e ouro que viram rubro-negro (tela 7); remo no ritmo; tempestade na tela 3 ----------
+def fla_setup(ctx):
+    n = len(ctx['cards'])
+    ctx['red_t'] = ctx['cards'][min(6, n-1)][0] + 0.6
+    s2 = ctx['cards'][min(2, n-1)]; ctx['storm'] = (s2[0], s2[0] + s2[1])
+    s3 = ctx['cards'][min(3, n-1)]; ctx['gone'] = (s3[0], s3[0] + s3[1]*0.45)
+    ctx['hits'] = _title_times(ctx, ('FLAMENGO',)) + [ctx['red_t']]
+    for tt in ctx['hits']: ev('whistle', tt); ev('applause', tt + 0.15)
+    ev('thunder', ctx['storm'][0] + 0.1); ev('thunder', ctx['storm'][0] + 3.5)
+    P = 1.6; k = 0
+    while k*P < ctx['total'] - 1: ev('splash', k*P + 0.55); k += 1
+
+def _fla_cols(t, ctx):
+    return ((200, 20, 30), (20, 20, 24)) if t >= ctx['red_t'] else ((30, 80, 200), (240, 200, 40))
+
+def _fla_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    c1, c2 = _fla_cols(t, ctx)
+    storm = ctx['storm'][0] <= t < ctx['storm'][1]
+    for x in range(96, LW, 2):
+        h = q(2 + math.sin(t*(4 if not storm else 9) + x*0.12)*(2 if not storm else 4))
+        d.rectangle((x, G - 8 - h, x + 1, G + 10), fill=(36, 100, 180))
+        if (x + int(t*30)) % 22 < 4: d.rectangle((x, G - 8 - h, x + 1, G - 7 - h), fill=(200, 230, 255))
+    gone = ctx['gone'][0] <= t < ctx['gone'][1]
+    stroke = (t % 1.6)/1.6
+    if not gone:
+        slide = 0
+        if ctx['gone'][1] <= t < ctx['gone'][1] + 1.0: slide = q((1 - (t - ctx['gone'][1]))*120)
+        tilt = math.sin(t*(2.2 if not storm else 6))*(2 if not storm else 6)
+        bx, by = 150 + slide, G - 16
+        for i in range(0, 96, 2):
+            yo = q(tilt*(i - 48)/48)
+            dep = 16 - (abs(i - 48)**2)//190
+            top = by + yo - 4 + (abs(i - 48)//16)
+            col = c1 if (i//8) % 2 == 0 else c2
+            d.rectangle((bx + i, top, bx + i + 1, top + dep), fill=col)
+            d.rectangle((bx + i, top, bx + i + 1, top + 1), fill=(120, 80, 40))
+        for k, ox in enumerate((26, 60)):
+            a = math.sin(stroke*2*math.pi + k)*0.8
+            x0, y0_ = bx + ox, by + q(tilt*(ox - 48)/48)
+            for j in range(10): d.rectangle((q(x0 - j*2*math.cos(a)), q(y0_ + j*2*math.sin(a) + j), q(x0 - j*2*math.cos(a)) + 1, q(y0_ + j*2*math.sin(a) + j) + 1), fill=(150, 100, 50))
+    if storm:
+        r = random.Random(int(t*12))
+        for _ in range(70):
+            x = r.randrange(0, LW); y = r.randrange(0, G)
+            d.rectangle((x, y, x + 1, y + 10), fill=(110, 130, 175))
+        if (t - ctx['storm'][0]) % 3.4 < 0.12 and md is not None:
+            md.rectangle((0, 0, CW, 80), fill=(255, 255, 255))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 1.0: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*20)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump)
+    place(cv, d, spr, MX, y0)
+    for i in range(0, 56, 8):
+        d.rectangle((MX + 10 + i, y0 + 26, MX + 17 + i, y0 + 32), fill=c1 if (i//8) % 2 == 0 else c2)
+    a = math.sin(stroke*2*math.pi)*0.6 + 0.9
+    hx, hy = MX + 74, y0 + 48
+    for j in range(22):
+        d.rectangle((q(hx + j*2*math.cos(a)), q(hy + j*2*math.sin(a)), q(hx + j*2*math.cos(a)) + 2, q(hy + j*2*math.sin(a)) + 2), fill=(160, 110, 55))
+    ex, ey = hx + 44*math.cos(a), hy + 44*math.sin(a)
+    d.rectangle((q(ex) - 3, q(ey) - 3, q(ex) + 5, q(ey) + 9), fill=(130, 85, 40))
+
+KINDS.update({'republica': (wrap(_rep_mascot), rep_setup), 'xbox': (wrap(_xbox_mascot), xbox_setup), 'flamengo': (wrap(_fla_mascot), fla_setup)})

@@ -1,0 +1,248 @@
+{
+ "name": "xbox",
+ "theme": "generic",
+ "mkind": "xbox",
+ "label": "25 ANOS DO XBOX",
+ "theme_cfg": {
+  "acc": [
+   120,
+   220,
+   60
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   12,
+   24,
+   14,
+   220
+  ],
+  "border": [
+   120,
+   220,
+   60
+  ],
+  "mascot": [
+   80,
+   190,
+   190
+  ],
+  "accessory": "headset",
+  "bpm": 112,
+  "ped": [
+   90,
+   100,
+   90
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   18,
+   28,
+   22
+  ],
+  "sky_bot": [
+   40,
+   90,
+   55
+  ],
+  "hills": [
+   30,
+   80,
+   45
+  ],
+  "ground": [
+   60,
+   70,
+   60
+  ],
+  "stars": true,
+  "cloud": [
+   60,
+   90,
+   70
+  ]
+ },
+ "cards": [
+  [
+   "O nome Xbox era pra ser provisório. E ficou porque as outras opções eram piores. Hoje, 15 de novembro, o Xbox faz vinte e cinco anos.",
+   [
+    [
+     "hook",
+     "O nome Xbox era pra ser *provisório*."
+    ],
+    [
+     "kicker",
+     "15 DE NOVEMBRO"
+    ],
+    [
+     "kicker",
+     "25 ANOS DO"
+    ],
+    [
+     "title",
+     "XBOX"
+    ]
+   ]
+  ],
+  [
+   "Em 15 de novembro de 2001, a Microsoft lançou o primeiro Xbox na América do Norte, por duzentos e noventa e nove dólares.",
+   [
+    [
+     "text",
+     "*15/11/2001*: o primeiro *Xbox* chega à América do Norte."
+    ],
+    [
+     "text",
+     "Preço: *US$ 299*."
+    ],
+    [
+     "icons",
+     [
+      "🎮"
+     ]
+    ]
+   ]
+  ],
+  [
+   "A ideia veio de quatro engenheiros do DirectX, a tecnologia da Microsoft para jogos no PC: Seamus Blackley, Kevin Bachus, Ted Hase e Otto Berkes.",
+   [
+    [
+     "text",
+     "A ideia: 4 engenheiros do *DirectX*."
+    ],
+    [
+     "text",
+     "*Seamus Blackley*, *Kevin Bachus*, *Ted Hase* e *Otto Berkes*."
+    ],
+    [
+     "icons",
+     [
+      "💡"
+     ]
+    ]
+   ]
+  ],
+  [
+   "O plano era transformar um PC num console. Por isso, o projeto se chamava DirectX Box. Encurtaram pra Xbox, esperando um nome melhor aparecer.",
+   [
+    [
+     "text",
+     "Um *PC* virando *console*: o *DirectX Box*."
+    ],
+    [
+     "text",
+     "Encurtaram pra *Xbox*, esperando um nome melhor."
+    ]
+   ]
+  ],
+  [
+   "O marketing sugeriu dezenas de nomes, como MAX, MIND e FACE. Segundo Blackley, eram péssimos. E o Xbox ficou.",
+   [
+    [
+     "text",
+     "Sugestões do marketing: *MAX*, *MIND*, *FACE*..."
+    ],
+    [
+     "text",
+     "Para Blackley, *péssimas*. Ficou *Xbox*."
+    ]
+   ]
+  ],
+  [
+   "E o verde? O designer Horace Luke tinha poucas canetas sobrando, e o azul já era a cor do PlayStation. Então o logo saiu verde.",
+   [
+    [
+     "text",
+     "Por que *verde*? Sobraram *poucas canetas*."
+    ],
+    [
+     "text",
+     "E o *azul* já era do *PlayStation*."
+    ],
+    [
+     "icons",
+     [
+      "🖍️"
+     ]
+    ]
+   ]
+  ],
+  [
+   "No lançamento, Bill Gates estava na Toys R Us da Times Square, em Nova York. E o jogo que vendeu o console foi Halo.",
+   [
+    [
+     "text",
+     "*Bill Gates* no lançamento, na *Times Square*."
+    ],
+    [
+     "text",
+     "O jogo que vendeu o console:"
+    ],
+    [
+     "title",
+     "HALO"
+    ]
+   ]
+  ],
+  [
+   "Em cerca de seis semanas, foram um milhão e meio de consoles vendidos na América do Norte. No total, o primeiro Xbox vendeu cerca de vinte e quatro milhões.",
+   [
+    [
+     "text",
+     "*1,5 milhão* vendidos em cerca de *6 semanas*."
+    ],
+    [
+     "text",
+     "Total: cerca de *24 milhões* de consoles."
+    ],
+    [
+     "icons",
+     [
+      "📈"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Nos vinte e cinco anos, a Microsoft anunciou o Xbox Series X25, uma edição limitada verde translúcida, inspirada no primeiro console.",
+   [
+    [
+     "text",
+     "Nos *25 anos*: *Xbox Series X25*, edição limitada *verde translúcida*."
+    ],
+    [
+     "icons",
+     [
+      "💚"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Qual foi o seu primeiro videogame: Xbox, PlayStation ou Nintendo? Comenta aqui, marca quem jogava Halo com você e segue o perfil pra descobrir o que se comemora amanhã.",
+   [
+    [
+     "text",
+     "Seu primeiro: *Xbox*, *PlayStation* ou *Nintendo*?"
+    ],
+    [
+     "icons",
+     [
+      "🎮"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e marca quem jogava *Halo* com você! Segue pra saber *o que se comemora amanhã*."
+    ]
+   ]
+  ]
+ ]
+}

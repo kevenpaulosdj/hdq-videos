@@ -11,6 +11,9 @@ CH = {'hiphop': (90, [(55.0,[220,261.63,329.63]),(43.65,[174.61,220,261.63]),(65
       'f1': (120, [(55.0,[220,261.63,329.63]),(43.65,[174.61,220,261.63]),(65.41,[261.63,329.63,392]),(49.0,[196,246.94,293.66])]),
       'sparta': (92, [(55.0,[220,261.63,329.63]),(43.65,[174.61,220,261.63]),(49.0,[196,246.94,293.66]),(41.2,[164.81,207.65,246.94])]),
       'camp': (84, [(55.0,[220,261.63,311.13]),(43.65,[174.61,207.65,261.63]),(49.0,[196,233.08,293.66]),(41.2,[164.81,196,233.08])]),
+      'republica': (100, [(65.41,[261.63,329.63,392]),(43.65,[174.61,220,261.63]),(49.0,[196,246.94,293.66]),(65.41,[261.63,329.63,392])]),
+      'xbox': (112, [(55.0,[220,261.63,329.63]),(43.65,[174.61,220,261.63]),(65.41,[196,261.63,329.63]),(49.0,[196,246.94,293.66])]),
+      'flamengo': (104, [(65.41,[261.63,329.63,392]),(49.0,[196,246.94,293.66]),(55.0,[220,261.63,329.63]),(43.65,[174.61,220,261.63])]),
       'inventor': (108, [(49.0,[196,246.94,293.66]),(73.42,[293.66,369.99,440]),(41.2,[164.81,196,246.94]),(65.41,[261.63,329.63,392])])}
 def build(name, theme, bpm=None):
     tl = json.load(open(f'{WORK}/tl_{name}.json')); TOT = tl['dur']; N = int(SR*TOT)
@@ -104,6 +107,22 @@ def build(name, theme, bpm=None):
         elif k == 'crackle':
             for _ in range(14):
                 n = int(0.012*SR); add(X, rng.standard_normal(n)*env(n, .004), t + rng.uniform(0, 2.6), 0.05)
+        elif k == 'boot':
+            n = int(2.2*SR); tt = np.arange(n)/SR
+            f = 55 + 110*np.minimum(1, tt/1.4)
+            sig = (np.sin(2*np.pi*np.cumsum(f)/SR) + 0.5*np.sin(2*np.pi*np.cumsum(f*1.5)/SR) + 0.3*np.sin(2*np.pi*np.cumsum(f*2.01)/SR))
+            sig *= np.minimum(1, tt/0.3)*np.minimum(1, (2.2-tt)/0.6)
+            add(X, sig/1.8, t, 0.16)
+            for j, fq in enumerate((880, 1318.5)):
+                m = int(0.5*SR); t2 = np.arange(m)/SR; add(X, np.sin(2*np.pi*fq*t2)*np.exp(-t2*6), t + 1.3 + j*0.12, 0.06)
+        elif k == 'splash':
+            n = int(0.35*SR); tt = np.arange(n)/SR; nz = rng.standard_normal(n)
+            F = np.fft.rfft(nz); fr = np.fft.rfftfreq(n, 1/SR); F[(fr < 400) | (fr > 5000)] = 0; b = np.fft.irfft(F, n); b /= np.max(np.abs(b)) + 1e-9
+            add(X, b*np.minimum(1, tt/0.02)*np.exp(-tt*9), t, 0.07)
+        elif k == 'thunder':
+            n = int(2.4*SR); tt = np.arange(n)/SR; nz = rng.standard_normal(n)
+            F = np.fft.rfft(nz); fr = np.fft.rfftfreq(n, 1/SR); F[(fr > 300)] = 0; b = np.fft.irfft(F, n); b /= np.max(np.abs(b)) + 1e-9
+            add(X, b*np.minimum(1, tt/0.03)*np.exp(-tt*1.6), t, 0.45)
         elif k == 'tap':
             n = int(0.06*SR); tt = np.arange(n)/SR; add(X, np.sin(2*np.pi*np.cumsum(220 - 1200*tt)/SR)*env(n, .02) + rng.standard_normal(n)*env(n, .004)*0.3, t, 0.07)
         elif k == 'whistle':

@@ -1,0 +1,236 @@
+{
+ "name": "flamengo",
+ "theme": "generic",
+ "mkind": "flamengo",
+ "label": "131 ANOS DO FLAMENGO",
+ "theme_cfg": {
+  "acc": [
+   235,
+   40,
+   45
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   22,
+   10,
+   12,
+   220
+  ],
+  "border": [
+   235,
+   40,
+   45
+  ],
+  "mascot": [
+   80,
+   190,
+   190
+  ],
+  "accessory": "none",
+  "bpm": 104,
+  "ped": [
+   210,
+   190,
+   150
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   90,
+   170,
+   235
+  ],
+  "sky_bot": [
+   200,
+   230,
+   250
+  ],
+  "hills": [
+   90,
+   150,
+   120
+  ],
+  "ground": [
+   230,
+   210,
+   160
+  ]
+ },
+ "cards": [
+  [
+   "O Flamengo faz aniversário hoje, mas não nasceu hoje. Hoje, 15 de novembro, o Flamengo completa cento e trinta e um anos.",
+   [
+    [
+     "hook",
+     "O Flamengo faz aniversário hoje, mas *não nasceu hoje*."
+    ],
+    [
+     "kicker",
+     "15 DE NOVEMBRO"
+    ],
+    [
+     "kicker",
+     "131 ANOS DO"
+    ],
+    [
+     "title",
+     "FLAMENGO"
+    ]
+   ]
+  ],
+  [
+   "Em 1895, um grupo de jovens remadores juntou dinheiro pra comprar um barco usado. O nome dele era Pherusa.",
+   [
+    [
+     "text",
+     "*1895*: jovens *remadores* compram um barco usado."
+    ],
+    [
+     "text",
+     "O nome: *Pherusa*."
+    ],
+    [
+     "icons",
+     [
+      "🚣"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Na primeira viagem, saindo da Ponta do Caju, o barco virou numa tempestade. Joaquim Bahia nadou até a praia pra pedir ajuda, e um barco da Penha resgatou todo mundo.",
+   [
+    [
+     "text",
+     "Primeira viagem: o barco *vira numa tempestade*."
+    ],
+    [
+     "text",
+     "*Joaquim Bahia* nada até a praia; um barco da *Penha* resgata todos."
+    ],
+    [
+     "icons",
+     [
+      "🌊"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Depois, a Pherusa foi roubada e nunca mais apareceu. Então eles compraram outro barco, o Scyra.",
+   [
+    [
+     "text",
+     "Depois, a Pherusa é *roubada* e some."
+    ],
+    [
+     "text",
+     "Novo barco: o *Scyra*."
+    ]
+   ]
+  ],
+  [
+   "Em 17 de novembro de 1895, na casa de Nestor de Barros, número 22 da Praia do Flamengo, eles fundaram o Grupo de Regatas do Flamengo.",
+   [
+    [
+     "text",
+     "*17/11/1895*, Praia do Flamengo, *nº 22*:"
+    ],
+    [
+     "text",
+     "nasce o *Grupo de Regatas do Flamengo*."
+    ]
+   ]
+  ],
+  [
+   "Mas escolheram 15 de novembro como data oficial. Assim, o aniversário do clube sempre cairia no feriado da Proclamação da República.",
+   [
+    [
+     "text",
+     "Data oficial: *15 de novembro*."
+    ],
+    [
+     "text",
+     "Pro aniversário cair sempre no *feriado da República*."
+    ],
+    [
+     "icons",
+     [
+      "🎉"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E as cores não eram vermelho e preto. Eram azul e ouro. A troca pro rubro-negro veio em 23 de novembro de 1896, por sugestão de Nestor de Barros.",
+   [
+    [
+     "text",
+     "As cores eram *azul e ouro*!"
+    ],
+    [
+     "text",
+     "*23/11/1896*: vira *rubro-negro*, ideia de *Nestor de Barros*."
+    ]
+   ]
+  ],
+  [
+   "O futebol só chegou em 1911, com jogadores que saíram do Fluminense. Na estreia, em 1912, o Flamengo goleou o Mangueira por dezesseis a dois.",
+   [
+    [
+     "text",
+     "*1911*: chega o futebol, com jogadores do *Fluminense*."
+    ],
+    [
+     "text",
+     "Estreia em *1912*: *16 a 2* no Mangueira."
+    ],
+    [
+     "icons",
+     [
+      "⚽"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Por isso o nome ainda é Clube de Regatas do Flamengo: antes da bola, veio o remo.",
+   [
+    [
+     "text",
+     "Clube de *Regatas* do Flamengo:"
+    ],
+    [
+     "text",
+     "antes da *bola*, veio o *remo*."
+    ],
+    [
+     "icons",
+     [
+      "🚣"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E você: sabia que o Flamengo já foi azul e ouro? Sim ou não? Comenta aqui, marca o flamenguista que precisa saber disso e segue o perfil pra descobrir o que se comemora amanhã.",
+   [
+    [
+     "text",
+     "Você sabia que o Flamengo já foi *azul e ouro*? *Sim* ou *não*?"
+    ],
+    [
+     "text",
+     "Comenta e marca o flamenguista! Segue pra saber *o que se comemora amanhã*."
+    ]
+   ]
+  ]
+ ]
+}

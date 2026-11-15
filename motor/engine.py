@@ -362,6 +362,19 @@ def mascot_base(th):
     elif acc == 'headband':
         cols = [(122, 16, 48), (240, 240, 240), (0, 97, 60)]
         for i in range(0, s, 8): d.rectangle((x+i, y+4, x+i+7, y+9), fill=cols[(i//8) % 3])
+    elif acc == 'bicorne':
+        nv = (28, 34, 72); gd = (230, 190, 60)
+        d.polygon([(x-8, y+6), (x+(s+dp)//2, y-dp-24), (x+s+dp+8, y+6)], fill=nv)
+        d.polygon([(x-2, y+2), (x+(s+dp)//2, y-dp-16), (x+s+dp+2, y+2)], fill=light(nv, .12))
+        d.rectangle((x-8, y+2, x+s+dp+8, y+6), fill=gd)
+        cx_, cy_ = x+(s+dp)//2, y-dp-6
+        d.rectangle((cx_-7, cy_-7, cx_+7, cy_+7), fill=(0, 150, 60)); d.rectangle((cx_-4, cy_-4, cx_+4, cy_+4), fill=(250, 215, 0))
+    elif acc == 'headset':
+        k = (24, 24, 28); g_ = (120, 220, 60)
+        d.rectangle((x+2, y-dp-8, x+s+dp-2, y-dp-3), fill=k)
+        d.rectangle((x-8, y+6, x+2, y+34), fill=k); d.rectangle((x-6, y+10, x, y+30), fill=g_)
+        d.rectangle((x+s+dp-2, y-2, x+s+dp+6, y+24), fill=k)
+        d.rectangle((x-2, y+30, x+18, y+33), fill=k); d.rectangle((x+16, y+28, x+22, y+35), fill=g_)
     elif acc == 'flower':
         sx, sy = x+s-8, y-dp-10
         d.rectangle((sx+3, sy+8, sx+5, sy+16), fill=(60,150,60))
