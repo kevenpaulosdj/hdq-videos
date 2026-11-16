@@ -375,6 +375,27 @@ def mascot_base(th):
         d.rectangle((x-8, y+6, x+2, y+34), fill=k); d.rectangle((x-6, y+10, x, y+30), fill=g_)
         d.rectangle((x+s+dp-2, y-2, x+s+dp+6, y+24), fill=k)
         d.rectangle((x-2, y+30, x+18, y+33), fill=k); d.rectangle((x+16, y+28, x+22, y+35), fill=g_)
+    elif acc == 'wizard':
+        pu = (70, 40, 130); st_ = (255, 220, 80)
+        d.rectangle((x-6, y-2, x+s+dp+6, y+4), fill=dark(pu, .8))
+        for k in range(0, 34, 2):
+            w_ = (s+dp-8)*(34-k)//34
+            cx_ = x+(s+dp)//2 + (k*k)//90
+            d.rectangle((cx_-w_//2, y-2-k, cx_+w_//2, y-1-k), fill=pu if k < 30 else light(pu, .2))
+        for sx_, sy_ in ((x+20, y-10), (x+36, y-20), (x+28, y-27)):
+            d.rectangle((sx_-1, sy_-3, sx_+1, sy_+3), fill=st_); d.rectangle((sx_-3, sy_-1, sx_+3, sy_+1), fill=st_)
+    elif acc == 'bowler':
+        k_ = (26, 22, 24)
+        d.rectangle((x-6, y-2, x+s+dp+4, y+3), fill=k_)
+        d.rectangle((x+8, y-16, x+s+dp-10, y-2), fill=k_); d.rectangle((x+12, y-20, x+s+dp-14, y-16), fill=k_)
+        d.rectangle((x+8, y-5, x+s+dp-10, y-3), fill=(120, 30, 30))
+        fx_, fy_ = 20, 44
+        d.rectangle((fx_+14, fy_+9, fx_+41, fy_+12), fill=(50, 34, 24)); d.rectangle((fx_+12, fy_+11, fx_+15, fy_+14), fill=(50, 34, 24)); d.rectangle((fx_+40, fy_+11, fx_+43, fy_+14), fill=(50, 34, 24))
+    elif acc == 'cowhat':
+        hb = (225, 190, 140); band = (240, 110, 170)
+        d.rectangle((x-12, y-2, x+s+dp+12, y+3), fill=dark(hb, .85)); d.rectangle((x-14, y-6, x-8, y-2), fill=dark(hb, .85)); d.rectangle((x+s+dp+8, y-6, x+s+dp+14, y-2), fill=dark(hb, .85))
+        d.rectangle((x+6, y-20, x+s+dp-6, y-2), fill=hb); d.rectangle((x+10, y-24, x+(s+dp)//2-3, y-20), fill=hb); d.rectangle((x+(s+dp)//2+3, y-24, x+s+dp-10, y-20), fill=hb)
+        d.rectangle((x+6, y-7, x+s+dp-6, y-3), fill=band)
     elif acc == 'flower':
         sx, sy = x+s-8, y-dp-10
         d.rectangle((sx+3, sy+8, sx+5, sy+16), fill=(60,150,60))

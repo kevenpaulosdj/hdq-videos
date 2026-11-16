@@ -1,0 +1,247 @@
+{
+ "name": "vacina",
+ "theme": "generic",
+ "mkind": "vacina",
+ "label": "REVOLTA DA VACINA",
+ "theme_cfg": {
+  "acc": [
+   235,
+   90,
+   50
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   40,
+   26,
+   16,
+   225
+  ],
+  "border": [
+   235,
+   90,
+   50
+  ],
+  "mascot": [
+   80,
+   190,
+   190
+  ],
+  "accessory": "bowler",
+  "bpm": 96,
+  "ped": [
+   120,
+   110,
+   100
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   150,
+   140,
+   120
+  ],
+  "sky_bot": [
+   220,
+   200,
+   170
+  ],
+  "hills": [
+   140,
+   120,
+   100
+  ],
+  "ground": [
+   150,
+   140,
+   130
+  ],
+  "cloud": [
+   200,
+   190,
+   180
+  ]
+ },
+ "cards": [
+  [
+   "O Rio de Janeiro virou praça de guerra por causa de uma vacina. E foi num 16 de novembro, em 1904, que a revolta chegou ao fim.",
+   [
+    [
+     "hook",
+     "O Rio virou *praça de guerra* por causa de uma vacina."
+    ],
+    [
+     "kicker",
+     "16 DE NOVEMBRO DE 1904"
+    ],
+    [
+     "kicker",
+     "FIM DA REVOLTA DA"
+    ],
+    [
+     "title",
+     "VACINA"
+    ]
+   ]
+  ],
+  [
+   "No começo do século vinte, a varíola matava muita gente no Rio, que era a capital do Brasil. Quem comandava a saúde pública era o médico Oswaldo Cruz.",
+   [
+    [
+     "text",
+     "*1904*: a *varíola* mata muita gente no Rio, a capital."
+    ],
+    [
+     "text",
+     "Na saúde pública: o médico *Oswaldo Cruz*."
+    ],
+    [
+     "icons",
+     [
+      "🏥"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Em 31 de outubro de 1904, foi aprovada a lei da vacinação obrigatória contra a varíola, com multa pra quem não se vacinasse.",
+   [
+    [
+     "text",
+     "*31/10/1904*: lei da *vacinação obrigatória*."
+    ],
+    [
+     "text",
+     "Com *multa* pra quem não se vacinasse."
+    ],
+    [
+     "icons",
+     [
+      "💉"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Em 9 de novembro, o jornal A Notícia publicou o regulamento da lei. Muita gente achou as regras autoritárias.",
+   [
+    [
+     "text",
+     "*9/11*: o jornal *A Notícia* publica o regulamento."
+    ],
+    [
+     "text",
+     "Muita gente achou as regras *autoritárias*."
+    ],
+    [
+     "icons",
+     [
+      "📰"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E os boatos corriam soltos. Um deles dizia que quem tomava a vacina ficava com cara de vaca.",
+   [
+    [
+     "text",
+     "Boatos pela cidade. Um deles:"
+    ],
+    [
+     "title",
+     "CARA DE VACA?"
+    ],
+    [
+     "icons",
+     [
+      "🐄"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Em 10 de novembro, começaram os protestos. Bondes foram virados, delegacias atacadas e as ruas viraram barricadas.",
+   [
+    [
+     "text",
+     "*10/11*: começam os protestos."
+    ],
+    [
+     "text",
+     "*Bondes virados*, delegacias atacadas, *barricadas*."
+    ],
+    [
+     "icons",
+     [
+      "🔥"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Em 16 de novembro, o governo decretou estado de sítio e suspendeu a vacinação obrigatória. A revolta perdeu força.",
+   [
+    [
+     "text",
+     "*16/11*: *estado de sítio*."
+    ],
+    [
+     "text",
+     "E a vacinação obrigatória é *suspensa*."
+    ]
+   ]
+  ],
+  [
+   "O saldo: trinta mortos, cento e dez feridos, quase mil presos e mais de quatrocentos deportados para o Acre.",
+   [
+    [
+     "text",
+     "*30 mortos* e *110 feridos*."
+    ],
+    [
+     "text",
+     "Quase *1.000 presos* e mais de *400 deportados* para o *Acre*."
+    ]
+   ]
+  ],
+  [
+   "Com o tempo, a campanha de vacinação deu resultado, e Oswaldo Cruz deixou de ser vilão pra virar símbolo da saúde pública no Brasil.",
+   [
+    [
+     "text",
+     "Com o tempo, a vacinação *deu resultado*."
+    ],
+    [
+     "text",
+     "*Oswaldo Cruz*: de vilão a *símbolo da saúde pública*."
+    ],
+    [
+     "icons",
+     [
+      "🏅"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Você já conhecia a Revolta da Vacina? Sim ou não? Comenta aqui, manda pra quem ama história e segue o perfil pra descobrir o que se comemora amanhã.",
+   [
+    [
+     "text",
+     "Você já conhecia a *Revolta da Vacina*? *Sim* ou *não*?"
+    ],
+    [
+     "text",
+     "Comenta e manda pra quem ama história! Segue pra saber *o que se comemora amanhã*."
+    ]
+   ]
+  ]
+ ]
+}

@@ -1,0 +1,253 @@
+{
+ "name": "boiadeira",
+ "theme": "generic",
+ "mkind": "boiadeira",
+ "label": "ANIVERSÁRIO DA ANA CASTELA",
+ "theme_cfg": {
+  "acc": [
+   240,
+   110,
+   170
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   50,
+   24,
+   30,
+   220
+  ],
+  "border": [
+   240,
+   110,
+   170
+  ],
+  "mascot": [
+   80,
+   190,
+   190
+  ],
+  "accessory": "cowhat",
+  "bpm": 104,
+  "ped": [
+   170,
+   130,
+   80
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   240,
+   150,
+   90
+  ],
+  "sky_bot": [
+   255,
+   215,
+   150
+  ],
+  "hills": [
+   150,
+   160,
+   80
+  ],
+  "ground": [
+   200,
+   160,
+   100
+  ],
+  "cloud": [
+   255,
+   230,
+   200
+  ]
+ },
+ "cards": [
+  [
+   "Ela começou cantando num coral de igreja e virou a Boiadeira do Brasil. Hoje, 16 de novembro, Ana Castela faz vinte e três anos.",
+   [
+    [
+     "hook",
+     "Do *coral da igreja* ao Brasil inteiro."
+    ],
+    [
+     "kicker",
+     "16 DE NOVEMBRO"
+    ],
+    [
+     "kicker",
+     "ANIVERSÁRIO DA"
+    ],
+    [
+     "title",
+     "ANA CASTELA"
+    ]
+   ]
+  ],
+  [
+   "Ana Flávia Castela nasceu em 16 de novembro de 2003, em Amambai, no Mato Grosso do Sul.",
+   [
+    [
+     "text",
+     "*Ana Flávia Castela*: nasceu em *16/11/2003*."
+    ],
+    [
+     "text",
+     "Em *Amambai*, Mato Grosso do Sul."
+    ],
+    [
+     "icons",
+     [
+      "🎂"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Ela cresceu em Sete Quedas, na fronteira com o Paraguai, e vivia visitando a fazenda dos avós do outro lado.",
+   [
+    [
+     "text",
+     "Cresceu em *Sete Quedas*, na fronteira com o *Paraguai*."
+    ],
+    [
+     "text",
+     "E vivia na *fazenda dos avós*."
+    ],
+    [
+     "icons",
+     [
+      "🐄"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Em 2019, estreou cantando num coral católico, o Coração de Maria.",
+   [
+    [
+     "text",
+     "*2019*: estreia num *coral católico*."
+    ],
+    [
+     "text",
+     "O *Coração de Maria*."
+    ],
+    [
+     "icons",
+     [
+      "🎶"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Na fazenda dos avós, ela gravou um vídeo cantando Vaqueiro Apaixonado. O vídeo viralizou e mudou os planos dela.",
+   [
+    [
+     "text",
+     "Na fazenda, um vídeo cantando *Vaqueiro Apaixonado*."
+    ],
+    [
+     "title",
+     "VIRALIZOU!"
+    ]
+   ]
+  ],
+  [
+   "Ela chegou a entrar na faculdade, mas trancou o curso pra focar na música.",
+   [
+    [
+     "text",
+     "Entrou na *faculdade*..."
+    ],
+    [
+     "text",
+     "...e *trancou* pra focar na *música*."
+    ],
+    [
+     "icons",
+     [
+      "🎓"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Em 2021, lançou a música Boiadeira. E foi dali que veio o apelido.",
+   [
+    [
+     "text",
+     "*2021*: lança a música..."
+    ],
+    [
+     "title",
+     "BOIADEIRA"
+    ]
+   ]
+  ],
+  [
+   "Em 2022, veio Pipoco, com Melody e DJ Chris no Beat. E ela estourou no Brasil inteiro.",
+   [
+    [
+     "text",
+     "*2022*: *Pipoco*, com *Melody* e *DJ Chris no Beat*."
+    ],
+    [
+     "text",
+     "E ela *estoura* no Brasil inteiro."
+    ],
+    [
+     "icons",
+     [
+      "💥"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Em 2023, gravou ao vivo o primeiro álbum, Boiadeira Internacional.",
+   [
+    [
+     "text",
+     "*2023*: primeiro álbum, gravado *ao vivo*."
+    ],
+    [
+     "text",
+     "*Boiadeira Internacional*."
+    ],
+    [
+     "icons",
+     [
+      "🤠"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Qual é a sua música preferida da Ana Castela? Comenta aqui, marca quem ama sertanejo e segue o perfil pra descobrir o que se comemora amanhã.",
+   [
+    [
+     "text",
+     "Qual a sua *música preferida* da Ana Castela?"
+    ],
+    [
+     "icons",
+     [
+      "🎤"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e marca quem ama *sertanejo*! Segue pra saber *o que se comemora amanhã*."
+    ]
+   ]
+  ]
+ ]
+}

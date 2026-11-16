@@ -1,0 +1,246 @@
+{
+ "name": "cinema",
+ "theme": "generic",
+ "mkind": "cinema",
+ "label": "25 ANOS DO FILME",
+ "theme_cfg": {
+  "acc": [
+   250,
+   200,
+   60
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   24,
+   14,
+   40,
+   225
+  ],
+  "border": [
+   250,
+   200,
+   60
+  ],
+  "mascot": [
+   80,
+   190,
+   190
+  ],
+  "accessory": "wizard",
+  "bpm": 100,
+  "ped": [
+   110,
+   70,
+   80
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   14,
+   10,
+   34
+  ],
+  "sky_bot": [
+   50,
+   30,
+   90
+  ],
+  "hills": [
+   40,
+   30,
+   70
+  ],
+  "ground": [
+   70,
+   40,
+   50
+  ],
+  "stars": true,
+  "cloud": [
+   60,
+   50,
+   100
+  ]
+ },
+ "cards": [
+  [
+   "O primeiro filme de Harry Potter quebrou o recorde de estreia de Hollywood. E hoje, 16 de novembro, ele faz vinte e cinco anos.",
+   [
+    [
+     "hook",
+     "O primeiro filme quebrou o *recorde de estreia*."
+    ],
+    [
+     "kicker",
+     "16 DE NOVEMBRO"
+    ],
+    [
+     "kicker",
+     "25 ANOS DE"
+    ],
+    [
+     "title",
+     "HARRY POTTER"
+    ]
+   ]
+  ],
+  [
+   "Em 16 de novembro de 2001, Harry Potter e a Pedra Filosofal estreou oficialmente nos Estados Unidos e no Reino Unido.",
+   [
+    [
+     "text",
+     "*16/11/2001*: estreia oficial nos *EUA* e no *Reino Unido*."
+    ],
+    [
+     "text",
+     "*Harry Potter e a Pedra Filosofal*."
+    ],
+    [
+     "icons",
+     [
+      "🎬"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Mas a história começou antes. Em 1995, J. K. Rowling terminou o primeiro livro numa máquina de escrever manual, vivendo de auxílio do governo.",
+   [
+    [
+     "text",
+     "*1995*: J. K. Rowling termina o 1º livro."
+    ],
+    [
+     "text",
+     "Numa *máquina de escrever manual*, vivendo de *auxílio do governo*."
+    ],
+    [
+     "icons",
+     [
+      "📖"
+     ]
+    ]
+   ]
+  ],
+  [
+   "O livro saiu em 1997. Quatro anos depois veio o filme, dirigido por Chris Columbus, com orçamento de cento e vinte e cinco milhões de dólares.",
+   [
+    [
+     "text",
+     "Livro: *1997*. Filme: *2001*."
+    ],
+    [
+     "text",
+     "Direção: *Chris Columbus*. Orçamento: *US$ 125 milhões*."
+    ]
+   ]
+  ],
+  [
+   "Nos Estados Unidos, o filme estreou em três mil seiscentos e setenta e dois cinemas de uma vez.",
+   [
+    [
+     "text",
+     "Estreia nos EUA em *3.672 cinemas* de uma vez."
+    ],
+    [
+     "icons",
+     [
+      "🍿"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Só na sexta-feira de estreia, foram trinta e dois milhões de dólares. No fim de semana, noventa vírgula três milhões. Recorde de estreia nos Estados Unidos.",
+   [
+    [
+     "text",
+     "Sexta-feira: *US$ 32 milhões*."
+    ],
+    [
+     "text",
+     "Fim de semana: *US$ 90,3 milhões*."
+    ],
+    [
+     "title",
+     "RECORDE!"
+    ]
+   ]
+  ],
+  [
+   "No Reino Unido, também foi a maior estreia da história até então.",
+   [
+    [
+     "text",
+     "No *Reino Unido*: maior estreia da história *até então*."
+    ],
+    [
+     "icons",
+     [
+      "🏆"
+     ]
+    ]
+   ]
+  ],
+  [
+   "No Brasil, o filme chegou uma semana depois, em 23 de novembro de 2001.",
+   [
+    [
+     "text",
+     "No *Brasil*: *23/11/2001*, uma semana depois."
+    ],
+    [
+     "icons",
+     [
+      "🇧🇷"
+     ]
+    ]
+   ]
+  ],
+  [
+   "No mundo todo, a bilheteria chegou perto de um bilhão de dólares, e abriu caminho pra uma série de oito filmes.",
+   [
+    [
+     "text",
+     "Bilheteria: perto de *US$ 1 bilhão*."
+    ],
+    [
+     "text",
+     "Começo de uma série de *8 filmes*."
+    ],
+    [
+     "icons",
+     [
+      "✨"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E você: viu no cinema ou só depois, na TV? Comenta aqui, marca quem é fã de verdade e segue o perfil pra descobrir o que se comemora amanhã.",
+   [
+    [
+     "text",
+     "Viu no *cinema* ou na *TV*?"
+    ],
+    [
+     "icons",
+     [
+      "🍿"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e marca quem é *fã*! Segue pra saber *o que se comemora amanhã*."
+    ]
+   ]
+  ]
+ ]
+}

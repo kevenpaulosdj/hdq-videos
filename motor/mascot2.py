@@ -542,3 +542,164 @@ def _fla_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
     d.rectangle((q(ex) - 3, q(ey) - 3, q(ex) + 5, q(ey) + 9), fill=(130, 85, 40))
 
 KINDS.update({'republica': (wrap(_rep_mascot), rep_setup), 'xbox': (wrap(_xbox_mascot), xbox_setup), 'flamengo': (wrap(_fla_mascot), fla_setup)})
+
+# ---------- CINEMA (16/11): chapéu de mago genérico, varinha com faíscas, balde de pipoca estourando ----------
+def cine_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('HARRY POTTER', 'RECORDE!'))
+    for tt in ctx['hits']: ev('chime', tt); ev('applause', tt + 0.15)
+    P = 60/100; k = 0
+    while k*P < ctx['total'] - 1:
+        if k % 2 == 1: ev('tick', k*P)
+        k += 1
+
+def _cine_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    # tela de cinema ao fundo com feixe do projetor
+    sx0, sy0 = 150, G - 86
+    d.rectangle((sx0 - 3, sy0 - 3, sx0 + 103, sy0 + 61), fill=(60, 20, 30))
+    d.rectangle((sx0, sy0, sx0 + 100, sy0 + 58), fill=(235, 232, 220))
+    fl = int(t*12) % 3
+    for yy in range(sy0 + 4, sy0 + 56, 6):
+        d.rectangle((sx0 + 6, yy, sx0 + 94, yy + 1), fill=(220 - fl*6, 216 - fl*6, 200 - fl*6))
+    # balde de pipoca
+    bx, by = 206, G - 30
+    for i in range(0, 26, 2):
+        d.rectangle((bx + i, by, bx + i + 1, by + 30), fill=(220, 30, 40) if (i//4) % 2 == 0 else (250, 245, 240))
+    for i in range(7):
+        d.rectangle((bx + 2 + i*3, by - 4 - (i % 3), bx + 6 + i*3, by), fill=(255, 240, 180))
+    ph = beat % 1
+    if ph < 0.5:
+        for j in range(3):
+            px_ = bx + 6 + j*7; py_ = by - 6 - q(math.sin(ph*2*math.pi)*14) - j*3
+            d.rectangle((px_, py_, px_ + 3, py_ + 3), fill=(255, 245, 200))
+    hop = 0; burst = None
+    for h in ctx['hits']:
+        if 0 <= t - h < 1.0: hop = q(-abs(math.sin((t - h)*math.pi*3.2))*18); burst = t - h
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump)
+    place(cv, d, spr, MX, y0)
+    # varinha
+    sw = math.sin(beat*math.pi)*0.5 - 0.7 if burst is None else -1.3
+    hx, hy = MX + 74, y0 + 50
+    tipx, tipy = hx, hy
+    for k in range(12):
+        tipx = hx + q(math.cos(sw)*k*2.4); tipy = hy + q(math.sin(sw)*k*2.4)
+        d.rectangle((tipx, tipy, tipx + 2, tipy + 2), fill=(110, 70, 40))
+    tw = 2 + int(t*10) % 2
+    d.rectangle((tipx - tw, tipy, tipx + 2 + tw, tipy + 2), fill=(255, 240, 150)); d.rectangle((tipx, tipy - tw, tipx + 2, tipy + 2 + tw), fill=(255, 240, 150))
+    if burst is not None:
+        rr = random.Random(int(burst*20))
+        for _ in range(16):
+            a = rr.uniform(0, 2*math.pi); dist = burst*60*rr.uniform(.5, 1)
+            col = rr.choice(((255, 220, 80), (190, 140, 255), (255, 255, 255)))
+            d.rectangle((q(tipx + math.cos(a)*dist), q(tipy + math.sin(a)*dist), q(tipx + math.cos(a)*dist) + 2, q(tipy + math.sin(a)*dist) + 2), fill=col)
+
+# ---------- VACINA (1904): chapéu-coco e bigode; bonde que vira nos protestos; chifres na "cara de vaca" ----------
+def vac_setup(ctx):
+    n = len(ctx['cards'])
+    c4 = ctx['cards'][min(4, n-1)]; ctx['cow'] = (c4[0] + 1.2, c4[0] + c4[1])
+    c5 = ctx['cards'][min(5, n-1)]; ctx['tip_t'] = c5[0] + 1.0
+    c8 = ctx['cards'][min(8, n-1)]; ctx['up_t'] = c8[0]
+    c3 = ctx['cards'][min(3, n-1)]; ctx['paper'] = (c3[0], c3[0] + c3[1])
+    ctx['hits'] = _title_times(ctx, ('VACINA', 'CARA DE VACA?'))
+    for tt in ctx['hits']: ev('ding', tt)
+    ev('moo', ctx['cow'][0] - 0.2)
+    ev('clank', ctx['tip_t'] + 0.45); ev('thud', ctx['tip_t'] + 0.5); ev('crackle', ctx['tip_t'] + 0.6); ev('crackle', ctx['tip_t'] + 3.2)
+    P = 60/96*2; k = 0
+    while k*P < ctx['total'] - 1: ev('drum', k*P, k=k); k += 1
+
+def _bonde(d, bx, by):
+    yl, gr = (225, 180, 50), (40, 100, 60)
+    d.rectangle((bx, by - 34, bx + 80, by - 6), fill=yl); d.rectangle((bx - 2, by - 38, bx + 82, by - 34), fill=gr)
+    for wx in range(bx + 6, bx + 74, 14): d.rectangle((wx, by - 30, wx + 9, by - 20), fill=(150, 190, 210))
+    d.rectangle((bx, by - 10, bx + 80, by - 6), fill=gr)
+    d.rectangle((bx + 38, by - 52, bx + 40, by - 38), fill=(60, 60, 60))
+    for wx in (bx + 12, bx + 60): d.rectangle((wx, by - 6, wx + 8, by + 2), fill=(40, 40, 40))
+
+def _vac_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    # poste de lampião
+    lx = 136; d.rectangle((lx, G - 100, lx + 3, G), fill=(40, 40, 46)); d.rectangle((lx - 5, G - 112, lx + 8, G - 100), fill=(40, 40, 46))
+    lit = not (ctx['tip_t'] <= t < ctx['up_t'])
+    d.rectangle((lx - 3, G - 110, lx + 6, G - 102), fill=(255, 220, 120) if lit else (70, 70, 70))
+    # bonde: em pé, tombado durante a revolta, em pé de novo depois
+    tipped = ctx['tip_t'] <= t < ctx['up_t']
+    lay = Image.new('RGBA', (120, 80), (0, 0, 0, 0)); ld = ImageDraw.Draw(lay); _bonde(ld, 18, 70)
+    if tipped:
+        a = min(1, (t - ctx['tip_t'])/0.5)
+        lay = lay.rotate(-90*a*a, resample=Image.NEAREST, center=(98, 70))
+    cv.alpha_composite(lay, (150, G - 70))
+    if tipped and t - ctx['tip_t'] > 0.5:
+        r = random.Random(int(t*10))
+        for _ in range(14):
+            sx_ = 150 + r.randrange(40, 115); sy_ = G - 40 - r.randrange(0, 70) - int((t*30) % 20)
+            d.rectangle((sx_, sy_, sx_ + 5, sy_ + 5), fill=(120, 115, 110))
+        for k in range(6):
+            fx_ = 200 + k*6; fh = 6 + int(abs(math.sin(t*9 + k))*10)
+            d.rectangle((fx_, G - fh, fx_ + 4, G), fill=(255, 140, 30) if k % 2 else (255, 210, 60))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*18)
+    beat = t*th['bpm']/60
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+    if ctx['cow'][0] <= t < ctx['cow'][1]:
+        for hx in (MX + 16, MX + 60):
+            d.rectangle((hx, y0 + 4, hx + 4, y0 + 12), fill=(240, 235, 220)); d.rectangle((hx + (-3 if hx < MX + 40 else 3), y0, hx + 1 + (-3 if hx < MX + 40 else 3), y0 + 5), fill=(240, 235, 220))
+        for sx_, sy_ in ((MX + 14, y0 + 30), (MX + 50, y0 + 60), (MX + 24, y0 + 66)):
+            d.rectangle((sx_, sy_, sx_ + 9, sy_ + 6), fill=(30, 30, 30))
+    if ctx['paper'][0] <= t < ctx['paper'][1]:
+        px_, py_ = MX + 70, y0 + 34
+        d.rectangle((px_, py_, px_ + 30, py_ + 36), fill=(235, 228, 205)); d.rectangle((px_ + 3, py_ + 3, px_ + 27, py_ + 8), fill=(40, 40, 40))
+        for yy in range(py_ + 12, py_ + 34, 4): d.rectangle((px_ + 3, yy, px_ + 27, yy + 1), fill=(120, 115, 105))
+
+# ---------- BOIADEIRA: chapéu country, laço girando, cerca e vaquinha; estouro de confete nos títulos ----------
+def boi_setup(ctx):
+    n = len(ctx['cards'])
+    ctx['hits'] = _title_times(ctx, ('ANA CASTELA', 'VIRALIZOU!', 'BOIADEIRA'))
+    c7 = ctx['cards'][min(7, n-1)]; ctx['pop'] = (c7[0] + 0.4, c7[0] + c7[1])
+    for tt in ctx['hits']: ev('ding', tt); ev('applause', tt + 0.15)
+    c2 = ctx['cards'][min(2, n-1)]; ev('moo', c2[0] + 0.8)
+    k = 0
+    while ctx['pop'][0] + k*0.45 < ctx['pop'][1]: ev('pop', ctx['pop'][0] + k*0.45); k += 1
+    P = 60/104; k = 0
+    while k*P < ctx['total'] - 1: ev('tap', k*P); k += 1
+
+def _boi_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    wd = (150, 100, 55)
+    for px_ in range(130, LW, 34): d.rectangle((px_, G - 34, px_ + 5, G), fill=wd)
+    for yy in (G - 28, G - 14): d.rectangle((130, yy, LW, yy + 3), fill=light(wd, .15))
+    # vaquinha
+    cx_, cy_ = 190, G - 52 + (1 if int(beat) % 2 else 0)
+    d.rectangle((cx_, cy_, cx_ + 44, cy_ + 24), fill=(250, 250, 245))
+    for sx_, sy_, w_, h_ in ((cx_ + 6, cy_ + 4, 12, 9), (cx_ + 26, cy_ + 12, 10, 8)): d.rectangle((sx_, sy_, sx_ + w_, sy_ + h_), fill=(30, 30, 30))
+    hd = cx_ - 14; d.rectangle((hd, cy_ - 6, hd + 16, cy_ + 12), fill=(250, 250, 245)); d.rectangle((hd, cy_ + 6, hd + 16, cy_ + 12), fill=(240, 170, 180))
+    d.rectangle((hd + 3, cy_ - 1, hd + 5, cy_ + 1), fill=(20, 20, 20)); d.rectangle((hd + 11, cy_ - 1, hd + 13, cy_ + 1), fill=(20, 20, 20))
+    d.rectangle((hd - 2, cy_ - 10, hd + 1, cy_ - 6), fill=(230, 220, 190)); d.rectangle((hd + 15, cy_ - 10, hd + 18, cy_ - 6), fill=(230, 220, 190))
+    for lx_ in (cx_ + 4, cx_ + 14, cx_ + 30, cx_ + 38): d.rectangle((lx_, cy_ + 24, lx_ + 3, G - 2), fill=(250, 250, 245))
+    hop = 0; burst = None
+    for h in ctx['hits']:
+        if 0 <= t - h < 1.0: hop = q(-abs(math.sin((t - h)*math.pi*3.2))*18); burst = t - h
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump)
+    place(cv, d, spr, MX, y0)
+    # laço girando sobre a cabeça
+    hx, hy = MX + 76, y0 + 46
+    ang = t*2*math.pi*1.3
+    lcx, lcy = MX + 50 + q(math.cos(ang)*6), y0 - 34
+    for k in range(10): d.rectangle((q(hx - (hx - lcx)*k/10), q(hy - (hy - lcy)*k/10), q(hx - (hx - lcx)*k/10) + 1, q(hy - (hy - lcy)*k/10) + 1), fill=(200, 160, 90))
+    for a in range(0, 360, 12):
+        r = math.radians(a) + ang
+        d.rectangle((q(lcx + math.cos(r)*26), q(lcy + math.sin(r)*7), q(lcx + math.cos(r)*26) + 2, q(lcy + math.sin(r)*7) + 2), fill=(200, 160, 90))
+    pop = ctx['pop'][0] <= t < ctx['pop'][1]
+    if burst is not None or pop:
+        u = burst if burst is not None else ((t - ctx['pop'][0]) % 0.45)
+        rr = random.Random(int((t if burst is None else burst)*7))
+        ox, oy = (lcx, lcy) if burst is not None else (rr.randrange(140, 260), rr.randrange(40, 120))
+        for _ in range(18):
+            a = rr.uniform(0, 2*math.pi); dist = u*70*rr.uniform(.4, 1)
+            col = rr.choice(((240, 110, 170), (255, 220, 80), (255, 255, 255), (120, 200, 255)))
+            d.rectangle((q(ox + math.cos(a)*dist), q(oy + math.sin(a)*dist), q(ox + math.cos(a)*dist) + 3, q(oy + math.sin(a)*dist) + 3), fill=col)
+
+KINDS.update({'cinema': (wrap(_cine_mascot), cine_setup), 'vacina': (wrap(_vac_mascot), vac_setup), 'boiadeira': (wrap(_boi_mascot), boi_setup)})
