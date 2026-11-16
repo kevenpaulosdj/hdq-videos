@@ -626,7 +626,7 @@ def _vac_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
     lay = Image.new('RGBA', (120, 80), (0, 0, 0, 0)); ld = ImageDraw.Draw(lay); _bonde(ld, 18, 70)
     if tipped:
         a = min(1, (t - ctx['tip_t'])/0.5)
-        lay = lay.rotate(-90*a*a, resample=Image.NEAREST, center=(98, 70))
+        lay = lay.rotate(-180*a*a, resample=Image.NEAREST, center=(58, 52))
     cv.alpha_composite(lay, (150, G - 70))
     if tipped and t - ctx['tip_t'] > 0.5:
         r = random.Random(int(t*10))
@@ -645,7 +645,7 @@ def _vac_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
     place(cv, d, spr, MX, y0)
     if ctx['cow'][0] <= t < ctx['cow'][1]:
         for hx in (MX + 16, MX + 60):
-            d.rectangle((hx, y0 + 4, hx + 4, y0 + 12), fill=(240, 235, 220)); d.rectangle((hx + (-3 if hx < MX + 40 else 3), y0, hx + 1 + (-3 if hx < MX + 40 else 3), y0 + 5), fill=(240, 235, 220))
+            d.rectangle((hx, y0 - 14, hx + 5, y0 + 4), fill=(240, 235, 220)); d.rectangle((hx + (-5 if hx < MX + 40 else 5), y0 - 20, hx + 5 + (-5 if hx < MX + 40 else 5), y0 - 12), fill=(240, 235, 220))
         for sx_, sy_ in ((MX + 14, y0 + 30), (MX + 50, y0 + 60), (MX + 24, y0 + 66)):
             d.rectangle((sx_, sy_, sx_ + 9, sy_ + 6), fill=(30, 30, 30))
     if ctx['paper'][0] <= t < ctx['paper'][1]:
