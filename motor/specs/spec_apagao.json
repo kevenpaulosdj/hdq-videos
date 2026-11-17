@@ -1,0 +1,264 @@
+{
+ "name": "apagao",
+ "theme": "generic",
+ "mkind": "apagao",
+ "label": "O BOATO DO APAGÃO",
+ "theme_cfg": {
+  "acc": [
+   255,
+   200,
+   60
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   14,
+   18,
+   34,
+   225
+  ],
+  "border": [
+   255,
+   200,
+   60
+  ],
+  "mascot": [
+   80,
+   190,
+   190
+  ],
+  "accessory": "hardhat",
+  "bpm": 100,
+  "ped": [
+   90,
+   90,
+   110
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   20,
+   28,
+   60
+  ],
+  "sky_bot": [
+   70,
+   80,
+   120
+  ],
+  "hills": [
+   30,
+   40,
+   70
+  ],
+  "ground": [
+   60,
+   60,
+   80
+  ],
+  "stars": true,
+  "cloud": [
+   60,
+   70,
+   100
+  ]
+ },
+ "cards": [
+  [
+   "O mundo vai ficar no escuro por noventa dias? Calma. O boato do apagão mundial de hoje, dezessete de novembro, é falso, e eu vou te mostrar por quê.",
+   [
+    [
+     "hook",
+     "O mundo no escuro por *90 dias*?"
+    ],
+    [
+     "kicker",
+     "17 DE NOVEMBRO"
+    ],
+    [
+     "kicker",
+     "O BOATO DO"
+    ],
+    [
+     "title",
+     "APAGÃO"
+    ]
+   ]
+  ],
+  [
+   "O boato diz que, hoje, dezessete de novembro de dois mil e vinte e seis, o planeta inteiro ficaria sem energia por até noventa dias.",
+   [
+    [
+     "text",
+     "*17/11/2026*: o planeta sem energia por *até 90 dias*."
+    ],
+    [
+     "icons",
+     [
+      "🌎"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Uma das origens é um episódio de Os Simpsons, de dois mil e vinte e três. Mas ele não fala de apagão mundial, nem de dois mil e vinte e seis.",
+   [
+    [
+     "text",
+     "Origem 1: um episódio de *Os Simpsons*, de *2023*."
+    ],
+    [
+     "text",
+     "Ele não fala de *apagão mundial*, nem de *2026*."
+    ],
+    [
+     "icons",
+     [
+      "📺"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Outra origem: a Defesa Civil recomendou ter água, comida e remédios pra setenta e duas horas. Mas era um aviso preventivo, já feito antes, em março e abril.",
+   [
+    [
+     "text",
+     "Origem 2: a *Defesa Civil* recomenda kit para *72 horas*."
+    ],
+    [
+     "text",
+     "Um aviso *preventivo*, já feito em *março e abril*."
+    ],
+    [
+     "icons",
+     [
+      "💧"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E teve os Estados Unidos. O programa Fortress quer deixar cerca de quinhentas bases militares autossuficientes por até noventa dias. Nas redes, virou apagão de noventa dias.",
+   [
+    [
+     "text",
+     "Origem 3: o programa *Fortress*, dos *EUA*."
+    ],
+    [
+     "text",
+     "Cerca de *500 bases militares* autossuficientes por *90 dias*."
+    ],
+    [
+     "icons",
+     [
+      "🛡️"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Então, por que um apagão mundial não funciona? Porque não existe uma rede elétrica única no planeta. Cada país tem a sua.",
+   [
+    [
+     "text",
+     "Não existe uma *rede elétrica única* no planeta."
+    ],
+    [
+     "title",
+     "CADA PAÍS"
+    ],
+    [
+     "text",
+     "*Cada país* tem a sua rede."
+    ]
+   ]
+  ],
+  [
+   "E as redes usam fontes diferentes, como hidrelétrica, solar e eólica. Pra apagar tudo ao mesmo tempo, teria que falhar tudo, em todo lugar, no mesmo segundo.",
+   [
+    [
+     "text",
+     "Fontes diferentes: *hidrelétrica*, *solar*, *eólica*."
+    ],
+    [
+     "text",
+     "Teria que falhar *tudo*, em *todo lugar*, no *mesmo segundo*."
+    ],
+    [
+     "icons",
+     [
+      "⚡"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Apagões regionais acontecem, sim. Em abril de dois mil e vinte e cinco, Espanha e Portugal ficaram horas sem energia. E a Índia teve outro gigante, em dois mil e doze.",
+   [
+    [
+     "text",
+     "Apagões *regionais* existem."
+    ],
+    [
+     "text",
+     "*2025*: *Espanha* e *Portugal*, por horas."
+    ],
+    [
+     "text",
+     "*2012*: *Índia*."
+    ],
+    [
+     "icons",
+     [
+      "🔌"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Mas nenhum deles virou apagão mundial. A energia foi voltando, e o resto do planeta seguiu funcionando normalmente.",
+   [
+    [
+     "text",
+     "Nenhum virou *apagão mundial*."
+    ],
+    [
+     "text",
+     "O resto do planeta *seguiu funcionando*."
+    ],
+    [
+     "icons",
+     [
+      "✅"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Então, hoje é só mais um dia. Você caiu nesse boato? Comenta aqui, manda pra quem está com medo e segue o perfil. Já já tem vídeo novo: o que aconteceria se o apagão fosse de verdade.",
+   [
+    [
+     "text",
+     "Você *caiu* nesse boato?"
+    ],
+    [
+     "icons",
+     [
+      "😅"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e manda pra quem está com *medo*! Já já: *e se fosse de verdade?*"
+    ]
+   ]
+  ]
+ ]
+}

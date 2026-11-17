@@ -703,3 +703,139 @@ def _boi_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
             d.rectangle((q(ox + math.cos(a)*dist), q(oy + math.sin(a)*dist), q(ox + math.cos(a)*dist) + 3, q(oy + math.sin(a)*dist) + 3), fill=col)
 
 KINDS.update({'cinema': (wrap(_cine_mascot), cine_setup), 'vacina': (wrap(_vac_mascot), vac_setup), 'boiadeira': (wrap(_boi_mascot), boi_setup)})
+
+# ---------- APAGAO (boato): postes que apagam um de cada vez (regional) e voltam; nunca todos juntos ----------
+def apa_setup(ctx):
+    n = len(ctx['cards'])
+    ctx['hits'] = _title_times(ctx, ('APAGÃO', 'CADA PAÍS'))
+    for tt in ctx['hits']: ev('ding', tt)
+    c7 = ctx['cards'][min(7, n-1)]; ctx['reg'] = (c7[0], c7[0] + c7[1])
+    P = 60/100*2; k = 0
+    while k*P < ctx['total'] - 1: ev('drum', k*P, k=k); k += 1
+    t = 1.0
+    while t < ctx['total'] - 1: ev('tick', t); t += 1.4
+
+def _apa_off(t, i, ctx):
+    if ctx['reg'][0] <= t < ctx['reg'][1]: return i < 2
+    return int(t/1.4) % 6 == i + 1
+
+def _apa_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    xs = (146, 262 - 90, 206, 238)
+    ov = Image.new('RGBA', (LW, LH), (0, 0, 0, 0)); od = ImageDraw.Draw(ov)
+    for i, lx in enumerate(xs):
+        d.rectangle((lx, G - 88, lx + 3, G), fill=(40, 40, 50)); d.rectangle((lx - 4, G - 94, lx + 8, G - 88), fill=(40, 40, 50))
+        off = _apa_off(t, i, ctx)
+        d.rectangle((lx - 2, G - 90, lx + 6, G - 86), fill=(60, 60, 66) if off else (255, 225, 120))
+        if not off:
+            od.polygon([(lx, G - 86), (lx + 3, G - 86), (lx + 20, G), (lx - 17, G)], fill=(255, 225, 120, 30))
+        else:
+            for k in range(3): d.rectangle((lx + k*3 - 2, G - 100 - k*4 - int(t*8) % 4, lx + k*3, G - 98 - k*4 - int(t*8) % 4), fill=(110, 110, 120))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*18)
+    beat = t*th['bpm']/60
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+    # capacete ja esta no sprite; lanterna na mao
+    fx, fy = MX + 74, y0 + 46
+    d.rectangle((fx, fy, fx + 12, fy + 6), fill=(70, 70, 80)); d.rectangle((fx + 12, fy - 1, fx + 15, fy + 7), fill=(255, 240, 150))
+    od.polygon([(fx + 15, fy + 3), (fx + 70, fy - 14), (fx + 70, fy + 20)], fill=(255, 240, 150, 40))
+    cv.alpha_composite(ov)
+
+# ---------- CENARIO (e se o mundo apagasse): lanterna de cabeca, geladeira que estraga, celular sem sinal ----------
+def cen_setup(ctx):
+    n = len(ctx['cards'])
+    ctx['hits'] = _title_times(ctx, ('APAGÃO', 'ESTRAGOU!'))
+    for tt in ctx['hits']: ev('ding', tt)
+    ctx['c2'] = ctx['cards'][min(2, n-1)]; c5 = ctx['cards'][min(5, n-1)]; ctx['c5'] = c5
+    ev('thud', c5[0] + 0.5)
+    for k in range(4): ev('tick', ctx['c2'][0] + 0.6 + k*(ctx['c2'][1] - 1.0)/4)
+    P = 60/84*2; k = 0
+    while k*P < ctx['total'] - 1: ev('drum', k*P, k=k); k += 1
+
+def _cen_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    ov = Image.new('RGBA', (LW, LH), (0, 0, 0, 0)); od = ImageDraw.Draw(ov)
+    # celular
+    px_, py_ = 150, G - 46
+    d.rectangle((px_, py_, px_ + 22, py_ + 38), fill=(30, 30, 36)); d.rectangle((px_ + 2, py_ + 3, px_ + 20, py_ + 35), fill=(120, 180, 230) if t < ctx['c2'][0] else (60, 70, 90))
+    c2s, c2d = ctx['c2'][0], ctx['c2'][1]
+    bars = 3 if t < c2s else max(0, 3 - int((t - c2s)/c2d*4))
+    for b in range(3):
+        d.rectangle((px_ + 5 + b*5, py_ + 14 - b*3, px_ + 8 + b*5, py_ + 18), fill=(255, 255, 255) if b < bars else (70, 70, 80))
+    if bars == 0:
+        for k in range(8): d.rectangle((px_ + 6 + k, py_ + 24 + k, px_ + 8 + k, py_ + 26 + k), fill=(235, 70, 60)); d.rectangle((px_ + 14 - k, py_ + 24 + k, px_ + 16 - k, py_ + 26 + k), fill=(235, 70, 60))
+    # geladeira
+    fx, fy = 200, G - 78
+    d.rectangle((fx, fy, fx + 38, G), fill=(225, 228, 236)); d.rectangle((fx, fy + 28, fx + 38, fy + 30), fill=(150, 155, 170))
+    d.rectangle((fx + 31, fy + 8, fx + 33, fy + 20), fill=(120, 125, 140)); d.rectangle((fx + 31, fy + 38, fx + 33, fy + 52), fill=(120, 125, 140))
+    led = t >= ctx['c5'][0] + 0.2 or int(t*2) % 2 == 0
+    d.rectangle((fx + 4, fy + 4, fx + 7, fy + 7), fill=(60, 60, 60) if t >= ctx['c2'][0] else (80, 220, 120))
+    if t >= ctx['c5'][0] + 0.5:
+        d.rectangle((fx + 2, fy + 32, fx + 28, fy + 74), fill=(200, 205, 215))
+        u = min(1, (t - ctx['c5'][0] - 0.5)/2.5)
+        for k, (cx_, cy_) in enumerate(((fx + 5, fy + 38), (fx + 15, fy + 38), (fx + 5, fy + 54), (fx + 15, fy + 54), (fx + 9, fy + 66))):
+            col = (220, int(70 + 130*(1 - u)), 70) if k % 2 == 0 else (int(240 - 140*u), int(220 - 40*u), int(90 - 20*u))
+            d.rectangle((cx_, cy_, cx_ + 7, cy_ + 9), fill=col)
+        for k in range(5):
+            wy = fy + 24 - ((t*14 + k*9) % 26)
+            d.rectangle((fx + 6 + k*6 + int(math.sin(t*5 + k)*2), wy, fx + 8 + k*6 + int(math.sin(t*5 + k)*2), wy + 3), fill=(120, 180, 70))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*16)
+    beat = t*th['bpm']/60
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    spr = face_sprite(base, t, talking)
+    place(cv, d, spr, MX, y0)
+    od.polygon([(MX + 64, y0 + 6), (MX + 200, y0 - 24), (MX + 200, y0 + 56)], fill=(255, 240, 150, 34))
+    od.polygon([(MX + 64, y0 + 6), (MX + 130, y0 - 6), (MX + 130, y0 + 26)], fill=(255, 240, 150, 40))
+    cv.alpha_composite(ov)
+
+# ---------- COVID (1o caso): oculos de pesquisa, calendario que marca as datas e particulas flutuando ----------
+CAL = [('17', 'NOV', '2019')]*4 + [('01', 'DEZ', '2019'), ('08', 'DEZ', '2019'), ('05', 'JAN', '2020'), ('11', 'FEV', '2020'), ('17', 'NOV', '2019'), ('17', 'NOV', '2019')]
+def _cal_at(ci, frac):
+    ci = min(ci, len(CAL) - 1)
+    if ci == 5 and frac > 0.5: return ('12', 'DEZ', '2019')
+    if ci == 7 and frac > 0.5: return ('11', 'MAR', '2020')
+    return CAL[ci]
+
+def cov_setup(ctx):
+    n = len(ctx['cards'])
+    ctx['hits'] = _title_times(ctx, ('COVID', 'SEM CONFIRMAÇÃO'))
+    for tt in ctx['hits']: ev('ding', tt)
+    for i, (s0, du, its) in enumerate(ctx['cards']):
+        if i > 0 and (CAL[min(i, 9)] != CAL[min(i-1, 9)] or i in (5, 7)): ev('tick', s0 + 0.15)
+    for i in (5, 7):
+        s0, du, _ = ctx['cards'][min(i, n-1)]; ev('tick', s0 + du*0.5)
+    P = 60/88*2; k = 0
+    while k*P < ctx['total'] - 1: ev('drum', k*P, k=k); k += 1
+
+def _cov_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    s0, du, _ = ctx['cards'][ci]
+    dd, mm, yy = _cal_at(ci, (t - s0)/max(du, 0.1))
+    cx0, cy0 = 176, G - 104
+    d.rectangle((cx0, cy0, cx0 + 64, cy0 + 70), fill=(246, 246, 240)); d.rectangle((cx0, cy0, cx0 + 64, cy0 + 16), fill=(205, 60, 60))
+    d.rectangle((cx0 + 12, cy0 - 5, cx0 + 15, cy0 + 3), fill=(60, 60, 70)); d.rectangle((cx0 + 48, cy0 - 5, cx0 + 51, cy0 + 3), fill=(60, 60, 70))
+    f1 = font(PS2, 8); f2 = font(PS2, 22); f3 = font(PS2, 8)
+    d.text((cx0 + 32 - f1.getlength(mm)/2, cy0 + 4), mm, font=f1, fill=(255, 255, 255))
+    d.text((cx0 + 32 - f2.getlength(dd)/2, cy0 + 24), dd, font=f2, fill=(40, 40, 50))
+    d.text((cx0 + 32 - f3.getlength(yy)/2, cy0 + 56), yy, font=f3, fill=(120, 120, 130))
+    # particulas flutuando (fundo)
+    for k in range(6):
+        vx = 118 + (k*37) % 140 + int(math.sin(t*0.9 + k*1.7)*6); vy = G - 150 + (k*23) % 70 + int(math.cos(t*0.7 + k)*5)
+        c_ = (110, 130, 150)
+        d.rectangle((vx, vy, vx + 7, vy + 7), fill=c_); d.rectangle((vx + 2, vy - 2, vx + 5, vy - 1), fill=c_); d.rectangle((vx + 2, vy + 8, vx + 5, vy + 9), fill=c_)
+        d.rectangle((vx - 2, vy + 2, vx - 1, vy + 5), fill=c_); d.rectangle((vx + 8, vy + 2, vx + 9, vy + 5), fill=c_)
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*16)
+    beat = t*th['bpm']/60
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+    # prancheta
+    bx, by = MX + 70, y0 + 40
+    d.rectangle((bx, by, bx + 24, by + 32), fill=(150, 110, 70)); d.rectangle((bx + 2, by + 3, bx + 22, by + 30), fill=(245, 245, 235)); d.rectangle((bx + 8, by - 2, bx + 16, by + 2), fill=(120, 120, 130))
+    for yy_ in range(by + 8, by + 28, 5): d.rectangle((bx + 5, yy_, bx + 19, yy_ + 1), fill=(130, 130, 140))
+
+KINDS.update({'apagao': (wrap(_apa_mascot), apa_setup), 'cenario': (wrap(_cen_mascot), cen_setup), 'covid': (wrap(_cov_mascot), cov_setup)})

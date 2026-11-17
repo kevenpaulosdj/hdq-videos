@@ -1,0 +1,264 @@
+{
+ "name": "cenario",
+ "theme": "generic",
+ "mkind": "cenario",
+ "label": "E SE O MUNDO APAGASSE?",
+ "theme_cfg": {
+  "acc": [
+   255,
+   170,
+   60
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   12,
+   14,
+   28,
+   228
+  ],
+  "border": [
+   255,
+   170,
+   60
+  ],
+  "mascot": [
+   80,
+   190,
+   190
+  ],
+  "accessory": "headlamp",
+  "bpm": 84,
+  "ped": [
+   60,
+   62,
+   80
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   8,
+   10,
+   26
+  ],
+  "sky_bot": [
+   30,
+   34,
+   60
+  ],
+  "hills": [
+   18,
+   22,
+   40
+  ],
+  "ground": [
+   40,
+   42,
+   56
+  ],
+  "stars": true,
+  "cloud": [
+   34,
+   40,
+   66
+  ]
+ },
+ "cards": [
+  [
+   "Sua geladeira aguenta só quatro horas sem luz. Agora imagina o mundo inteiro. Hoje eu mostro o cenário de um apagão mundial, que é só hipótese.",
+   [
+    [
+     "hook",
+     "Sua geladeira aguenta só *4 horas* sem luz."
+    ],
+    [
+     "kicker",
+     "E SE O MUNDO"
+    ],
+    [
+     "kicker",
+     "FICASSE NO ESCURO?"
+    ],
+    [
+     "title",
+     "APAGÃO"
+    ]
+   ]
+  ],
+  [
+   "Nas primeiras horas, param semáforos, metrô e elevadores. O trânsito vira caos, e trens e voos ficam parados.",
+   [
+    [
+     "text",
+     "*Primeiras horas*: param *semáforos*, *metrô* e *elevadores*."
+    ],
+    [
+     "text",
+     "Trânsito no *caos*. Trens e voos *parados*."
+    ],
+    [
+     "icons",
+     [
+      "🚦"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Depois, o celular e a internet vão saindo do ar, porque as antenas dependem de energia. E ficar sem notícias piora tudo.",
+   [
+    [
+     "text",
+     "*Celular* e *internet* saem do ar."
+    ],
+    [
+     "text",
+     "As antenas dependem de *energia*."
+    ],
+    [
+     "icons",
+     [
+      "📵"
+     ]
+    ]
+   ]
+  ],
+  [
+   "O dinheiro também trava. Caixa eletrônico, cartão e Pix param de funcionar. Comprar qualquer coisa vira um problema.",
+   [
+    [
+     "text",
+     "*Caixa eletrônico*, *cartão* e *Pix* param."
+    ],
+    [
+     "icons",
+     [
+      "💳"
+     ]
+    ],
+    [
+     "text",
+     "Comprar vira um *problema*."
+    ]
+   ]
+  ],
+  [
+   "A água é uma das primeiras a faltar nos prédios, porque depende de bomba elétrica. Com o tempo, o abastecimento das cidades também é afetado.",
+   [
+    [
+     "text",
+     "Prédios: a *água* depende de *bomba elétrica*."
+    ],
+    [
+     "text",
+     "Com o tempo, o *abastecimento* das cidades também."
+    ],
+    [
+     "icons",
+     [
+      "🚰"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Na comida, uma geladeira fechada segura os alimentos por cerca de quatro horas. Depois, o que é perecível estraga, e os mercados não conseguem repor o estoque.",
+   [
+    [
+     "text",
+     "Geladeira fechada: cerca de *4 horas*."
+    ],
+    [
+     "title",
+     "ESTRAGOU!"
+    ],
+    [
+     "text",
+     "Mercados sem *reposição*."
+    ]
+   ]
+  ],
+  [
+   "Os hospitais têm geradores, mas o combustível acaba. Cirurgias e aparelhos que mantêm pessoas vivas ficariam em risco.",
+   [
+    [
+     "text",
+     "*Hospitais*: geradores, mas o *combustível acaba*."
+    ],
+    [
+     "text",
+     "*Cirurgias* e aparelhos em *risco*."
+    ],
+    [
+     "icons",
+     [
+      "🏥"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E o que fazer? A Defesa Civil recomenda um kit pra setenta e duas horas, com água, comida que não estraga, remédios, lanterna e pilhas.",
+   [
+    [
+     "text",
+     "Kit para *72 horas*:"
+    ],
+    [
+     "text",
+     "*Água*, comida que *não estraga*, *remédios*, *lanterna* e *pilhas*."
+    ],
+    [
+     "icons",
+     [
+      "🔦"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E cuidado: nunca ligue gerador em lugar fechado, por causa do monóxido de carbono. E prefira lanterna a vela dentro de casa.",
+   [
+    [
+     "text",
+     "*Gerador* nunca em lugar *fechado*: *monóxido de carbono*."
+    ],
+    [
+     "text",
+     "Prefira *lanterna* a *vela*."
+    ],
+    [
+     "icons",
+     [
+      "⚠️"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E você, estaria preparado? Comenta quantas horas você aguentaria, marca alguém que precisa ver isso e segue o perfil. Hoje à noite tem a história do primeiro caso de covid.",
+   [
+    [
+     "text",
+     "Quantas *horas* você aguentaria?"
+    ],
+    [
+     "icons",
+     [
+      "🔦"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e marca *alguém*! À noite: o *primeiro caso de covid*."
+    ]
+   ]
+  ]
+ ]
+}

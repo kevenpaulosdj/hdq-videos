@@ -1,0 +1,263 @@
+{
+ "name": "covid",
+ "theme": "generic",
+ "mkind": "covid",
+ "label": "PRIMEIRO CASO DE COVID",
+ "theme_cfg": {
+  "acc": [
+   120,
+   200,
+   255
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   16,
+   24,
+   40,
+   225
+  ],
+  "border": [
+   120,
+   200,
+   255
+  ],
+  "mascot": [
+   80,
+   190,
+   190
+  ],
+  "accessory": "goggles",
+  "bpm": 88,
+  "ped": [
+   140,
+   150,
+   170
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   40,
+   70,
+   110
+  ],
+  "sky_bot": [
+   150,
+   190,
+   220
+  ],
+  "hills": [
+   70,
+   100,
+   130
+  ],
+  "ground": [
+   190,
+   200,
+   210
+  ],
+  "cloud": [
+   200,
+   220,
+   240
+  ]
+ },
+ "cards": [
+  [
+   "O primeiro caso de covid pode ter acontecido há sete anos. Hoje, dezessete de novembro, é a data que muita gente aponta, mas calma, que tem controvérsia.",
+   [
+    [
+     "hook",
+     "O primeiro caso de covid pode ter sido *há 7 anos*."
+    ],
+    [
+     "kicker",
+     "17 DE NOVEMBRO DE 2019"
+    ],
+    [
+     "kicker",
+     "PRIMEIRO CASO DE"
+    ],
+    [
+     "title",
+     "COVID"
+    ]
+   ]
+  ],
+  [
+   "A data vem de uma reportagem do jornal South China Morning Post, de Hong Kong, em dois mil e vinte. Ela cita dados do governo chinês.",
+   [
+    [
+     "text",
+     "Reportagem do *South China Morning Post*, de *Hong Kong*."
+    ],
+    [
+     "text",
+     "Baseada em *dados do governo chinês*."
+    ],
+    [
+     "icons",
+     [
+      "📰"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Segundo esses dados, um homem de cinquenta e cinco anos, da província de Hubei, teria sido o primeiro infectado, em dezessete de novembro de dois mil e dezenove.",
+   [
+    [
+     "text",
+     "Um homem de *55 anos*, da província de *Hubei*."
+    ],
+    [
+     "text",
+     "Teria sido o *primeiro infectado*, em *17/11/2019*."
+    ],
+    [
+     "icons",
+     [
+      "🇨🇳"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Depois dele, os dados falavam em um a cinco novos casos por dia. Segundo a reportagem, ao menos duzentas e sessenta e seis pessoas foram atendidas até o fim do ano.",
+   [
+    [
+     "text",
+     "Depois: de *1 a 5 casos novos* por dia."
+    ],
+    [
+     "text",
+     "Ao menos *266 pessoas* até o fim de *2019*, segundo a reportagem."
+    ],
+    [
+     "icons",
+     [
+      "📈"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Mas ninguém sabia que a doença era nova. Em primeiro de dezembro, a revista The Lancet registrou um caso sem ligação com o mercado de frutos do mar de Wuhan.",
+   [
+    [
+     "text",
+     "*Primeiro de dezembro*: a revista *The Lancet* registra um caso."
+    ],
+    [
+     "text",
+     "Sem ligação com o *mercado de frutos do mar* de *Wuhan*."
+    ],
+    [
+     "icons",
+     [
+      "🔬"
+     ]
+    ]
+   ]
+  ],
+  [
+   "A Organização Mundial da Saúde cita oito de dezembro como início dos sintomas do primeiro caso na China. E Wuhan diz que o diagnóstico foi em doze de dezembro.",
+   [
+    [
+     "text",
+     "*8/12*: início dos sintomas, segundo a *OMS*."
+    ],
+    [
+     "text",
+     "*12/12*: diagnóstico, segundo *Wuhan*."
+    ],
+    [
+     "icons",
+     [
+      "🏥"
+     ]
+    ]
+   ]
+  ],
+  [
+   "O primeiro anúncio de Wuhan só veio em cinco de janeiro de dois mil e vinte. E, em janeiro, as autoridades chinesas confirmaram um novo coronavírus.",
+   [
+    [
+     "text",
+     "*5/1/2020*: Wuhan anuncia o *primeiro caso*."
+    ],
+    [
+     "text",
+     "Em *janeiro*: confirmado um *novo coronavírus*."
+    ],
+    [
+     "icons",
+     [
+      "🦠"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Em onze de fevereiro, a OMS deu o nome covid dezenove à doença. E em onze de março de dois mil e vinte, declarou a pandemia.",
+   [
+    [
+     "text",
+     "*11/2/2020*: a *OMS* batiza a *covid-19*."
+    ],
+    [
+     "text",
+     "*11/3/2020*: declarada a *pandemia*."
+    ],
+    [
+     "icons",
+     [
+      "🌍"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Por isso, dezessete de novembro é uma estimativa. Nunca foi confirmado como paciente zero, e a ciência ainda discute a origem do vírus.",
+   [
+    [
+     "text",
+     "*17/11* é uma *estimativa*."
+    ],
+    [
+     "title",
+     "SEM CONFIRMAÇÃO"
+    ],
+    [
+     "text",
+     "A origem ainda é *debatida*."
+    ]
+   ]
+  ],
+  [
+   "E você, lembra de onde estava quando a pandemia chegou? Comenta aqui, marca quem viveu essa história com você e segue o perfil pra descobrir o que se comemora amanhã.",
+   [
+    [
+     "text",
+     "Onde você estava quando a *pandemia* chegou?"
+    ],
+    [
+     "icons",
+     [
+      "🕰️"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e marca *quem viveu isso com você*! Segue pra saber *o que se comemora amanhã*."
+    ]
+   ]
+  ]
+ ]
+}
