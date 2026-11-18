@@ -839,3 +839,107 @@ def _cov_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
     for yy_ in range(by + 8, by + 28, 5): d.rectangle((bx + 5, yy_, bx + 19, yy_ + 1), fill=(130, 130, 140))
 
 KINDS.update({'apagao': (wrap(_apa_mascot), apa_setup), 'cenario': (wrap(_cen_mascot), cen_setup), 'covid': (wrap(_cov_mascot), cov_setup)})
+
+# ---------- 18/11: BLOCOS (pixel genérico), STEAMBOAT (P&B), FIAT ----------
+def blo_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('MINECRAFT', 'VERSÃO 1.0'))
+    for tt in ctx['hits']: ev('ding', tt)
+    for i, (s0, du, _) in enumerate(ctx['cards']):
+        if i > 0: ev('clank', s0 + 0.2)
+    P = 60/108*2; k = 0
+    while k*P < ctx['total'] - 1: ev('drum', k*P, k=k); k += 1
+
+def _blo_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    n = min(ci + 1, 10)
+    pal = [(110, 80, 50), (120, 120, 126), (90, 170, 80), (80, 200, 220)]
+    for r in range(4):
+        for c in range(5):
+            if (r*5 + c) < n*2:
+                bx, by = 150 + c*18, G - 18 - r*18
+                col = pal[(r + c) % 4]
+                d.rectangle((bx, by, bx + 17, by + 17), fill=dark(col, .75)); d.rectangle((bx + 1, by + 1, bx + 16, by + 16), fill=col)
+                d.rectangle((bx + 3, by + 3, bx + 7, by + 7), fill=light(col, .25))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*16)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+    sw = math.sin(beat*math.pi)*0.6 - 0.2
+    hx, hy = MX + 74, y0 + 46
+    ex, ey = hx + q(math.cos(sw)*26), hy + q(math.sin(sw)*26)
+    for k in range(14):
+        d.rectangle((hx + q(math.cos(sw)*k*1.9), hy + q(math.sin(sw)*k*1.9), hx + q(math.cos(sw)*k*1.9) + 2, hy + q(math.sin(sw)*k*1.9) + 2), fill=(120, 80, 45))
+    d.rectangle((ex - 8, ey - 3, ex + 8, ey + 1), fill=(200, 205, 210)); d.rectangle((ex - 8, ey + 1, ex - 5, ey + 5), fill=(200, 205, 210)); d.rectangle((ex + 5, ey + 1, ex + 8, ey + 5), fill=(200, 205, 210))
+
+def ste_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('O VAPOR WILLIE', 'SUCESSO!'))
+    for tt in ctx['hits']: ev('whistle', tt); ev('applause', tt + 0.2)
+    P = 60/100; k = 0
+    while k*P < ctx['total'] - 1:
+        ev('tick' if k % 2 else 'tap', k*P); k += 1
+
+def _ste_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    wob = int(math.sin(t*2.2)*3)
+    bx, by = 138, G - 60 + wob
+    d.rectangle((bx, by + 30, bx + 110, by + 44), fill=(60, 60, 64)); d.rectangle((bx + 8, by + 44, bx + 102, by + 48), fill=(40, 40, 44))
+    d.rectangle((bx + 14, by + 12, bx + 96, by + 30), fill=(235, 235, 235)); d.rectangle((bx + 22, by + 17, bx + 30, by + 24), fill=(50, 50, 54)); d.rectangle((bx + 46, by + 17, bx + 54, by + 24), fill=(50, 50, 54)); d.rectangle((bx + 70, by + 17, bx + 78, by + 24), fill=(50, 50, 54))
+    for sx_ in (bx + 34, bx + 66):
+        d.rectangle((sx_, by - 8, sx_ + 14, by + 12), fill=(40, 40, 44)); d.rectangle((sx_ - 2, by - 12, sx_ + 16, by - 8), fill=(20, 20, 24))
+        for j in range(4):
+            sm = (t*18 + j*9 + sx_) % 36
+            r_ = 3 + int(sm/8)
+            d.rectangle((sx_ + 4 + int(sm*0.5), by - 16 - int(sm), sx_ + 4 + int(sm*0.5) + r_, by - 16 - int(sm) + r_), fill=(210 - j*10, 210 - j*10, 214 - j*10))
+    wr = int(t*8) % 4
+    for k in range(4):
+        d.rectangle((bx + 4 + k*3, by + 32 + (wr + k) % 4, bx + 6 + k*3, by + 34 + (wr + k) % 4), fill=(170, 170, 176))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*16)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+    # clapperboard de cinema
+    cx_, cy_ = MX + 72, y0 + 42
+    d.rectangle((cx_, cy_ + 6, cx_ + 24, cy_ + 28), fill=(40, 40, 44)); d.rectangle((cx_ + 2, cy_ + 12, cx_ + 22, cy_ + 26), fill=(230, 230, 230))
+    ang = int(math.sin(beat*math.pi)*3)
+    for k in range(6): d.rectangle((cx_ + k*4, cy_ + ang, cx_ + k*4 + 2, cy_ + 5 + ang), fill=(240, 240, 240) if k % 2 else (30, 30, 34))
+
+def fia_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('FIAT 147', 'PIONEIRO!', 'CACHACINHA'))
+    for tt in ctx['hits']: ev('horn', tt)
+    P = 60/104*2; k = 0
+    while k*P < ctx['total'] - 1: ev('drum', k*P, k=k); k += 1
+
+def _fia_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    bump = 1 if int(t*6) % 2 else 0
+    cx0, cy0 = 134, G - 50 - bump
+    body = (240, 200, 60)
+    d.rectangle((cx0, cy0 + 14, cx0 + 108, cy0 + 36), fill=body); d.rectangle((cx0 + 22, cy0, cx0 + 82, cy0 + 14), fill=body)
+    d.rectangle((cx0 + 28, cy0 + 3, cx0 + 50, cy0 + 13), fill=(170, 220, 240)); d.rectangle((cx0 + 54, cy0 + 3, cx0 + 76, cy0 + 13), fill=(170, 220, 240))
+    d.rectangle((cx0 + 100, cy0 + 20, cx0 + 108, cy0 + 26), fill=(255, 250, 200)); d.rectangle((cx0, cy0 + 20, cx0 + 5, cy0 + 26), fill=(210, 40, 40))
+    d.rectangle((cx0, cy0 + 32, cx0 + 108, cy0 + 36), fill=dark(body, .7))
+    for wx in (cx0 + 22, cx0 + 82):
+        d.rectangle((wx - 9, cy0 + 28 + bump, wx + 9, cy0 + 46 + bump), fill=(30, 30, 34)); d.rectangle((wx - 4, cy0 + 33 + bump, wx + 4, cy0 + 41 + bump), fill=(190, 190, 196))
+    if int(t*3) % 2 == 0:
+        for j in range(3): d.rectangle((cx0 - 8 - j*7, cy0 + 36 - j*3, cx0 - 4 - j*7, cy0 + 40 - j*3), fill=(220, 220, 225))
+    # bomba de etanol
+    px_, py_ = 258, G - 56
+    d.rectangle((px_, py_, px_ + 22, py_ + 56), fill=(60, 160, 80)); d.rectangle((px_ + 3, py_ + 6, px_ + 19, py_ + 22), fill=(230, 240, 230)); d.rectangle((px_ + 6, py_ + 10, px_ + 16, py_ + 18), fill=(40, 40, 44))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*16)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+    # chave inglesa
+    sw = math.sin(beat*math.pi)*0.5 - 0.3
+    hx, hy = MX + 74, y0 + 48
+    ex, ey = hx + q(math.cos(sw)*24), hy + q(math.sin(sw)*24)
+    for k in range(12): d.rectangle((hx + q(math.cos(sw)*k*2), hy + q(math.sin(sw)*k*2), hx + q(math.cos(sw)*k*2) + 2, hy + q(math.sin(sw)*k*2) + 2), fill=(190, 190, 198))
+    d.rectangle((ex - 4, ey - 4, ex + 5, ey + 5), fill=(190, 190, 198)); d.rectangle((ex - 1, ey - 4, ex + 2, ey), fill=(60, 60, 66))
+
+KINDS.update({'blocos': (wrap(_blo_mascot), blo_setup), 'steamboat': (wrap(_ste_mascot), ste_setup), 'fiat': (wrap(_fia_mascot), fia_setup)})

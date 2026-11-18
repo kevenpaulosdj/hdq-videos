@@ -405,6 +405,18 @@ def mascot_base(th):
         k_ = (36, 36, 44)
         d.rectangle((x, y+3, x+s, y+8), fill=k_); d.rectangle((x+s, y-4, x+s+dp, y+3), fill=k_)
         d.rectangle((x+20, y-3, x+38, y+11), fill=(60, 60, 70)); d.rectangle((x+23, y, x+35, y+8), fill=(255, 240, 150)); d.rectangle((x+24, y+1, x+27, y+3), fill=(255, 255, 255))
+    elif acc == 'beanie':
+        bc = (60, 170, 80)
+        d.rectangle((x-2, y-4, x+s+dp+2, y+4), fill=dark(bc, .8)); d.rectangle((x+2, y-14, x+s+dp-2, y-4), fill=bc)
+        d.rectangle((x+6, y-18, x+s+dp-6, y-14), fill=light(bc, .2)); d.rectangle((x+s//2, y-24, x+s//2+8, y-18), fill=(240, 240, 240))
+    elif acc == 'newsboy':
+        nc = (90, 90, 96)
+        d.rectangle((x-2, y-3, x+s+dp+2, y+3), fill=dark(nc, .7)); d.rectangle((x+2, y-13, x+s+dp-2, y-3), fill=nc)
+        d.rectangle((x+8, y-16, x+s+dp-8, y-13), fill=light(nc, .25)); d.rectangle((x+s//2+4, y-19, x+s//2+9, y-16), fill=dark(nc, .8))
+    elif acc == 'mechanic':
+        mc = (30, 90, 170)
+        d.rectangle((x-1, y-2, x+s+dp+1, y+3), fill=dark(mc, .8)); d.rectangle((x+3, y-12, x+s+dp-3, y-2), fill=mc)
+        d.rectangle((x+10, y-8, x+22, y-4), fill=(240, 240, 240)); d.rectangle((x+s-2, y+14, x+s+4, y+24), fill=(70, 70, 76))
     elif acc == 'flower':
         sx, sy = x+s-8, y-dp-10
         d.rectangle((sx+3, sy+8, sx+5, sy+16), fill=(60,150,60))

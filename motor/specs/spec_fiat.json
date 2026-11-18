@@ -1,0 +1,251 @@
+{
+ "name": "fiat",
+ "theme": "generic",
+ "mkind": "fiat",
+ "label": "FIAT 147 A ÁLCOOL",
+ "theme_cfg": {
+  "acc": [
+   240,
+   200,
+   60
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   28,
+   22,
+   16,
+   225
+  ],
+  "border": [
+   240,
+   200,
+   60
+  ],
+  "mascot": [
+   80,
+   190,
+   190
+  ],
+  "accessory": "mechanic",
+  "bpm": 104,
+  "ped": [
+   150,
+   120,
+   80
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   255,
+   170,
+   90
+  ],
+  "sky_bot": [
+   255,
+   225,
+   160
+  ],
+  "hills": [
+   170,
+   150,
+   80
+  ],
+  "ground": [
+   190,
+   160,
+   110
+  ],
+  "cloud": [
+   255,
+   240,
+   210
+  ]
+ },
+ "cards": [
+  [
+   "O primeiro carro a álcool do mundo é brasileiro. Em novembro de mil novecentos e setenta e seis, ele foi mostrado ao público, e isso faz cinquenta anos.",
+   [
+    [
+     "hook",
+     "O primeiro carro a álcool do mundo é *brasileiro*."
+    ],
+    [
+     "kicker",
+     "NOVEMBRO DE 1976"
+    ],
+    [
+     "kicker",
+     "50 ANOS DO"
+    ],
+    [
+     "title",
+     "FIAT 147"
+    ]
+   ]
+  ],
+  [
+   "Era o Fiat 147. A Fiat mostrou no Salão do Automóvel de São Paulo um protótipo movido a etanol, já com dezenas de milhares de quilômetros rodados em testes.",
+   [
+    [
+     "text",
+     "Protótipo do *Fiat 147* a etanol no *Salão do Automóvel*."
+    ],
+    [
+     "text",
+     "Já com *dezenas de milhares de km* em testes."
+    ],
+    [
+     "icons",
+     [
+      "🚗"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Por que álcool? A crise do petróleo deixou o combustível importado caríssimo, e o governo lançou o Proálcool em mil novecentos e setenta e cinco.",
+   [
+    [
+     "text",
+     "Crise do *petróleo*: combustível importado *caríssimo*."
+    ],
+    [
+     "text",
+     "*1975*: o governo lança o *Proálcool*."
+    ],
+    [
+     "icons",
+     [
+      "🛢️"
+     ]
+    ]
+   ]
+  ],
+  [
+   "O Proálcool incentivava a produção de etanol a partir da cana-de-açúcar, um combustível renovável feito aqui mesmo.",
+   [
+    [
+     "text",
+     "*Proálcool*: etanol feito de *cana-de-açúcar*."
+    ],
+    [
+     "text",
+     "Combustível *nacional* e *renovável*."
+    ],
+    [
+     "icons",
+     [
+      "🌾"
+     ]
+    ]
+   ]
+  ],
+  [
+   "O Fiat 147 a gasolina tinha sido lançado em mil novecentos e setenta e seis, em Ouro Preto, e foi o primeiro carro da Fiat feito no Brasil, em Betim, Minas Gerais.",
+   [
+    [
+     "text",
+     "*1976*: lançado o *147 a gasolina*, em *Ouro Preto*."
+    ],
+    [
+     "text",
+     "O primeiro Fiat feito no Brasil: *Betim (MG)*."
+    ]
+   ]
+  ],
+  [
+   "A Fiat já tinha o motor a etanol pronto. Só esperava os incentivos do Proálcool pra lançar.",
+   [
+    [
+     "text",
+     "O motor a etanol *já estava pronto*."
+    ],
+    [
+     "text",
+     "A Fiat só esperava os *incentivos*."
+    ],
+    [
+     "icons",
+     [
+      "🔧"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Em cinco de julho de mil novecentos e setenta e nove, chegou às ruas o primeiro Fiat 147 a álcool, o primeiro carro a etanol feito em série no mundo.",
+   [
+    [
+     "text",
+     "*5/7/1979*: chega às ruas o *147 a álcool*."
+    ],
+    [
+     "title",
+     "PIONEIRO!"
+    ],
+    [
+     "text",
+     "O primeiro a etanol *em série*, no *mundo*."
+    ]
+   ]
+  ],
+  [
+   "O cheiro que saía do escapamento deu ao carro um apelido carinhoso: Cachacinha.",
+   [
+    [
+     "text",
+     "O cheiro do escapamento deu o apelido:"
+    ],
+    [
+     "title",
+     "CACHACINHA"
+    ]
+   ]
+  ],
+  [
+   "O 147 também gerou uma família completa: picape, perua Panorama, furgão Fiorino e sedã Oggi. E abriu caminho pro carro flex, que chegou em dois mil e três.",
+   [
+    [
+     "text",
+     "A família do 147: *picape*, *Panorama*, *Fiorino* e *Oggi*."
+    ],
+    [
+     "text",
+     "Abriu caminho pro *flex*, em *2003*."
+    ],
+    [
+     "icons",
+     [
+      "🚙"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E você, já andou num 147? Ou seu pai teve um? Comenta aqui, marca quem tinha um e segue o perfil pra descobrir o que se comemora amanhã.",
+   [
+    [
+     "text",
+     "Você já andou num *147*? Ou seu *pai* teve um?"
+    ],
+    [
+     "icons",
+     [
+      "🚗"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e marca *quem tinha um*! Segue pra saber *o que se comemora amanhã*."
+    ]
+   ]
+  ]
+ ]
+}

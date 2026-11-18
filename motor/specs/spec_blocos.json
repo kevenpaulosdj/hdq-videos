@@ -1,0 +1,265 @@
+{
+ "name": "blocos",
+ "theme": "generic",
+ "mkind": "blocos",
+ "label": "15 ANOS DO MINECRAFT",
+ "theme_cfg": {
+  "acc": [
+   110,
+   200,
+   90
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   18,
+   28,
+   20,
+   225
+  ],
+  "border": [
+   110,
+   200,
+   90
+  ],
+  "mascot": [
+   80,
+   190,
+   190
+  ],
+  "accessory": "beanie",
+  "bpm": 108,
+  "ped": [
+   110,
+   80,
+   50
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   110,
+   185,
+   240
+  ],
+  "sky_bot": [
+   205,
+   235,
+   252
+  ],
+  "hills": [
+   90,
+   150,
+   110
+  ],
+  "ground": [
+   130,
+   95,
+   60
+  ],
+  "cloud": [
+   255,
+   255,
+   255
+  ]
+ },
+ "cards": [
+  [
+   "O Minecraft nasceu em apenas um fim de semana. Hoje, dezoito de novembro, o jogo faz quinze anos de lançamento oficial, e eu te conto essa história.",
+   [
+    [
+     "hook",
+     "O Minecraft nasceu em *um fim de semana*."
+    ],
+    [
+     "kicker",
+     "18 DE NOVEMBRO"
+    ],
+    [
+     "kicker",
+     "15 ANOS DO"
+    ],
+    [
+     "title",
+     "MINECRAFT"
+    ]
+   ]
+  ],
+  [
+   "Tudo começou com o programador sueco Markus Persson, o Notch. Em maio de dois mil e nove, ele criou a primeira versão em um fim de semana.",
+   [
+    [
+     "text",
+     "O criador: o sueco *Markus Persson*, o *Notch*."
+    ],
+    [
+     "text",
+     "*Maio de 2009*: a primeira versão, em *um fim de semana*."
+    ],
+    [
+     "icons",
+     [
+      "💻"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Antes, Notch tinha feito outros protótipos, como o RubyDung e o Infiniminer, inspirados em jogos de construir e de minerar blocos.",
+   [
+    [
+     "text",
+     "Antes: protótipos como *RubyDung* e *Infiniminer*."
+    ],
+    [
+     "text",
+     "Jogos de *construir* e *minerar blocos*."
+    ],
+    [
+     "icons",
+     [
+      "⛏️"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Em dezessete de maio de dois mil e nove, ele publicou o jogo num fórum de desenvolvedores independentes, o TIGSource.",
+   [
+    [
+     "text",
+     "*17/05/2009*: o jogo vai para o fórum *TIGSource*."
+    ],
+    [
+     "text",
+     "Um fórum de *desenvolvedores independentes*."
+    ],
+    [
+     "icons",
+     [
+      "📣"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Com o dinheiro do jogo, Notch fundou a Mojang, com dois ex-colegas. E largou o emprego pra se dedicar só ao Minecraft.",
+   [
+    [
+     "text",
+     "Nasce a *Mojang*, com mais *dois sócios*."
+    ],
+    [
+     "text",
+     "Notch *larga o emprego* pra focar no jogo."
+    ],
+    [
+     "icons",
+     [
+      "🏢"
+     ]
+    ]
+   ]
+  ],
+  [
+   "O jogo foi crescendo aos poucos: a versão alfa saiu em junho de dois mil e dez, e a beta, em dezembro do mesmo ano.",
+   [
+    [
+     "text",
+     "*Junho de 2010*: versão *alfa*."
+    ],
+    [
+     "text",
+     "*Dezembro de 2010*: versão *beta*."
+    ],
+    [
+     "icons",
+     [
+      "🧱"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E em dezoito de novembro de dois mil e onze, na MineCon, o Minecraft saiu do beta e ganhou a versão um ponto zero.",
+   [
+    [
+     "text",
+     "*18/11/2011*: lançamento oficial, na *MineCon*."
+    ],
+    [
+     "title",
+     "VERSÃO 1.0"
+    ],
+    [
+     "icons",
+     [
+      "🎮"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Em dois mil e catorze, a Microsoft comprou a Mojang por dois bilhões e meio de dólares.",
+   [
+    [
+     "text",
+     "*2014*: a *Microsoft* compra a Mojang."
+    ],
+    [
+     "text",
+     "Por *US$ 2,5 bilhões*."
+    ],
+    [
+     "icons",
+     [
+      "💰"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Hoje o jogo roda em computador, celular e console, e também é usado em escolas pra ensinar programação, história e matemática.",
+   [
+    [
+     "text",
+     "Computador, *celular* e *console*."
+    ],
+    [
+     "text",
+     "Nas escolas: *programação*, *história* e *matemática*."
+    ],
+    [
+     "icons",
+     [
+      "🏫"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E você, já jogou Minecraft? Qual foi a sua primeira construção? Comenta aqui, marca quem jogou com você e segue o perfil pra descobrir o que se comemora amanhã.",
+   [
+    [
+     "text",
+     "Qual foi a sua *primeira construção*?"
+    ],
+    [
+     "icons",
+     [
+      "🏠"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e marca *quem jogou com você*! Segue pra saber *o que se comemora amanhã*."
+    ]
+   ]
+  ]
+ ]
+}

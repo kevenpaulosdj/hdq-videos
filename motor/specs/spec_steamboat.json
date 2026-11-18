@@ -1,0 +1,253 @@
+{
+ "name": "steamboat",
+ "theme": "generic",
+ "mkind": "steamboat",
+ "label": "ANIVERSÁRIO DO MICKEY",
+ "theme_cfg": {
+  "acc": [
+   235,
+   235,
+   235
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   20,
+   20,
+   22,
+   228
+  ],
+  "border": [
+   235,
+   235,
+   235
+  ],
+  "mascot": [
+   170,
+   170,
+   170
+  ],
+  "accessory": "newsboy",
+  "bpm": 100,
+  "ped": [
+   110,
+   110,
+   116
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   70,
+   70,
+   76
+  ],
+  "sky_bot": [
+   190,
+   190,
+   196
+  ],
+  "hills": [
+   110,
+   110,
+   116
+  ],
+  "ground": [
+   150,
+   150,
+   156
+  ],
+  "cloud": [
+   225,
+   225,
+   230
+  ]
+ },
+ "cards": [
+  [
+   "O Mickey virou estrela porque Walt Disney apostou no som. Hoje, dezoito de novembro, o desenho em que ele estreou faz noventa e oito anos.",
+   [
+    [
+     "hook",
+     "O Mickey virou estrela porque Walt apostou no *som*."
+    ],
+    [
+     "kicker",
+     "18 DE NOVEMBRO DE 1928"
+    ],
+    [
+     "kicker",
+     "98 ANOS DE"
+    ],
+    [
+     "title",
+     "O VAPOR WILLIE"
+    ]
+   ]
+  ],
+  [
+   "O Vapor Willie estreou em dezoito de novembro de mil novecentos e vinte e oito, no Colony Theater, em Nova York.",
+   [
+    [
+     "text",
+     "*18/11/1928*: estreia no *Colony Theater*, em *Nova York*."
+    ],
+    [
+     "icons",
+     [
+      "🎬"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Na época, o estúdio de Walt Disney passava por dificuldades. Os dois primeiros curtas do Mickey eram mudos, e nenhum distribuidor se interessou.",
+   [
+    [
+     "text",
+     "O estúdio de Walt passava por *dificuldades*."
+    ],
+    [
+     "text",
+     "Dois curtas *mudos* do Mickey: *ninguém* se interessou."
+    ],
+    [
+     "icons",
+     [
+      "😟"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Aí o cinema falado explodiu. O Cantor de Jazz, de mil novecentos e vinte e sete, inspirou Walt a fazer um desenho com som sincronizado.",
+   [
+    [
+     "text",
+     "*1927*: *O Cantor de Jazz* revoluciona o cinema."
+    ],
+    [
+     "text",
+     "Walt quer um desenho com *som sincronizado*."
+    ],
+    [
+     "icons",
+     [
+      "🎷"
+     ]
+    ]
+   ]
+  ],
+  [
+   "O curta foi dirigido por Walt Disney e Ub Iwerks, e quase todo animado por Iwerks. A produção levou de julho a setembro de mil novecentos e vinte e oito.",
+   [
+    [
+     "text",
+     "Direção: *Walt Disney* e *Ub Iwerks*."
+    ],
+    [
+     "text",
+     "Animação: quase toda de *Iwerks*."
+    ],
+    [
+     "text",
+     "Produção: *julho a setembro de 1928*."
+    ]
+   ]
+  ],
+  [
+   "A história é simples: o Mickey é um marujo num barco a vapor comandado por um gato mal-humorado.",
+   [
+    [
+     "text",
+     "O Mickey é *marujo* num *barco a vapor*."
+    ],
+    [
+     "text",
+     "O capitão: um *gato mal-humorado*."
+    ],
+    [
+     "icons",
+     [
+      "🚢"
+     ]
+    ]
+   ]
+  ],
+  [
+   "O som foi o grande trunfo. Não foi o primeiro desenho sonoro, mas foi o que mais fez sucesso na época e mostrou que música, efeitos e imagem funcionavam juntos.",
+   [
+    [
+     "text",
+     "Não foi o *primeiro desenho com som*."
+    ],
+    [
+     "title",
+     "SUCESSO!"
+    ],
+    [
+     "text",
+     "Música, efeitos e imagem *juntos*."
+    ]
+   ]
+  ],
+  [
+   "E os guinchinhos do Mickey? Quem fez foi o próprio Walt Disney.",
+   [
+    [
+     "text",
+     "Os *guinchinhos* do Mickey: o próprio *Walt*."
+    ],
+    [
+     "icons",
+     [
+      "🎤"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Por isso, dezoito de novembro ficou conhecido como o aniversário do Mickey. E, em primeiro de janeiro de dois mil e vinte e quatro, essa versão do curta entrou em domínio público.",
+   [
+    [
+     "text",
+     "*18/11*: o aniversário do *Mickey*."
+    ],
+    [
+     "text",
+     "*1/1/2024*: o curta entra em *domínio público*."
+    ],
+    [
+     "icons",
+     [
+      "🎂"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E você, qual era o seu desenho preferido da infância? Comenta aqui, marca quem cresceu assistindo e segue o perfil pra descobrir o que se comemora amanhã.",
+   [
+    [
+     "text",
+     "Qual era o seu *desenho preferido* da infância?"
+    ],
+    [
+     "icons",
+     [
+      "📺"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e marca *quem cresceu assistindo*! Segue pra saber *o que se comemora amanhã*."
+    ]
+   ]
+  ]
+ ]
+}
