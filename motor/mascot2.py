@@ -943,3 +943,116 @@ def _fia_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
     d.rectangle((ex - 4, ey - 4, ex + 5, ey + 5), fill=(190, 190, 198)); d.rectangle((ex - 1, ey - 4, ex + 2, ey), fill=(60, 60, 66))
 
 KINDS.update({'blocos': (wrap(_blo_mascot), blo_setup), 'steamboat': (wrap(_ste_mascot), ste_setup), 'fiat': (wrap(_fia_mascot), fia_setup)})
+
+# ---------- 19/11: VICE (GTA VI genérico), APOLLO, PELE ----------
+def vic_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('GTA VI', 'ADIADO 2X!'))
+    for tt in ctx['hits']: ev('ding', tt)
+    for i, (s0, du, _) in enumerate(ctx['cards']):
+        if i == 1: ev('pop', s0 + 0.3)
+        if i == 2: ev('chime', s0 + 0.3)
+    P = 60/112*2; k = 0
+    while k*P < ctx['total'] - 1: ev('drum', k*P, k=k); k += 1
+
+def _vic_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    # sol de neon
+    d.rectangle((176, G - 120, 236, G - 100), fill=(255, 190, 90)); d.rectangle((166, G - 100, 246, G - 84), fill=(255, 120, 130)); d.rectangle((156, G - 84, 256, G - 70), fill=(255, 70, 160))
+    for sx_, hh in ((150, 74), (252, 90)):
+        sw = int(math.sin(t*1.6 + sx_)*3)
+        d.rectangle((sx_, G - hh, sx_ + 5, G), fill=(90, 60, 40))
+        for k in range(5):
+            a = -2.6 + k*1.05
+            ex, ey = sx_ + 3 + q(math.cos(a)*22) + sw, G - hh + q(math.sin(a)*12)
+            d.rectangle((min(sx_ + 3, ex), min(G - hh, ey), max(sx_ + 3, ex) + 2, max(G - hh, ey) + 2), fill=(40, 170, 110))
+    # relogio de contagem na carta 6 (meia-noite)
+    if ci == 2:
+        d.rectangle((176, G - 50, 232, G - 26), fill=(10, 10, 20)); d.rectangle((178, G - 48, 230, G - 28), outline=(255, 90, 180), width=2)
+        f1 = font(PS2, 12); d.text((204 - f1.getlength('00:00')/2, G - 45), '00:00', font=f1, fill=(255, 90, 180))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*16)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+    # controle de videogame
+    cx_, cy_ = MX + 66, y0 + 50 + (2 if int(beat*2) % 2 else 0)
+    d.rectangle((cx_, cy_, cx_ + 30, cy_ + 14), fill=(40, 40, 52)); d.rectangle((cx_ - 3, cy_ + 4, cx_, cy_ + 14), fill=(40, 40, 52)); d.rectangle((cx_ + 30, cy_ + 4, cx_ + 33, cy_ + 14), fill=(40, 40, 52))
+    d.rectangle((cx_ + 5, cy_ + 5, cx_ + 11, cy_ + 7), fill=(200, 200, 210)); d.rectangle((cx_ + 7, cy_ + 3, cx_ + 9, cy_ + 9), fill=(200, 200, 210))
+    d.rectangle((cx_ + 21, cy_ + 4, cx_ + 24, cy_ + 7), fill=(255, 90, 180)); d.rectangle((cx_ + 25, cy_ + 8, cx_ + 28, cy_ + 11), fill=(80, 200, 220))
+
+def apo_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('NA LUA!', 'SALVOU!'))
+    for tt in ctx['hits']: ev('chime', tt)
+    for i in (1, 2):
+        s0, du, _ = ctx['cards'][min(i, len(ctx['cards'])-1)]
+        ev('thunder', s0 + 1.2)
+    P = 60/92*2; k = 0
+    while k*P < ctx['total'] - 1: ev('drum', k*P, k=k); k += 1
+
+def _apo_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    # Terra ao fundo
+    d.rectangle((222, G - 150, 246, G - 126), fill=(60, 130, 220)); d.rectangle((226, G - 146, 234, G - 138), fill=(70, 180, 100)); d.rectangle((236, G - 140, 242, G - 132), fill=(240, 240, 250))
+    storm = ci in (1, 2)
+    if storm:
+        for k in range(3):
+            cx0 = 130 + k*55 + int(math.sin(t*0.8 + k)*6)
+            d.rectangle((cx0, G - 160, cx0 + 44, G - 146), fill=(50, 52, 70)); d.rectangle((cx0 + 8, G - 168, cx0 + 36, G - 160), fill=(50, 52, 70))
+        ph = (t*1.7) % 2.4
+        if ph < 0.35:
+            bx = 190 + int(ph*20)
+            pts = [(bx, G - 146), (bx - 6, G - 120), (bx + 4, G - 116), (bx - 8, G - 80), (bx + 2, G - 78), (bx - 4, G - 40)]
+            d.line(pts, fill=(255, 245, 160), width=4)
+    else:
+        # modulo lunar generico
+        lx, ly = 176, G - 44
+        d.rectangle((lx, ly, lx + 44, ly + 26), fill=(200, 170, 80)); d.rectangle((lx + 8, ly - 14, lx + 36, ly), fill=(215, 215, 225)); d.rectangle((lx + 14, ly - 9, lx + 30, ly - 3), fill=(40, 40, 60))
+        for ox in (-8, 46): d.line([(lx + (4 if ox < 0 else 40), ly + 26), (lx + ox, G)], fill=(180, 180, 190), width=3)
+        # bandeira generica verde
+        d.rectangle((248, G - 60, 250, G), fill=(220, 220, 225)); d.rectangle((250, G - 60, 268, G - 46), fill=(80, 200, 120))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*18)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    if not storm: y0 += 0
+    place(cv, d, spr, MX, y0)
+    if storm and ((t*1.7) % 2.4) < 0.12:
+        ov = Image.new('RGBA', (LW, LH), (255, 255, 230, 90)); cv.alpha_composite(ov)
+
+def pel_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('GOL MIL', 'GOOOL!'))
+    for tt in ctx['hits']: ev('whistle', tt); ev('applause', tt + 0.2)
+    P = 60/108*2; k = 0
+    while k*P < ctx['total'] - 1: ev('drum', k*P, k=k); k += 1
+
+def _pel_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    # torcida ao fundo
+    rr = random.Random(7)
+    for k in range(34):
+        px_ = 120 + (k*9) % 150; py_ = G - 100 + (k % 3)*7 + int(math.sin(t*3 + k)*2)
+        d.rectangle((px_, py_, px_ + 5, py_ + 5), fill=rr.choice(((250, 210, 60), (240, 240, 240), (90, 180, 100), (230, 80, 80))))
+    # trave com rede
+    gx, gy = 214, G - 60
+    d.rectangle((gx, gy, gx + 50, gy + 3), fill=(240, 240, 240)); d.rectangle((gx, gy, gx + 3, G), fill=(240, 240, 240)); d.rectangle((gx + 47, gy, gx + 50, G), fill=(240, 240, 240))
+    for yy in range(gy + 8, G, 8): d.line([(gx + 3, yy), (gx + 47, yy)], fill=(200, 205, 210), width=1)
+    for xx in range(gx + 10, gx + 47, 10): d.line([(xx, gy + 3), (xx, G)], fill=(200, 205, 210), width=1)
+    hop = 0; kick = None
+    for h in ctx['hits']:
+        if 0 <= t - h < 1.2: hop = q(-abs(math.sin((t - h)*math.pi*3.0))*16); kick = t - h
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+    # camisa 10 generica
+    d.rectangle((MX + 22, y0 + 74, MX + 34, y0 + 90), fill=(240, 240, 240)); f1 = font(PS2, 8); d.text((MX + 23, y0 + 77), '10', font=f1, fill=(30, 30, 30))
+    # bola
+    if kick is None:
+        bx = MX + 84 + int(abs(math.sin(beat*math.pi))*0); by = G - 14 - int(abs(math.sin(beat*math.pi))*10)
+    else:
+        bx = MX + 84 + q(kick*110); by = G - 14 - q(math.sin(min(kick, 1.0)*math.pi)*30)
+        bx = min(bx, gx + 36)
+    d.rectangle((bx, by, bx + 12, by + 12), fill=(245, 245, 245)); d.rectangle((bx + 4, by + 4, bx + 8, by + 8), fill=(30, 30, 34)); d.rectangle((bx + 1, by + 1, bx + 3, by + 3), fill=(30, 30, 34)); d.rectangle((bx + 9, by + 9, bx + 11, by + 11), fill=(30, 30, 34))
+
+KINDS.update({'vice': (wrap(_vic_mascot), vic_setup), 'apollo': (wrap(_apo_mascot), apo_setup), 'pele': (wrap(_pel_mascot), pel_setup)})

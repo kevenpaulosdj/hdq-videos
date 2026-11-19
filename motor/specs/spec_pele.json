@@ -1,0 +1,179 @@
+{
+ "name": "pele",
+ "theme": "generic",
+ "mkind": "pele",
+ "label": "GOL MIL DO PELÉ",
+ "theme_cfg": {
+  "acc": [
+   250,
+   210,
+   50
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   10,
+   40,
+   20,
+   228
+  ],
+  "border": [
+   250,
+   210,
+   50
+  ],
+  "mascot": [
+   240,
+   240,
+   240
+  ],
+  "accessory": "headband",
+  "bpm": 108,
+  "ped": [
+   40,
+   110,
+   50
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   20,
+   30,
+   70
+  ],
+  "sky_bot": [
+   70,
+   110,
+   160
+  ],
+  "stars": true,
+  "hills": [
+   40,
+   100,
+   50
+  ],
+  "ground": [
+   50,
+   140,
+   60
+  ],
+  "cloud": [
+   200,
+   210,
+   230
+  ]
+ },
+ "cards": [
+  [
+   "O gol mil do Pelé foi de pênalti! E com VAR talvez nem existisse. Hoje faz cinquenta e sete anos!",
+   [
+    [
+     "hook",
+     "O gol mil do Pelé foi de *pênalti*... e *com VAR* não seria!"
+    ],
+    [
+     "kicker",
+     "19 DE NOVEMBRO DE 1969"
+    ],
+    [
+     "kicker",
+     "57 ANOS DO"
+    ],
+    [
+     "title",
+     "GOL MIL"
+    ]
+   ]
+  ],
+  [
+   "Maracanã lotado, mais de sessenta e cinco mil pessoas. Santos contra Vasco. O Pelé tinha novecentos e noventa e nove gols, mas o goleiro Andrada pegava tudo!",
+   [
+    [
+     "text",
+     "*Santos x Vasco*, *65 mil* no Maracanã."
+    ],
+    [
+     "text",
+     "*999 gols*: falta *um*!"
+    ],
+    [
+     "icons",
+     [
+      "🧤"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Aí veio o pênalti! Paradinha, canto esquerdo, gol mil às vinte e três e vinte e três! A torcida invadiu o campo!",
+   [
+    [
+     "text",
+     "*Pênalti!* Paradinha no *canto esquerdo*."
+    ],
+    [
+     "title",
+     "GOOOL!"
+    ],
+    [
+     "text",
+     "*23h23*: o gol *mil*."
+    ],
+    [
+     "icons",
+     [
+      "🎉"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Mas atenção: esses mil contam amistosos. Só nos jogos oficiais, são setecentos e sessenta e dois. Ainda assim, uma máquina!",
+   [
+    [
+     "text",
+     "Conta *amistosos* e *não oficiais*."
+    ],
+    [
+     "text",
+     "Só *oficiais* (IFFHS): *762*."
+    ],
+    [
+     "icons",
+     [
+      "🤖"
+     ]
+    ]
+   ]
+  ],
+  [
+   "No mesmo dia a Apollo doze pousou na Lua! Gol ou Lua: qual foi mais histórico? Comenta aqui, marca o amigo do futebol e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "Mesmo dia: *Apollo 12* na *Lua*!"
+    ],
+    [
+     "text",
+     "*Gol* ou *Lua*?"
+    ],
+    [
+     "icons",
+     [
+      "🚀"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e marca *o amigo do futebol*! Segue pra saber *o que se comemora amanhã*."
+    ]
+   ]
+  ]
+ ]
+}

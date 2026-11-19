@@ -1,0 +1,177 @@
+{
+ "name": "apollo",
+ "theme": "generic",
+ "mkind": "apollo",
+ "label": "APOLLO 12 NA LUA",
+ "theme_cfg": {
+  "acc": [
+   140,
+   190,
+   255
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   10,
+   14,
+   30,
+   230
+  ],
+  "border": [
+   140,
+   190,
+   255
+  ],
+  "mascot": [
+   235,
+   235,
+   245
+  ],
+  "accessory": "astro",
+  "bpm": 92,
+  "ped": [
+   110,
+   110,
+   120
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   5,
+   8,
+   25
+  ],
+  "sky_bot": [
+   30,
+   35,
+   70
+  ],
+  "stars": true,
+  "hills": [
+   70,
+   70,
+   85
+  ],
+  "ground": [
+   150,
+   150,
+   158
+  ],
+  "cloud": [
+   60,
+   65,
+   100
+  ]
+ },
+ "cards": [
+  [
+   "Uma nave levou dois raios na decolagem e foi pra Lua mesmo assim! Foi hoje, em mil novecentos e sessenta e nove!",
+   [
+    [
+     "hook",
+     "A nave levou *dois raios* e *foi pra Lua* mesmo assim!"
+    ],
+    [
+     "kicker",
+     "19 DE NOVEMBRO DE 1969"
+    ],
+    [
+     "kicker",
+     "APOLLO 12"
+    ],
+    [
+     "title",
+     "NA LUA!"
+    ]
+   ]
+  ],
+  [
+   "Trinta e seis segundos depois de decolar, bum, raio na nave! O painel virou uma árvore de natal de alertas!",
+   [
+    [
+     "text",
+     "*36 segundos* depois: *raio*!"
+    ],
+    [
+     "text",
+     "Painel *cheio de alertas*."
+    ],
+    [
+     "icons",
+     [
+      "⚡"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Aí veio a dica salvadora: tenta o SCE pra AUX. O Alan Bean trocou a chave e tudo voltou. A missão foi salva por um interruptor!",
+   [
+    [
+     "text",
+     "A dica: *SCE pra AUX*."
+    ],
+    [
+     "text",
+     "*Alan Bean* troca a chave."
+    ],
+    [
+     "title",
+     "SALVOU!"
+    ]
+   ]
+  ],
+  [
+   "Cinco dias depois a nave pousou na Lua, a menos de duzentos metros de uma sonda de sessenta e sete. O Pete Conrad soltou um uhul! E o Alan Bean queimou a câmera apontando pro Sol!",
+   [
+    [
+     "text",
+     "Pouso a *200 metros* de uma sonda de *1967*."
+    ],
+    [
+     "text",
+     "*Conrad*: o *terceiro* humano na Lua."
+    ],
+    [
+     "text",
+     "Câmera *queimada* no Sol."
+    ],
+    [
+     "icons",
+     [
+      "🌑"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E no mesmo dia, o Pelé fez o gol mil! Lua ou gol: qual foi mais histórico? Comenta aqui, marca um amigo e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "Mesmo dia: *gol mil do Pelé*!"
+    ],
+    [
+     "text",
+     "*Lua* ou *gol*?"
+    ],
+    [
+     "icons",
+     [
+      "⚽"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e marca *um amigo*! Segue pra saber *o que se comemora amanhã*."
+    ]
+   ]
+  ]
+ ]
+}

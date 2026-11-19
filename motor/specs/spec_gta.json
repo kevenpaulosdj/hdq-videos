@@ -1,0 +1,164 @@
+{
+ "name": "gta",
+ "theme": "generic",
+ "mkind": "vice",
+ "label": "GTA VI CHEGOU",
+ "theme_cfg": {
+  "acc": [
+   255,
+   90,
+   180
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   30,
+   12,
+   40,
+   226
+  ],
+  "border": [
+   255,
+   90,
+   180
+  ],
+  "mascot": [
+   80,
+   200,
+   200
+  ],
+  "accessory": "shades",
+  "bpm": 112,
+  "ped": [
+   90,
+   60,
+   110
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   70,
+   30,
+   120
+  ],
+  "sky_bot": [
+   255,
+   140,
+   110
+  ],
+  "stars": false,
+  "hills": [
+   120,
+   50,
+   120
+  ],
+  "ground": [
+   60,
+   40,
+   80
+  ],
+  "cloud": [
+   255,
+   170,
+   200
+  ]
+ },
+ "cards": [
+  [
+   "Gente, o GTA seis saiu hoje! Treze anos de espera acabaram!",
+   [
+    [
+     "hook",
+     "A novela acabou: *GTA seis* saiu *hoje*!"
+    ],
+    [
+     "kicker",
+     "19 DE NOVEMBRO DE 2026"
+    ],
+    [
+     "kicker",
+     "CHEGOU O"
+    ],
+    [
+     "title",
+     "GTA VI"
+    ]
+   ]
+  ],
+  [
+   "O trailer fez mais de noventa milhões de views em um dia, mas o jogo foi adiado duas vezes! Era pra sair em dois mil e vinte e cinco, depois em maio. Foi meme pra todo lado!",
+   [
+    [
+     "text",
+     "Trailer: *90 milhões* de views em *um dia*."
+    ],
+    [
+     "text",
+     "Primeiro: *2025*."
+    ],
+    [
+     "text",
+     "Depois: *maio de 2026*."
+    ],
+    [
+     "title",
+     "ADIADO 2X!"
+    ],
+    [
+     "icons",
+     [
+      "😂"
+     ]
+    ]
+   ]
+  ],
+  [
+   "A história rola em Vice City, com a Lucia e o Jason. E o jogo liberou à meia-noite, só pra PlayStation cinco e Xbox Series. PC? Nada confirmado!",
+   [
+    [
+     "text",
+     "*Vice City*, com *Lucia* e *Jason*."
+    ],
+    [
+     "text",
+     "Liberado à *meia-noite*."
+    ],
+    [
+     "text",
+     "*PS5* e *Xbox Series*. *PC*: nada ainda."
+    ],
+    [
+     "icons",
+     [
+      "🎮"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Tem gente tirando folga pra jogar! Agora responde: PlayStation ou Xbox? Comenta aqui, marca o amigo viciado e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "*PlayStation* ou *Xbox*?"
+    ],
+    [
+     "icons",
+     [
+      "🕹️"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e marca *o amigo viciado*! Segue pra saber *o que se comemora amanhã*."
+    ]
+   ]
+  ]
+ ]
+}

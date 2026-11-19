@@ -417,6 +417,12 @@ def mascot_base(th):
         mc = (30, 90, 170)
         d.rectangle((x-1, y-2, x+s+dp+1, y+3), fill=dark(mc, .8)); d.rectangle((x+3, y-12, x+s+dp-3, y-2), fill=mc)
         d.rectangle((x+10, y-8, x+22, y-4), fill=(240, 240, 240)); d.rectangle((x+s-2, y+14, x+s+4, y+24), fill=(70, 70, 76))
+    elif acc == 'shades':
+        d.rectangle((x+4, y+16, x+s-4, y+28), fill=(20, 20, 26)); d.rectangle((x+8, y+18, x+24, y+26), fill=(255, 90, 180)); d.rectangle((x+s-24, y+18, x+s-8, y+26), fill=(255, 90, 180))
+        d.rectangle((x+24, y+18, x+s-24, y+21), fill=(20, 20, 26))
+    elif acc == 'astro':
+        d.rectangle((x-6, y-8, x+s+dp+6, y+s+8), outline=(215, 220, 235), width=4); d.rectangle((x-6, y+s+4, x+s+dp+6, y+s+14), fill=(215, 220, 235))
+        d.rectangle((x+s//2, y-22, x+s//2+3, y-8), fill=(215, 220, 235)); d.rectangle((x+s//2-2, y-26, x+s//2+5, y-22), fill=(255, 80, 80))
     elif acc == 'flower':
         sx, sy = x+s-8, y-dp-10
         d.rectangle((sx+3, sy+8, sx+5, sy+16), fill=(60,150,60))
