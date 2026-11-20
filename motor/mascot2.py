@@ -1056,3 +1056,79 @@ def _pel_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
     d.rectangle((bx, by, bx + 12, by + 12), fill=(245, 245, 245)); d.rectangle((bx + 4, by + 4, bx + 8, by + 8), fill=(30, 30, 34)); d.rectangle((bx + 1, by + 1, bx + 3, by + 3), fill=(30, 30, 34)); d.rectangle((bx + 9, by + 9, bx + 11, by + 11), fill=(30, 30, 34))
 
 KINDS.update({'vice': (wrap(_vic_mascot), vic_setup), 'apollo': (wrap(_apo_mascot), apo_setup), 'pele': (wrap(_pel_mascot), pel_setup)})
+
+# ---------- 20/11: QUILOMBO (Consciencia Negra), WIN (Windows 1.0) ----------
+def quil_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('ZUMBI', 'FERIADO!'))
+    for tt in ctx['hits']: ev('chime', tt)
+    P = 60/100; k = 0
+    while k*P < ctx['total'] - 1: ev('drum', k*P, k=k); k += 1
+
+def _quil_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    # serra ao fundo
+    d.polygon([(110, G - 40), (170, G - 120), (215, G - 85), (255, G - 130), (270, G - 110), (270, G - 40)], fill=(60, 80, 40))
+    # paliçada
+    for k in range(12):
+        x = 140 + k*11; h = 44 + (k % 3)*4
+        d.rectangle((x, G - h, x + 8, G), fill=(120, 80, 45)); d.polygon([(x, G - h), (x + 4, G - h - 6), (x + 8, G - h)], fill=(120, 80, 45))
+        d.rectangle((x + 1, G - h + 4, x + 2, G - 2), fill=(95, 60, 35))
+    d.rectangle((140, G - 30, 272, G - 26), fill=(90, 58, 30))
+    # palmeiras
+    for sx_, hh in ((128, 96), (262, 110)):
+        sw = int(math.sin(t*1.4 + sx_)*3)
+        d.rectangle((sx_, G - hh, sx_ + 4, G), fill=(100, 70, 40))
+        for kk in range(5):
+            a = -2.6 + kk*1.05
+            ex, ey = sx_ + 2 + q(math.cos(a)*20) + sw, G - hh + q(math.sin(a)*10)
+            d.line([(sx_ + 2, G - hh), (ex, ey)], fill=(50, 140, 70), width=3)
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*14)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+    # atabaque
+    ax, ay = MX + 70, G - 34
+    d.rectangle((ax, ay, ax + 20, G), fill=(150, 90, 45)); d.rectangle((ax - 2, ay - 3, ax + 22, ay + 1), fill=(230, 210, 170))
+    for yy in (ay + 8, ay + 20): d.rectangle((ax, yy, ax + 20, yy + 2), fill=(250, 200, 60))
+    for kk in range(4): d.line([(ax + 2 + kk*5, ay + 1), (ax + 4 + kk*5, ay + 8)], fill=(90, 50, 25), width=1)
+    if int(beat*2) % 2 == 0:
+        d.rectangle((ax + 4, ay - 8, ax + 9, ay - 4), fill=(250, 200, 60)); d.rectangle((ax + 12, ay - 10, ax + 16, ay - 6), fill=(250, 200, 60))
+
+def win_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('WINDOWS 1.0', 'FRACASSO?!'))
+    for tt in ctx['hits']: ev('ding', tt)
+    for i, (s0, du, _) in enumerate(ctx['cards']):
+        if i == 2: ev('thud', s0 + 0.4)
+    P = 60/110*2; k = 0
+    while k*P < ctx['total'] - 1: ev('tick', k*P, k=k); k += 1
+
+def _win_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    # computador CRT generico
+    cx, cy = 168, G - 92
+    d.rectangle((cx, cy, cx + 76, cy + 60), fill=(215, 210, 190)); d.rectangle((cx + 6, cy + 6, cx + 70, cy + 50), fill=(20, 30, 90))
+    # janelas genericas no monitor
+    ws = [((cx + 10, cy + 10, cx + 44, cy + 32), (240, 240, 240)), ((cx + 30, cy + 22, cx + 66, cy + 46), (230, 230, 230))]
+    for k, (r, c) in enumerate(ws):
+        if (t*0.8 + k*0.5) % 3 < 2.7:
+            d.rectangle(r, fill=c); d.rectangle((r[0], r[1], r[2], r[1] + 4), fill=(60, 120, 220))
+    if ci == 1:  # ampulheta de espera
+        hx, hy = cx + 34, cy + 20
+        d.polygon([(hx, hy), (hx + 10, hy), (hx + 5, hy + 7)], fill=(250, 250, 250)); d.polygon([(hx, hy + 14), (hx + 10, hy + 14), (hx + 5, hy + 7)], fill=(250, 250, 250))
+    d.rectangle((cx + 20, cy + 60, cx + 56, cy + 66), fill=(190, 185, 165)); d.rectangle((cx + 4, cy + 66, cx + 72, cy + 74), fill=(225, 220, 200))
+    d.rectangle((cx + 8, cy + 76, cx + 70, cy + 86), fill=(200, 195, 175))
+    for kk in range(10): d.rectangle((cx + 10 + kk*6, cy + 78, cx + 14 + kk*6, cy + 82), fill=(150, 145, 130))
+    # pilha de disquetes
+    for kk in range(4):
+        fx, fy = 252, G - 10 - kk*9
+        d.rectangle((fx, fy, fx + 16, fy + 8), fill=(40, 40, 50)); d.rectangle((fx + 4, fy + 1, fx + 12, fy + 4), fill=(190, 190, 200))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*16)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+
+KINDS.update({'quilombo': (wrap(_quil_mascot), quil_setup), 'win': (wrap(_win_mascot), win_setup)})

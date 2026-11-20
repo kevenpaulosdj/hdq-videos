@@ -1,0 +1,158 @@
+{
+ "name": "windows",
+ "theme": "generic",
+ "mkind": "win",
+ "label": "41 ANOS DO WINDOWS",
+ "theme_cfg": {
+  "acc": [
+   80,
+   180,
+   255
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   10,
+   20,
+   50,
+   228
+  ],
+  "border": [
+   80,
+   180,
+   255
+  ],
+  "mascot": [
+   200,
+   200,
+   210
+  ],
+  "accessory": "headset",
+  "bpm": 110,
+  "ped": [
+   60,
+   60,
+   80
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   20,
+   30,
+   80
+  ],
+  "sky_bot": [
+   60,
+   110,
+   180
+  ],
+  "stars": true,
+  "hills": [
+   40,
+   60,
+   110
+  ],
+  "ground": [
+   70,
+   70,
+   90
+  ],
+  "cloud": [
+   150,
+   180,
+   230
+  ]
+ },
+ "cards": [
+  [
+   "O primeiro Windows foi um fracasso! Os críticos detonaram. E hoje ele faz quarenta e um anos!",
+   [
+    [
+     "hook",
+     "O primeiro Windows foi um *fracasso*!"
+    ],
+    [
+     "kicker",
+     "20 DE NOVEMBRO DE 1985"
+    ],
+    [
+     "kicker",
+     "NASCIA O"
+    ],
+    [
+     "title",
+     "WINDOWS 1.0"
+    ]
+   ]
+  ],
+  [
+   "Ele foi anunciado em mil novecentos e oitenta e três e prometido pro ano seguinte. Atrasou dois anos! Chegou em vinte de novembro de oitenta e cinco, por noventa e nove dólares.",
+   [
+    [
+     "text",
+     "Anunciado em *1983*."
+    ],
+    [
+     "text",
+     "Atrasou *2 anos*!"
+    ],
+    [
+     "text",
+     "Preço: *US$ 99*."
+    ],
+    [
+     "icons",
+     [
+      "⏳"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E nem era um sistema de verdade: ele rodava em cima do MS-DOS e vinha em disquetes. A crítica achou lento e sem graça.",
+   [
+    [
+     "text",
+     "Rodava em cima do *MS-DOS*."
+    ],
+    [
+     "text",
+     "Vinha em *disquetes*."
+    ],
+    [
+     "title",
+     "FRACASSO?!"
+    ]
+   ]
+  ],
+  [
+   "Mas a ideia das janelas pegou e virou o sistema mais usado em computadores do mundo. Qual Windows você usou primeiro? Comenta aqui e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "As *janelas* venceram!"
+    ],
+    [
+     "text",
+     "Qual foi o *seu primeiro* Windows?"
+    ],
+    [
+     "icons",
+     [
+      "💾"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}

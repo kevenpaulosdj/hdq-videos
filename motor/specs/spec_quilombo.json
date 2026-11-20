@@ -1,0 +1,173 @@
+{
+ "name": "quilombo",
+ "theme": "generic",
+ "mkind": "quilombo",
+ "label": "CONSCIÊNCIA NEGRA",
+ "theme_cfg": {
+  "acc": [
+   250,
+   200,
+   60
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   40,
+   20,
+   10,
+   228
+  ],
+  "border": [
+   250,
+   200,
+   60
+  ],
+  "mascot": [
+   150,
+   95,
+   60
+  ],
+  "accessory": "none",
+  "bpm": 100,
+  "ped": [
+   100,
+   65,
+   35
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   90,
+   40,
+   30
+  ],
+  "sky_bot": [
+   250,
+   160,
+   70
+  ],
+  "stars": false,
+  "hills": [
+   70,
+   90,
+   40
+  ],
+  "ground": [
+   120,
+   80,
+   40
+  ],
+  "cloud": [
+   255,
+   200,
+   150
+  ]
+ },
+ "cards": [
+  [
+   "O feriado de hoje nasceu de uma ideia de um grupo de amigos em Porto Alegre! E levou mais de cinquenta anos pra virar feriado no Brasil inteiro.",
+   [
+    [
+     "hook",
+     "O feriado de hoje nasceu de *uma ideia* de amigos!"
+    ],
+    [
+     "kicker",
+     "20 DE NOVEMBRO"
+    ],
+    [
+     "kicker",
+     "DIA DE"
+    ],
+    [
+     "title",
+     "ZUMBI"
+    ]
+   ]
+  ],
+  [
+   "Vinte de novembro é o dia em que Zumbi, líder do Quilombo dos Palmares, foi morto, em mil seiscentos e noventa e cinco. Palmares foi o maior quilombo da história do Brasil.",
+   [
+    [
+     "text",
+     "*20/11/1695*: morte de *Zumbi*."
+    ],
+    [
+     "text",
+     "Palmares: o *maior quilombo* do Brasil."
+    ],
+    [
+     "icons",
+     [
+      "✊🏿"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Em mil novecentos e setenta e um, o Grupo Palmares, em Porto Alegre, propôs lembrar a data como um contraponto ao treze de maio.",
+   [
+    [
+     "text",
+     "*1971*: Grupo Palmares, em *Porto Alegre*."
+    ],
+    [
+     "text",
+     "Um contraponto ao *13 de maio*."
+    ],
+    [
+     "icons",
+     [
+      "📜"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Em dois mil e onze, a data virou lei, mas sem feriado. Só com uma nova lei, sancionada no fim de dois mil e vinte e três, virou feriado nacional. Dois mil e vinte e quatro foi o primeiro ano com folga no país todo.",
+   [
+    [
+     "text",
+     "*2011*: vira lei, *sem* feriado."
+    ],
+    [
+     "text",
+     "Fim de *2023*: nova lei."
+    ],
+    [
+     "title",
+     "FERIADO!"
+    ],
+    [
+     "text",
+     "*2024*: primeiro feriado *nacional*."
+    ]
+   ]
+  ],
+  [
+   "Você sabia dessa origem? Comenta sim ou não, manda pra quem precisa saber e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "Você sabia? *Sim* ou *não*?"
+    ],
+    [
+     "icons",
+     [
+      "👇"
+     ]
+    ],
+    [
+     "text",
+     "Manda pra quem *precisa saber*! Segue pra saber *o que se comemora amanhã*."
+    ]
+   ]
+  ]
+ ]
+}

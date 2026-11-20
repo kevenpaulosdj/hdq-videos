@@ -1,0 +1,160 @@
+{
+ "name": "copa",
+ "theme": "generic",
+ "mkind": "pele",
+ "label": "4 ANOS DA COPA 2022",
+ "theme_cfg": {
+  "acc": [
+   255,
+   110,
+   150
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   40,
+   10,
+   25,
+   228
+  ],
+  "border": [
+   255,
+   110,
+   150
+  ],
+  "mascot": [
+   240,
+   240,
+   240
+  ],
+  "accessory": "cap",
+  "bpm": 112,
+  "ped": [
+   40,
+   110,
+   50
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   20,
+   20,
+   60
+  ],
+  "sky_bot": [
+   90,
+   60,
+   120
+  ],
+  "stars": true,
+  "hills": [
+   60,
+   40,
+   70
+  ],
+  "ground": [
+   50,
+   140,
+   60
+  ],
+  "cloud": [
+   200,
+   180,
+   220
+  ]
+ },
+ "cards": [
+  [
+   "Pela primeira vez em quase cem anos de Copa, o dono da casa perdeu o jogo de abertura! Foi há exatos quatro anos.",
+   [
+    [
+     "hook",
+     "O dono da casa *perdeu a abertura* pela 1ª vez!"
+    ],
+    [
+     "kicker",
+     "20 DE NOVEMBRO DE 2022"
+    ],
+    [
+     "kicker",
+     "COPA DO"
+    ],
+    [
+     "title",
+     "CATAR"
+    ]
+   ]
+  ],
+  [
+   "A Copa do Catar foi a primeira em novembro, por causa do calor. A abertura teve o ator Morgan Freeman e o Jung Kook, do BTS.",
+   [
+    [
+     "text",
+     "Primeira Copa em *novembro*."
+    ],
+    [
+     "text",
+     "Show: *Morgan Freeman* e *Jung Kook*."
+    ],
+    [
+     "icons",
+     [
+      "🎤"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Aí a bola rolou: Catar contra Equador, no estádio Al Bayt. E o Enner Valencia fez dois gols só no primeiro tempo!",
+   [
+    [
+     "text",
+     "*Catar x Equador*, no Al Bayt."
+    ],
+    [
+     "title",
+     "GOOOL!"
+    ],
+    [
+     "text",
+     "*Enner Valencia*: dois gols."
+    ],
+    [
+     "icons",
+     [
+      "⚽"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Dois a zero pro Equador, e o tabu de noventa e dois anos caiu! Você lembra onde assistiu essa Copa? Comenta aqui e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "*2 x 0*: tabu desde *1930* derrubado!"
+    ],
+    [
+     "text",
+     "Onde *você* assistiu essa Copa?"
+    ],
+    [
+     "icons",
+     [
+      "📺"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}
