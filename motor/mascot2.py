@@ -1132,3 +1132,136 @@ def _win_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
     place(cv, d, spr, MX, y0)
 
 KINDS.update({'quilombo': (wrap(_quil_mascot), quil_setup), 'win': (wrap(_win_mascot), win_setup)})
+
+# ---------- 21/11: TVDAY (TV de tubo com antena), GUGU (palco/auditório), SNES (console 16 bits genérico) ----------
+def tv_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('TELEVISÃO', 'NO AR!'))
+    for tt in ctx['hits']: ev('ding', tt)
+    P = 60/104*2; k = 0
+    while k*P < ctx['total'] - 1: ev('tick', k*P, k=k); k += 1
+
+def _tv_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    tx, ty = 170, G - 96
+    # antena
+    sw = int(math.sin(t*2)*3)
+    d.line([(tx + 38, ty), (tx + 18 + sw, ty - 30)], fill=(200, 200, 210), width=2)
+    d.line([(tx + 38, ty), (tx + 58 + sw, ty - 30)], fill=(200, 200, 210), width=2)
+    d.rectangle((tx + 32, ty - 4, tx + 44, ty + 2), fill=(60, 50, 40))
+    # gabinete de madeira
+    d.rectangle((tx, ty, tx + 80, ty + 70), fill=(140, 90, 50)); d.rectangle((tx + 4, ty + 4, tx + 60, ty + 60), fill=(30, 30, 30))
+    sx0, sy0, sx1, sy1 = tx + 8, ty + 8, tx + 56, ty + 56
+    phase = int(t*1.2) % 3 if ci != 0 else (0 if t % 2 < 1 else 1)
+    if phase == 0:  # chiado
+        for k in range(60):
+            px = sx0 + (k*37 + int(t*90)*13) % (sx1 - sx0); py = sy0 + (k*53 + int(t*90)*7) % (sy1 - sy0)
+            v = 120 + (k*71 + int(t*60)) % 130; d.rectangle((px, py, px + 2, py + 2), fill=(v, v, v))
+        d.rectangle((sx0, sy0, sx1, sy1), outline=(80, 80, 80))
+    else:  # barras de cor
+        cols = [(230, 230, 230), (230, 220, 40), (40, 210, 220), (40, 200, 60), (210, 40, 200), (220, 40, 40), (40, 40, 220)]
+        w = (sx1 - sx0) / 7
+        for k, c in enumerate(cols): d.rectangle((sx0 + int(k*w), sy0, sx0 + int((k + 1)*w), sy1 - 12), fill=c)
+        d.rectangle((sx0, sy1 - 12, sx1, sy1), fill=(20, 20, 60))
+    # botões
+    for k in range(2): d.ellipse((tx + 64, ty + 10 + k*16, tx + 74, ty + 20 + k*16), fill=(220, 200, 150))
+    for k in range(4): d.rectangle((tx + 64, ty + 46 + k*4, tx + 76, ty + 47 + k*4), fill=(90, 60, 30))
+    d.rectangle((tx + 8, ty + 70, tx + 14, G), fill=(90, 60, 30)); d.rectangle((tx + 66, ty + 70, tx + 72, G), fill=(90, 60, 30))
+    # controle remoto piscando
+    rx, ry = 256, G - 18
+    d.rectangle((rx, ry, rx + 10, ry + 18), fill=(40, 40, 45))
+    d.rectangle((rx + 3, ry + 3, rx + 7, ry + 6), fill=(230, 50, 50) if int(beat*2) % 2 else (90, 30, 30))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*16)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+
+def gugu_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('GUGU', 'AUDIÊNCIA!'))
+    for i, tt in enumerate(ctx['hits']): ev('applause' if i == 1 else 'chime', tt)
+    P = 60/84*2; k = 0
+    while k*P < ctx['total'] - 1: ev('tick', k*P, k=k); k += 1
+
+def _gugu_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    sad = ci == 3
+    cur = (150, 25, 40) if not sad else (90, 20, 30); fold = (110, 15, 30) if not sad else (60, 12, 20)
+    # cortinas nas laterais
+    for x0, x1, sgn in ((0, 26, 1), (244, 270, -1)):
+        d.rectangle((x0, G - 120, x1, G), fill=cur)
+        for k in range(4): d.rectangle((x0 + 3 + k*6, G - 120, x0 + 4 + k*6, G), fill=fold)
+        d.rectangle((x0, G - 124, x1, G - 118), fill=(200, 160, 60))
+    # holofote no chão atrás do mascote
+    for j in range(5):
+        d.ellipse((MX - 14 - j*4, G - 6 - j, MX + 66 + j*4, G + 4 + j), outline=(255, 235, 170) if not sad else (170, 170, 210))
+    # estrela
+    sx, sy = 200, G - 110 + q(math.sin(t*1.5)*3)
+    r = 7 if int(t*3) % 2 else 5
+    d.polygon([(sx, sy - r), (sx + 2, sy - 2), (sx + r, sy), (sx + 2, sy + 2), (sx, sy + r), (sx - 2, sy + 2), (sx - r, sy), (sx - 2, sy - 2)], fill=(255, 220, 90))
+    # pedestal de microfone
+    mx = 170
+    d.rectangle((mx, G - 64, mx + 2, G), fill=(90, 90, 95)); d.rectangle((mx - 8, G - 3, mx + 10, G), fill=(90, 90, 95))
+    d.ellipse((mx - 3, G - 74, mx + 5, G - 62), fill=(40, 40, 45)); d.rectangle((mx - 2, G - 72, mx + 4, G - 70), fill=(170, 170, 180))
+    # plateia
+    for k in range(4):
+        hx = 192 + k*12; d.ellipse((hx, G - 14, hx + 10, G - 4), fill=(45, 35, 55)); d.rectangle((hx - 1, G - 6, hx + 11, G), fill=(45, 35, 55))
+    if not sad and 'hits' in ctx and len(ctx['hits']) > 1 and 0 <= t - ctx['hits'][1] < 2.5:
+        for k in range(4):
+            if int(t*10 + k) % 2: d.rectangle((194 + k*12, G - 22, 198 + k*12, G - 18), fill=(250, 220, 170))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*14)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (0 if sad else (2 if int(beat) % 2 else 0))
+    place(cv, d, spr, MX, y0)
+
+def snes_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('SUPER NINTENDO', 'ESGOTOU!'))
+    for tt in ctx['hits']: ev('ding', tt)
+    for i, (s0, du, _) in enumerate(ctx['cards']):
+        if i == 0: ev('boot', s0 + 0.2)
+        if i == 1: ev('engine', s0 + 0.3, dur=min(du - 0.5, 3.5))
+    P = 60/120; k = 0
+    while k*P < ctx['total'] - 1: ev('blip', k*P, k=k); k += 1
+
+def _snes_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    if ci == 1:  # lua e caminhão na madrugada
+        d.ellipse((240, G - 170, 262, G - 148), fill=(240, 240, 210)); d.ellipse((248, G - 172, 268, G - 152), fill=th.get('sky_top', (20, 20, 50)))
+        s0 = ctx['cards'][1][0]
+        tx = 300 - int(((t - s0)*55) % 260)
+        d.rectangle((tx, G - 26, tx + 34, G - 6), fill=(230, 230, 235)); d.rectangle((tx - 14, G - 20, tx, G - 6), fill=(70, 90, 160))
+        d.rectangle((tx - 12, G - 18, tx - 4, G - 12), fill=(170, 210, 240))
+        for wx in (tx - 8, tx + 8, tx + 26): d.ellipse((wx, G - 10, wx + 8, G - 2), fill=(30, 30, 30))
+        d.polygon([(tx - 14, G - 14), (tx - 40, G - 22), (tx - 40, G - 6)], fill=(255, 250, 180))
+    # console genérico 16 bits
+    cx, cy = 140, G - 40
+    d.rectangle((cx, cy, cx + 78, cy + 30), fill=(205, 205, 210)); d.rectangle((cx + 4, cy - 6, cx + 74, cy), fill=(190, 190, 196))
+    d.rectangle((cx + 22, cy - 10, cx + 56, cy - 4), fill=(60, 60, 65))
+    # cartucho entra no gancho
+    cart_y = cy - 30
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.5: cart_y = cy - 30 - int((0.5 - (t - h))*30)
+    d.rectangle((cx + 25, cart_y, cx + 53, cy - 6), fill=(80, 80, 88)); d.rectangle((cx + 29, cart_y + 4, cx + 49, cart_y + 14), fill=(200, 60, 60))
+    for k, c in enumerate(((150, 120, 220), (150, 120, 220))): d.rectangle((cx + 8 + k*52, cy + 8, cx + 18 + k*52, cy + 14), fill=c)
+    d.ellipse((cx + 34, cy + 18, cx + 42, cy + 24), fill=(220, 40, 40) if int(beat) % 2 else (120, 30, 30))
+    # controle com 4 botões coloridos
+    jx, jy = 226, G - 14
+    d.line([(cx + 70, cy + 28), (jx, jy + 6)], fill=(60, 60, 60), width=1)
+    d.rounded_rectangle((jx, jy, jx + 34, jy + 14), radius=6, fill=(200, 200, 205))
+    d.rectangle((jx + 4, jy + 6, jx + 12, jy + 8), fill=(60, 60, 60)); d.rectangle((jx + 7, jy + 3, jx + 9, jy + 11), fill=(60, 60, 60))
+    bc = [(230, 50, 50), (240, 200, 40), (50, 120, 230), (50, 180, 80)]
+    pos = [(26, 7), (22, 3), (22, 10), (18, 7)]
+    lit = int(beat*2) % 4
+    for k, ((bx, by), c) in enumerate(zip(pos, bc)):
+        cc = c if k == lit else tuple(int(v*0.55) for v in c)
+        d.rectangle((jx + bx, jy + by, jx + bx + 3, jy + by + 3), fill=cc)
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*16)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+
+KINDS.update({'tvday': (wrap(_tv_mascot), tv_setup), 'gugu': (wrap(_gugu_mascot), gugu_setup), 'snes': (wrap(_snes_mascot), snes_setup)})

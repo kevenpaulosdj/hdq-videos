@@ -1,0 +1,154 @@
+{
+ "name": "snes",
+ "theme": "generic",
+ "mkind": "snes",
+ "label": "36 ANOS DO SUPER NINTENDO",
+ "theme_cfg": {
+  "acc": [
+   190,
+   160,
+   255
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   25,
+   20,
+   45,
+   228
+  ],
+  "border": [
+   190,
+   160,
+   255
+  ],
+  "mascot": [
+   200,
+   200,
+   215
+  ],
+  "accessory": "headset",
+  "bpm": 120,
+  "ped": [
+   50,
+   45,
+   65
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   15,
+   15,
+   45
+  ],
+  "sky_bot": [
+   60,
+   40,
+   110
+  ],
+  "stars": true,
+  "hills": [
+   45,
+   35,
+   80
+  ],
+  "ground": [
+   60,
+   55,
+   75
+  ],
+  "cloud": [
+   160,
+   150,
+   210
+  ]
+ },
+ "cards": [
+  [
+   "A Nintendo tinha tanto medo da máfia japonesa que despachou o Super Nintendo escondida, de madrugada! E foi há exatos trinta e seis anos.",
+   [
+    [
+     "hook",
+     "Lançado *escondido* por medo da *máfia*!"
+    ],
+    [
+     "kicker",
+     "21 DE NOVEMBRO DE 1990"
+    ],
+    [
+     "kicker",
+     "NASCIA O"
+    ],
+    [
+     "title",
+     "SUPER NINTENDO"
+    ]
+   ]
+  ],
+  [
+   "Na véspera do lançamento no Japão, cem caminhões saíram carregados no meio da noite, pra fugir da Yakuza.",
+   [
+    [
+     "text",
+     "*100 caminhões* de madrugada."
+    ],
+    [
+     "text",
+     "Pra fugir da *Yakuza*!"
+    ],
+    [
+     "icons",
+     [
+      "🚚"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Resultado: trezentos mil consoles esgotaram em poucas horas! E ele chegou com só dois jogos.",
+   [
+    [
+     "text",
+     "*300 mil* esgotados em *horas*."
+    ],
+    [
+     "title",
+     "ESGOTOU!"
+    ],
+    [
+     "text",
+     "Só *2 jogos* no lançamento."
+    ]
+   ]
+  ],
+  [
+   "No total, vendeu quase cinquenta milhões de unidades. Qual era o seu jogo favorito no Super Nintendo? Comenta aqui e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "Quase *50 milhões* vendidos."
+    ],
+    [
+     "text",
+     "Qual era o seu *jogo favorito*?"
+    ],
+    [
+     "icons",
+     [
+      "🎮"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}

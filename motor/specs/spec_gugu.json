@@ -1,0 +1,169 @@
+{
+ "name": "gugu",
+ "theme": "generic",
+ "mkind": "gugu",
+ "label": "7 ANOS SEM GUGU",
+ "theme_cfg": {
+  "acc": [
+   255,
+   205,
+   90
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   50,
+   15,
+   20,
+   228
+  ],
+  "border": [
+   255,
+   205,
+   90
+  ],
+  "mascot": [
+   240,
+   190,
+   150
+  ],
+  "accessory": "none",
+  "bpm": 84,
+  "ped": [
+   60,
+   35,
+   35
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   25,
+   15,
+   40
+  ],
+  "sky_bot": [
+   80,
+   40,
+   70
+  ],
+  "stars": true,
+  "hills": [
+   50,
+   30,
+   55
+  ],
+  "ground": [
+   70,
+   40,
+   40
+  ],
+  "cloud": [
+   180,
+   140,
+   170
+  ]
+ },
+ "cards": [
+  [
+   "Ele mandava cartas pro Silvio Santos com ideias de programas, até ser contratado com só catorze anos! Há sete anos, o Brasil se despedia do Gugu.",
+   [
+    [
+     "hook",
+     "Começou na TV com só *14 anos*!"
+    ],
+    [
+     "kicker",
+     "21 DE NOVEMBRO DE 2019"
+    ],
+    [
+     "kicker",
+     "ADEUS AO"
+    ],
+    [
+     "title",
+     "GUGU"
+    ]
+   ]
+  ],
+  [
+   "Ele começou como assistente de produção do Domingo no Parque. Depois veio o Viva a Noite, e em mil novecentos e noventa e três, estreou o Domingo Legal.",
+   [
+    [
+     "text",
+     "Assistente de produção aos *14*."
+    ],
+    [
+     "text",
+     "*Viva a Noite* e *Domingo Legal* (1993)."
+    ],
+    [
+     "icons",
+     [
+      "🎤"
+     ]
+    ]
+   ]
+  ],
+  [
+   "No Domingo Legal, quadros como a Banheira do Gugu viraram febre, e ele chegou a vencer o Faustão na audiência dos domingos.",
+   [
+    [
+     "text",
+     "*Banheira do Gugu* virou febre!"
+    ],
+    [
+     "title",
+     "AUDIÊNCIA!"
+    ],
+    [
+     "text",
+     "Venceu o *Faustão* aos domingos."
+    ]
+   ]
+  ],
+  [
+   "Em novembro de dois mil e dezenove, ele caiu de uma altura de cerca de quatro metros enquanto consertava o ar-condicionado de casa, em Orlando. Partiu aos sessenta anos.",
+   [
+    [
+     "text",
+     "Queda de *4 metros* em casa, em Orlando."
+    ],
+    [
+     "text",
+     "Partiu aos *60 anos*."
+    ],
+    [
+     "icons",
+     [
+      "⭐"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Qual programa do Gugu você mais assistia? Comenta aqui e segue pra saber o que se comemora amanhã.",
+   [
+    [
+     "text",
+     "Qual programa do *Gugu* você via?"
+    ],
+    [
+     "icons",
+     [
+      "👇"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}

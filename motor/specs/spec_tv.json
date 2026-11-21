@@ -1,0 +1,154 @@
+{
+ "name": "tv",
+ "theme": "generic",
+ "mkind": "tvday",
+ "label": "DIA MUNDIAL DA TV",
+ "theme_cfg": {
+  "acc": [
+   255,
+   210,
+   70
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   20,
+   15,
+   50,
+   228
+  ],
+  "border": [
+   255,
+   210,
+   70
+  ],
+  "mascot": [
+   230,
+   120,
+   90
+  ],
+  "accessory": "none",
+  "bpm": 104,
+  "ped": [
+   70,
+   50,
+   90
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   30,
+   20,
+   80
+  ],
+  "sky_bot": [
+   120,
+   70,
+   160
+  ],
+  "stars": true,
+  "hills": [
+   60,
+   40,
+   100
+  ],
+  "ground": [
+   80,
+   60,
+   110
+  ],
+  "cloud": [
+   200,
+   170,
+   230
+  ]
+ },
+ "cards": [
+  [
+   "Sabia que a televisão tem um dia mundial só dela? E quem criou foi a ONU, há exatos trinta anos!",
+   [
+    [
+     "hook",
+     "A TV tem um *dia mundial* só dela!"
+    ],
+    [
+     "kicker",
+     "21 DE NOVEMBRO"
+    ],
+    [
+     "kicker",
+     "DIA MUNDIAL DA"
+    ],
+    [
+     "title",
+     "TELEVISÃO"
+    ]
+   ]
+  ],
+  [
+   "Em vinte e um de novembro de mil novecentos e noventa e seis, a ONU reuniu os grandes nomes da TV no primeiro Fórum Mundial da Televisão, em Nova York.",
+   [
+    [
+     "text",
+     "*1996*: primeiro Fórum Mundial."
+    ],
+    [
+     "text",
+     "Na sede da *ONU*, em Nova York."
+    ],
+    [
+     "icons",
+     [
+      "🌎"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Em dezembro, a Assembleia Geral oficializou a data. E a ideia nem é festejar o aparelho, e sim o que ele representa: comunicação pro mundo todo.",
+   [
+    [
+     "text",
+     "*Dezembro de 1996*: data oficial."
+    ],
+    [
+     "title",
+     "NO AR!"
+    ],
+    [
+     "text",
+     "Não é o aparelho: é a *comunicação*."
+    ]
+   ]
+  ],
+  [
+   "Aqui no Brasil, a TV chegou em mil novecentos e cinquenta, com a TV Tupi. Qual programa de TV marcou a sua infância? Comenta aqui e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "No Brasil: *1950*, TV Tupi."
+    ],
+    [
+     "text",
+     "Qual programa marcou *sua infância*?"
+    ],
+    [
+     "icons",
+     [
+      "📺"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}
