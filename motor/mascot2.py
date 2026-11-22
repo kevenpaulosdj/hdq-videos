@@ -1265,3 +1265,130 @@ def _snes_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
     place(cv, d, spr, MX, y0)
 
 KINDS.update({'tvday': (wrap(_tv_mascot), tv_setup), 'gugu': (wrap(_gugu_mascot), gugu_setup), 'snes': (wrap(_snes_mascot), snes_setup)})
+
+# ---------- 22/11: JFK (TV P&B com plantão + jornal), JUSTICA (colunas, martelo, tornozeleira, relógio 00:08), SCARLETT (set de filmagem + bolo) ----------
+def jfk_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('KENNEDY', 'AO VIVO!'))
+    for tt in ctx['hits']: ev('thud', tt)
+    P = 60/88*2; k = 0
+    while k*P < ctx['total'] - 1: ev('tick', k*P, k=k); k += 1
+
+def _jfk_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    tx, ty = 170, G - 92
+    d.line([(tx + 38, ty), (tx + 22, ty - 26)], fill=(190, 190, 190), width=2); d.line([(tx + 38, ty), (tx + 54, ty - 26)], fill=(190, 190, 190), width=2)
+    d.rectangle((tx, ty, tx + 80, ty + 66), fill=(110, 80, 55)); d.rectangle((tx + 6, ty + 6, tx + 60, ty + 56), fill=(30, 30, 30))
+    sx0, sy0, sx1, sy1 = tx + 9, ty + 9, tx + 57, ty + 53
+    g = 150 + int(abs(math.sin(t*9))*40)
+    d.rectangle((sx0, sy0, sx1, sy1), fill=(g - 60, g - 60, g - 60))
+    if int(t*2) % 2 == 0 or ci != 0:
+        d.rectangle((sx0 + 4, sy0 + 16, sx1 - 4, sy0 + 28), fill=(235, 235, 235))
+        for k in range(6): d.rectangle((sx0 + 7 + k*7, sy0 + 20, sx0 + 11 + k*7, sy0 + 24), fill=(30, 30, 30))
+    for k in range(0, sy1 - sy0, 3): d.line([(sx0, sy0 + k), (sx1, sy0 + k)], fill=(g - 90, g - 90, g - 90))
+    for k in range(2): d.ellipse((tx + 64, ty + 10 + k*16, tx + 74, ty + 20 + k*16), fill=(200, 190, 160))
+    d.rectangle((tx + 8, ty + 66, tx + 14, G), fill=(80, 60, 40)); d.rectangle((tx + 66, ty + 66, tx + 72, G), fill=(80, 60, 40))
+    # jornal no chão
+    nx, ny = 250, G - 12
+    d.rectangle((nx, ny, nx + 18, ny + 12), fill=(230, 225, 210)); d.rectangle((nx + 2, ny + 2, nx + 16, ny + 4), fill=(40, 40, 40))
+    for k in range(3): d.rectangle((nx + 2, ny + 6 + k*2, nx + 16, ny + 6 + k*2), fill=(140, 140, 140))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*12)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+
+def jus_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('BOLSONARO', 'DEFINITIVA'))
+    for tt in ctx['hits']: ev('thud', tt)
+    for i, (s0, du, _) in enumerate(ctx['cards']):
+        if i == 1: ev('ding', s0 + 0.5)
+    P = 60/92*2; k = 0
+    while k*P < ctx['total'] - 1: ev('tick', k*P, k=k); k += 1
+
+def _jus_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    # fachada com colunas
+    bx = 150
+    d.polygon([(bx - 6, G - 104), (bx + 60, G - 128), (bx + 126, G - 104)], fill=(215, 215, 220))
+    d.rectangle((bx - 6, G - 104, bx + 126, G - 98), fill=(190, 190, 200))
+    for k in range(5):
+        cx = bx + 4 + k*26
+        d.rectangle((cx, G - 98, cx + 10, G - 6), fill=(225, 225, 230)); d.rectangle((cx + 2, G - 98, cx + 3, G - 6), fill=(200, 200, 205))
+    d.rectangle((bx - 10, G - 6, bx + 130, G), fill=(180, 180, 190))
+    # relógio digital 00:08 (tela 1)
+    if ci == 1:
+        d.rectangle((bx + 30, G - 150, bx + 90, G - 134), fill=(20, 20, 25))
+        on = int(t*2) % 2 == 0
+        col = (255, 70, 70) if on else (120, 30, 30)
+        digs = '0008'
+        seg = {'0': ['a', 'b', 'c', 'd', 'e', 'f'], '8': ['a', 'b', 'c', 'd', 'e', 'f', 'g']}
+        for k, ch in enumerate(digs):
+            x0 = bx + 34 + k*13 + (4 if k >= 2 else 0); y0_ = G - 147
+            S = seg[ch]
+            if 'a' in S: d.rectangle((x0, y0_, x0 + 6, y0_ + 1), fill=col)
+            if 'g' in S: d.rectangle((x0, y0_ + 5, x0 + 6, y0_ + 6), fill=col)
+            if 'd' in S: d.rectangle((x0, y0_ + 10, x0 + 6, y0_ + 11), fill=col)
+            if 'f' in S: d.rectangle((x0, y0_, x0 + 1, y0_ + 5), fill=col)
+            if 'b' in S: d.rectangle((x0 + 5, y0_, x0 + 6, y0_ + 5), fill=col)
+            if 'e' in S: d.rectangle((x0, y0_ + 5, x0 + 1, y0_ + 11), fill=col)
+            if 'c' in S: d.rectangle((x0 + 5, y0_ + 5, x0 + 6, y0_ + 11), fill=col)
+        d.rectangle((bx + 59, G - 144, bx + 60, G - 143), fill=col); d.rectangle((bx + 59, G - 139, bx + 60, G - 138), fill=col)
+    # tornozeleira com luz piscando
+    ax, ay = MX + 8, G - 6
+    d.rectangle((ax, ay, ax + 20, ay + 6), fill=(30, 30, 35)); d.rectangle((ax + 7, ay - 4, ax + 15, ay + 6), fill=(50, 50, 55))
+    d.rectangle((ax + 9, ay - 2, ax + 12, ay + 1), fill=(255, 50, 50) if int(beat*2) % 2 else (60, 200, 80))
+    # martelo que bate nos títulos
+    gx, gy = MX + 70, G - 30
+    ang = 0.0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.35: ang = 0.9*(1 - (t - h)/0.35)
+    d.rectangle((gx - 4, G - 8, gx + 22, G - 2), fill=(120, 80, 45))
+    hx, hy = gx + 9 + int(math.sin(ang)*14), gy - int(math.cos(ang)*4)
+    d.line([(gx + 20, gy + 10), (hx, hy)], fill=(140, 95, 55), width=2)
+    d.rectangle((hx - 6, hy - 4, hx + 6, hy + 4), fill=(110, 70, 40))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.6: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*8)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 86 + hop + jumpoff(jump) + (1 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+
+def sca_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('SCARLETT', '9 FILMES'))
+    for i, tt in enumerate(ctx['hits']): ev('applause' if i == 0 else 'ding', tt)
+    P = 60/112; k = 0
+    while k*P < ctx['total'] - 1: ev('blip', k*P, k=k); k += 1
+
+def _sca_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    # claquete
+    cx, cy = 168, G - 44
+    d.rectangle((cx, cy, cx + 40, cy + 30), fill=(30, 30, 35))
+    for k in range(3): d.rectangle((cx + 4, cy + 8 + k*7, cx + 36, cy + 9 + k*7), fill=(220, 220, 220))
+    op = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.4: op = int((0.4 - (t - h))*30)
+    d.polygon([(cx, cy - 1), (cx + 40, cy - 1 - op), (cx + 40, cy - 7 - op), (cx, cy - 7)], fill=(240, 240, 240))
+    for k in range(4): d.polygon([(cx + 4 + k*9, cy - 1 - op*(4 + k*9)//40), (cx + 9 + k*9, cy - 1 - op*(9 + k*9)//40), (cx + 9 + k*9, cy - 7 - op*(9 + k*9)//40), (cx + 4 + k*9, cy - 7 - op*(4 + k*9)//40)], fill=(30, 30, 35))
+    # bolo com velas
+    kx, ky = 222, G - 26
+    d.rectangle((kx, ky, kx + 40, ky + 26), fill=(240, 170, 190)); d.rectangle((kx, ky, kx + 40, ky + 6), fill=(255, 245, 250))
+    for k in range(5): d.ellipse((kx + 2 + k*8, ky + 3, kx + 8 + k*8, ky + 9), fill=(255, 245, 250))
+    for k in range(2):
+        vx = kx + 13 + k*12
+        d.rectangle((vx, ky - 12, vx + 3, ky), fill=(120, 180, 255) if k else (255, 220, 90))
+        fl = 2 if int(t*8 + k) % 2 else 0
+        d.ellipse((vx - 1, ky - 18 - fl, vx + 4, ky - 12), fill=(255, 190, 60)); d.ellipse((vx, ky - 16 - fl, vx + 3, ky - 13), fill=(255, 250, 200))
+    # confete
+    for k in range(14):
+        px = (k*37 + int(t*30)) % 270; py = (k*53 + int(t*40)) % 150 + int(G - 200)
+        if int(beat + k) % 3: d.rectangle((px, py, px + 2, py + 2), fill=[(255, 90, 120), (255, 210, 70), (120, 200, 255), (140, 230, 140)][k % 4])
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*16)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+
+KINDS.update({'jfk': (wrap(_jfk_mascot), jfk_setup), 'justica': (wrap(_jus_mascot), jus_setup), 'scarlett': (wrap(_sca_mascot), sca_setup)})

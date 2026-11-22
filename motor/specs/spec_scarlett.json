@@ -1,0 +1,167 @@
+{
+ "name": "scarlett",
+ "theme": "generic",
+ "mkind": "scarlett",
+ "label": "SCARLETT: 42 ANOS",
+ "theme_cfg": {
+  "acc": [
+   255,
+   120,
+   140
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   40,
+   15,
+   30,
+   228
+  ],
+  "border": [
+   255,
+   120,
+   140
+  ],
+  "mascot": [
+   245,
+   200,
+   175
+  ],
+  "accessory": "none",
+  "bpm": 112,
+  "ped": [
+   80,
+   40,
+   60
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   40,
+   15,
+   50
+  ],
+  "sky_bot": [
+   150,
+   60,
+   100
+  ],
+  "stars": true,
+  "hills": [
+   80,
+   35,
+   70
+  ],
+  "ground": [
+   90,
+   50,
+   70
+  ],
+  "cloud": [
+   230,
+   170,
+   200
+  ]
+ },
+ "cards": [
+  [
+   "A Viúva Negra faz aniversário no mesmo dia que o Hulk! Hoje, Scarlett Johansson completa quarenta e dois anos, e o Mark Ruffalo também sopra as velinhas.",
+   [
+    [
+     "hook",
+     "A Viúva Negra faz aniversário *junto com o Hulk*!"
+    ],
+    [
+     "kicker",
+     "22 DE NOVEMBRO DE 1984"
+    ],
+    [
+     "kicker",
+     "PARABÉNS,"
+    ],
+    [
+     "title",
+     "SCARLETT"
+    ]
+   ]
+  ],
+  [
+   "Ela nasceu em Nova York, começou a atuar com só oito anos, e tem um irmão gêmeo, o Hunter.",
+   [
+    [
+     "text",
+     "Nasceu em *Nova York*."
+    ],
+    [
+     "text",
+     "Atua desde os *8 anos*."
+    ],
+    [
+     "text",
+     "Tem um *irmão gêmeo*!"
+    ]
+   ]
+  ],
+  [
+   "O estouro veio com Encontros e Desencontros, em dois mil e três. Em dois mil e dez, estreou como Viúva Negra, em Homem de Ferro dois, e viveu a heroína em nove filmes.",
+   [
+    [
+     "text",
+     "*2003*: Encontros e Desencontros."
+    ],
+    [
+     "text",
+     "*2010*: estreia como *Viúva Negra*."
+    ],
+    [
+     "title",
+     "9 FILMES"
+    ]
+   ]
+  ],
+  [
+   "Em dois mil e vinte, ela fez algo raro: foi indicada a dois Oscars no mesmo ano, por História de um Casamento e Jojo Rabbit.",
+   [
+    [
+     "text",
+     "*2020*: *2 indicações* ao Oscar..."
+    ],
+    [
+     "text",
+     "...no *mesmo ano*!"
+    ],
+    [
+     "icons",
+     [
+      "🏆"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Qual é o seu filme favorito da Scarlett? Comenta aqui e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "Qual seu *filme favorito* dela?"
+    ],
+    [
+     "icons",
+     [
+      "🎂"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}

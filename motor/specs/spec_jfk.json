@@ -1,0 +1,173 @@
+{
+ "name": "jfk",
+ "theme": "generic",
+ "mkind": "jfk",
+ "label": "63 ANOS SEM KENNEDY",
+ "theme_cfg": {
+  "acc": [
+   240,
+   200,
+   90
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   25,
+   25,
+   35,
+   228
+  ],
+  "border": [
+   240,
+   200,
+   90
+  ],
+  "mascot": [
+   200,
+   200,
+   200
+  ],
+  "accessory": "bowler",
+  "bpm": 88,
+  "ped": [
+   80,
+   80,
+   85
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   40,
+   40,
+   55
+  ],
+  "sky_bot": [
+   110,
+   110,
+   125
+  ],
+  "stars": false,
+  "hills": [
+   70,
+   70,
+   80
+  ],
+  "ground": [
+   90,
+   90,
+   95
+  ],
+  "cloud": [
+   170,
+   170,
+   180
+  ]
+ },
+ "cards": [
+  [
+   "O homem acusado de matar o presidente Kennedy também foi morto, ao vivo na televisão, só dois dias depois! E tudo começou há exatos sessenta e três anos.",
+   [
+    [
+     "hook",
+     "O acusado de matar Kennedy foi morto *ao vivo na TV*!"
+    ],
+    [
+     "kicker",
+     "22 DE NOVEMBRO DE 1963"
+    ],
+    [
+     "kicker",
+     "O DIA EM QUE MATARAM"
+    ],
+    [
+     "title",
+     "KENNEDY"
+    ]
+   ]
+  ],
+  [
+   "Era meio-dia e meia em Dallas, no Texas. Kennedy desfilava num carro aberto, ao lado da primeira-dama Jackie, quando foi atingido por tiros.",
+   [
+    [
+     "text",
+     "*12h30*, em *Dallas*, Texas."
+    ],
+    [
+     "text",
+     "Carro aberto, ao lado de *Jackie*."
+    ],
+    [
+     "icons",
+     [
+      "🚗"
+     ]
+    ]
+   ]
+  ],
+  [
+   "O vice, Lyndon Johnson, virou presidente noventa e nove minutos depois da morte, e tomou posse dentro do avião presidencial.",
+   [
+    [
+     "text",
+     "*99 minutos* depois..."
+    ],
+    [
+     "text",
+     "*Lyndon Johnson* tomou posse no *avião*!"
+    ],
+    [
+     "icons",
+     [
+      "✈️"
+     ]
+    ]
+   ]
+  ],
+  [
+   "O suspeito, Lee Harvey Oswald, negou tudo. Mas, dois dias depois, foi baleado por Jack Ruby, dono de uma boate, com as câmeras transmitindo. Foi o primeiro assassinato mostrado ao vivo na TV.",
+   [
+    [
+     "text",
+     "*Oswald* negou o crime."
+    ],
+    [
+     "title",
+     "AO VIVO!"
+    ],
+    [
+     "text",
+     "*24/11*: baleado por *Jack Ruby*."
+    ]
+   ]
+  ],
+  [
+   "A investigação oficial concluiu que ele agiu sozinho. Mas, como nunca foi julgado, as teorias da conspiração existem até hoje. Você acredita na versão oficial? Comenta e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "Oswald *nunca foi julgado*."
+    ],
+    [
+     "text",
+     "Você acredita na *versão oficial*?"
+    ],
+    [
+     "icons",
+     [
+      "🕵️"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}
