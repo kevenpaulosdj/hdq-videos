@@ -1,0 +1,154 @@
+{
+ "name": "brown",
+ "theme": "generic",
+ "mkind": "timbal",
+ "label": "CARLINHOS BROWN: 64",
+ "theme_cfg": {
+  "acc": [
+   255,
+   200,
+   60
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   30,
+   20,
+   10,
+   228
+  ],
+  "border": [
+   255,
+   200,
+   60
+  ],
+  "mascot": [
+   150,
+   95,
+   60
+  ],
+  "accessory": "headband",
+  "bpm": 110,
+  "ped": [
+   120,
+   85,
+   45
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   40,
+   90,
+   160
+  ],
+  "sky_bot": [
+   250,
+   170,
+   80
+  ],
+  "stars": false,
+  "hills": [
+   60,
+   120,
+   70
+  ],
+  "ground": [
+   150,
+   110,
+   60
+  ],
+  "cloud": [
+   255,
+   230,
+   200
+  ]
+ },
+ "cards": [
+  [
+   "Ele foi o primeiro músico brasileiro a entrar pra Academia do Oscar! E hoje, Carlinhos Brown completa sessenta e quatro anos.",
+   [
+    [
+     "hook",
+     "Primeiro músico brasileiro no *Oscar*!"
+    ],
+    [
+     "kicker",
+     "23 DE NOVEMBRO DE 1962"
+    ],
+    [
+     "kicker",
+     "PARABÉNS, CARLINHOS"
+    ],
+    [
+     "title",
+     "BROWN"
+    ]
+   ]
+  ],
+  [
+   "Nasceu no Candeal, em Salvador, cresceu no meio dos tambores, e nos anos noventa criou a Timbalada, que levou a percussão baiana pro mundo.",
+   [
+    [
+     "text",
+     "Nasceu no *Candeal*, em *Salvador*."
+    ],
+    [
+     "title",
+     "TIMBALADA"
+    ],
+    [
+     "text",
+     "Percussão baiana *pro mundo*!"
+    ]
+   ]
+  ],
+  [
+   "Também formou os Tribalistas, com Marisa Monte e Arnaldo Antunes. E em dois mil e doze, foi indicado ao Oscar pela música Real in Rio, do filme Rio.",
+   [
+    [
+     "text",
+     "*Tribalistas*: com Marisa e Arnaldo."
+    ],
+    [
+     "text",
+     "*2012*: indicado ao *Oscar*!"
+    ],
+    [
+     "icons",
+     [
+      "🏆"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Ainda tem Grammys Latinos e até um prêmio Goya, do cinema espanhol. Qual é a sua música favorita do Carlinhos Brown? Comenta e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "*Grammys Latinos* e um *Goya*."
+    ],
+    [
+     "text",
+     "Qual sua *música favorita* dele?"
+    ],
+    [
+     "icons",
+     [
+      "🥁"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}

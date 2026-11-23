@@ -1392,3 +1392,99 @@ def _sca_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
     place(cv, d, spr, MX, y0)
 
 KINDS.update({'jfk': (wrap(_jfk_mascot), jfk_setup), 'justica': (wrap(_jus_mascot), jus_setup), 'scarlett': (wrap(_sca_mascot), sca_setup)})
+
+# ---------- 23/11: LIBERTA (final 2019), ONIBUS (Maduro), TIMBAL (Carlinhos Brown) ----------
+def lib_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('LIBERTADORES', 'GOOOL!'))
+    for tt in ctx['hits']: ev('whistle', tt); ev('applause', tt + 0.2)
+    P = 60/108*2; k = 0
+    while k*P < ctx['total'] - 1: ev('drum', k*P, k=k); k += 1
+
+def _lib_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    # torcida ao fundo
+    rr = random.Random(7)
+    for k in range(34):
+        px_ = 120 + (k*9) % 150; py_ = G - 100 + (k % 3)*7 + int(math.sin(t*3 + k)*2)
+        d.rectangle((px_, py_, px_ + 5, py_ + 5), fill=rr.choice(((220, 30, 40), (25, 25, 25), (220, 30, 40), (240, 240, 240))))
+    # trave com rede
+    gx, gy = 214, G - 60
+    d.rectangle((gx, gy, gx + 50, gy + 3), fill=(240, 240, 240)); d.rectangle((gx, gy, gx + 3, G), fill=(240, 240, 240)); d.rectangle((gx + 47, gy, gx + 50, G), fill=(240, 240, 240))
+    for yy in range(gy + 8, G, 8): d.line([(gx + 3, yy), (gx + 47, yy)], fill=(200, 205, 210), width=1)
+    for xx in range(gx + 10, gx + 47, 10): d.line([(xx, gy + 3), (xx, G)], fill=(200, 205, 210), width=1)
+    hop = 0; kick = None
+    for h in ctx['hits']:
+        if 0 <= t - h < 1.2: hop = q(-abs(math.sin((t - h)*math.pi*3.0))*16); kick = t - h
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+    # camisa 10 generica
+    d.rectangle((MX + 22, y0 + 74, MX + 34, y0 + 90), fill=(200, 25, 35)); d.rectangle((MX + 22, y0 + 80, MX + 34, y0 + 83), fill=(25, 25, 25)); f1 = font(PS2, 8); d.text((MX + 25, y0 + 77), '9', font=f1, fill=(255, 255, 255))
+    # bola
+    if kick is None:
+        bx = MX + 84 + int(abs(math.sin(beat*math.pi))*0); by = G - 14 - int(abs(math.sin(beat*math.pi))*10)
+    else:
+        bx = MX + 84 + q(kick*110); by = G - 14 - q(math.sin(min(kick, 1.0)*math.pi)*30)
+        bx = min(bx, gx + 36)
+    d.rectangle((bx, by, bx + 12, by + 12), fill=(245, 245, 245)); d.rectangle((bx + 4, by + 4, bx + 8, by + 8), fill=(30, 30, 34)); d.rectangle((bx + 1, by + 1, bx + 3, by + 3), fill=(30, 30, 34)); d.rectangle((bx + 9, by + 9, bx + 11, by + 11), fill=(30, 30, 34))
+
+
+def oni_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('MADURO', 'CAPTURADO'))
+    for tt in ctx['hits']: ev('thud', tt)
+    for i, (s0, du, _) in enumerate(ctx['cards']):
+        if i == 1: ev('horn', s0 + 0.4)
+    P = 60/96*2; k = 0
+    while k*P < ctx['total'] - 1: ev('tick', k*P, k=k); k += 1
+
+def _oni_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    # prédios ao fundo
+    for k, (x0, h) in enumerate(((120, 70), (150, 100), (186, 84), (220, 120), (250, 76))):
+        d.rectangle((x0, G - h, x0 + 26, G), fill=(70, 75, 95))
+        for yy in range(G - h + 6, G - 8, 10):
+            for xx in (x0 + 5, x0 + 15):
+                if (xx + yy + int(t)) % 3: d.rectangle((xx, yy, xx + 4, yy + 4), fill=(250, 220, 120))
+    # ônibus atravessando
+    s0 = ctx['cards'][min(ci, len(ctx['cards']) - 1)][0]
+    bx = 300 - int(((t - s0)*45) % 300)
+    d.rectangle((bx, G - 34, bx + 70, G - 8), fill=(240, 200, 40)); d.rectangle((bx, G - 34, bx + 70, G - 30), fill=(200, 60, 50))
+    for k in range(5): d.rectangle((bx + 4 + k*13, G - 28, bx + 14 + k*13, G - 19), fill=(170, 210, 240))
+    for wx in (bx + 8, bx + 52): d.ellipse((wx, G - 12, wx + 11, G - 1), fill=(30, 30, 30))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.7: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*10)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (1 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+
+def tim_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('BROWN', 'TIMBALADA'))
+    for tt in ctx['hits']: ev('applause', tt)
+    P = 60/110/2; k = 0
+    while k*P < ctx['total'] - 1: ev('drum', k*P, k=k); k += 1
+
+def _tim_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    cols = [(240, 60, 60), (250, 200, 40), (60, 170, 90), (60, 130, 230)]
+    # timbaus coloridos
+    for k in range(3):
+        x0 = 168 + k*30; h = 40 + k*6; y0_ = G - h
+        hit = int(beat*2) % 3 == k
+        d.polygon([(x0, y0_), (x0 + 22, y0_), (x0 + 18, G), (x0 + 4, G)], fill=cols[k])
+        d.rectangle((x0 - 1, y0_ - 3 + (2 if hit else 0), x0 + 23, y0_ + (2 if hit else 0)), fill=(240, 230, 200))
+        for yy in (y0_ + 10, y0_ + 22): d.rectangle((x0 + 2, yy, x0 + 20, yy + 2), fill=cols[(k + 1) % 4])
+        if hit:
+            d.rectangle((x0 + 4, y0_ - 12, x0 + 8, y0_ - 8), fill=(255, 255, 255)); d.rectangle((x0 + 14, y0_ - 14, x0 + 18, y0_ - 10), fill=(255, 255, 255))
+    # notas musicais
+    for k in range(4):
+        nx = 140 + k*34; ny = G - 120 - int(((t*25 + k*30) % 60))
+        d.rectangle((nx, ny, nx + 4, ny + 4), fill=cols[k]); d.rectangle((nx + 3, ny - 10, nx + 4, ny), fill=cols[k]); d.rectangle((nx + 4, ny - 10, nx + 8, ny - 8), fill=cols[k])
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*16)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (3 if int(beat*2) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+
+KINDS.update({'liberta': (wrap(_lib_mascot), lib_setup), 'onibus': (wrap(_oni_mascot), oni_setup), 'timbal': (wrap(_tim_mascot), tim_setup)})

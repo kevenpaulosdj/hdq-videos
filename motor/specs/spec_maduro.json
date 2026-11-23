@@ -1,0 +1,167 @@
+{
+ "name": "maduro",
+ "theme": "generic",
+ "mkind": "onibus",
+ "label": "MADURO: 64 ANOS",
+ "theme_cfg": {
+  "acc": [
+   250,
+   200,
+   70
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   25,
+   20,
+   40,
+   228
+  ],
+  "border": [
+   250,
+   200,
+   70
+  ],
+  "mascot": [
+   200,
+   180,
+   160
+  ],
+  "accessory": "none",
+  "bpm": 96,
+  "ped": [
+   60,
+   60,
+   70
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   25,
+   25,
+   55
+  ],
+  "sky_bot": [
+   90,
+   80,
+   130
+  ],
+  "stars": true,
+  "hills": [
+   50,
+   50,
+   75
+  ],
+  "ground": [
+   70,
+   70,
+   80
+  ],
+  "cloud": [
+   170,
+   160,
+   200
+  ]
+ },
+ "cards": [
+  [
+   "Ele começou como motorista de ônibus e virou presidente da Venezuela. Hoje, Nicolás Maduro faz sessenta e quatro anos, preso nos Estados Unidos.",
+   [
+    [
+     "hook",
+     "De *motorista de ônibus* a presidente!"
+    ],
+    [
+     "kicker",
+     "23 DE NOVEMBRO DE 1962"
+    ],
+    [
+     "kicker",
+     "NASCIA NICOLÁS"
+    ],
+    [
+     "title",
+     "MADURO"
+    ]
+   ]
+  ],
+  [
+   "Ele nasceu em Caracas, dirigiu ônibus do metrô da cidade e virou líder sindical. Depois entrou na política, ao lado de Hugo Chávez.",
+   [
+    [
+     "text",
+     "Nasceu em *Caracas*."
+    ],
+    [
+     "text",
+     "Motorista de ônibus e *sindicalista*."
+    ],
+    [
+     "text",
+     "Aliado de *Hugo Chávez*."
+    ]
+   ]
+  ],
+  [
+   "Com a morte de Chávez, em dois mil e treze, assumiu a presidência. A reeleição de dois mil e vinte e quatro foi contestada pela oposição e por vários países.",
+   [
+    [
+     "text",
+     "*2013*: assume após a morte de Chávez."
+    ],
+    [
+     "text",
+     "*2024*: reeleição *contestada*."
+    ],
+    [
+     "icons",
+     [
+      "🗳️"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Em três de janeiro deste ano, forças dos Estados Unidos o capturaram em Caracas e o levaram para Nova York, onde ele responde a acusações de narcoterrorismo. A defesa contesta as acusações.",
+   [
+    [
+     "text",
+     "*03/01/2026*: capturado pelos *EUA*."
+    ],
+    [
+     "title",
+     "CAPTURADO"
+    ],
+    [
+     "text",
+     "Acusação: *narcoterrorismo*. Defesa *contesta*."
+    ]
+   ]
+  ],
+  [
+   "Você acompanhou essa história? Comenta aqui e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "Você *acompanhou* essa história?"
+    ],
+    [
+     "icons",
+     [
+      "📰"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}

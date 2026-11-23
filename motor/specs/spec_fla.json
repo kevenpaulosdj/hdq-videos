@@ -1,0 +1,169 @@
+{
+ "name": "fla",
+ "theme": "generic",
+ "mkind": "liberta",
+ "label": "LIBERTADORES 2019",
+ "theme_cfg": {
+  "acc": [
+   255,
+   90,
+   90
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   30,
+   8,
+   10,
+   228
+  ],
+  "border": [
+   255,
+   90,
+   90
+  ],
+  "mascot": [
+   240,
+   240,
+   240
+  ],
+  "accessory": "cap",
+  "bpm": 116,
+  "ped": [
+   40,
+   110,
+   50
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   20,
+   10,
+   20
+  ],
+  "sky_bot": [
+   110,
+   30,
+   40
+  ],
+  "stars": true,
+  "hills": [
+   60,
+   20,
+   25
+  ],
+  "ground": [
+   50,
+   140,
+   60
+  ],
+  "cloud": [
+   200,
+   150,
+   160
+  ]
+ },
+ "cards": [
+  [
+   "Três minutos! Foi o tempo que o Flamengo levou pra virar uma final de Libertadores que já estava perdida. E isso foi há exatos sete anos!",
+   [
+    [
+     "hook",
+     "*3 minutos* pra virar uma final *perdida*!"
+    ],
+    [
+     "kicker",
+     "23 DE NOVEMBRO DE 2019"
+    ],
+    [
+     "kicker",
+     "FLAMENGO NA FINAL DA"
+    ],
+    [
+     "title",
+     "LIBERTADORES"
+    ]
+   ]
+  ],
+  [
+   "Foi a primeira final em jogo único da história, em Lima, no Peru. O River Plate, que era o campeão, abriu o placar aos catorze minutos.",
+   [
+    [
+     "text",
+     "Primeira final em *jogo único*, em *Lima*."
+    ],
+    [
+     "text",
+     "*River Plate* fez 1 a 0 aos *14'*."
+    ],
+    [
+     "icons",
+     [
+      "🏟️"
+     ]
+    ]
+   ]
+  ],
+  [
+   "O River segurou até o minuto oitenta e nove. Aí apareceu o Gabigol: empatou aos oitenta e nove e virou aos noventa e dois!",
+   [
+    [
+     "text",
+     "*89'*: Gabigol empata!"
+    ],
+    [
+     "title",
+     "GOOOL!"
+    ],
+    [
+     "text",
+     "*90+2'*: Gabigol vira!"
+    ]
+   ]
+  ],
+  [
+   "Era o segundo título do Flamengo, trinta e oito anos depois do primeiro, em mil novecentos e oitenta e um. E no dia seguinte, sem nem entrar em campo, o time ainda foi campeão brasileiro!",
+   [
+    [
+     "text",
+     "Segundo título: *38 anos* depois de *1981*."
+    ],
+    [
+     "text",
+     "No dia seguinte: *campeão brasileiro*!"
+    ],
+    [
+     "icons",
+     [
+      "🏆"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Onde você estava quando o Gabigol virou esse jogo? Comenta aqui e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "Onde *você* viu essa virada?"
+    ],
+    [
+     "icons",
+     [
+      "⚽"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}
