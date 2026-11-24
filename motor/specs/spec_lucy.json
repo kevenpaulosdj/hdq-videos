@@ -1,0 +1,156 @@
+{
+ "name": "lucy",
+ "theme": "generic",
+ "mkind": "fossil",
+ "label": "DIA DA EVOLUÇÃO",
+ "theme_cfg": {
+  "acc": [
+   255,
+   170,
+   60
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   40,
+   25,
+   10,
+   228
+  ],
+  "border": [
+   255,
+   170,
+   60
+  ],
+  "mascot": [
+   200,
+   150,
+   110
+  ],
+  "accessory": "scout",
+  "bpm": 96,
+  "ped": [
+   190,
+   140,
+   80
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   90,
+   150,
+   210
+  ],
+  "sky_bot": [
+   250,
+   200,
+   140
+  ],
+  "stars": false,
+  "hills": [
+   200,
+   150,
+   90
+  ],
+  "ground": [
+   220,
+   175,
+   110
+  ],
+  "cloud": [
+   255,
+   240,
+   220
+  ]
+ },
+ "cards": [
+  [
+   "O fóssil mais famoso do mundo ganhou nome de música dos Beatles! E ela foi encontrada num dia vinte e quatro de novembro, por isso hoje é o Dia Mundial da Evolução.",
+   [
+    [
+     "hook",
+     "O fóssil mais famoso tem nome de *música dos Beatles*!"
+    ],
+    [
+     "kicker",
+     "24 DE NOVEMBRO DE 1974"
+    ],
+    [
+     "kicker",
+     "A DESCOBERTA DE"
+    ],
+    [
+     "title",
+     "LUCY"
+    ]
+   ]
+  ],
+  [
+   "Na Etiópia, o pesquisador Donald Johanson viu um pedacinho de cotovelo no chão. Era o começo de um esqueleto de três milhões e duzentos mil anos, com cerca de quarenta por cento dos ossos.",
+   [
+    [
+     "text",
+     "Etiópia: um pedaço de *cotovelo*..."
+    ],
+    [
+     "text",
+     "Esqueleto de *3,2 milhões* de anos!"
+    ],
+    [
+     "text",
+     "Cerca de *40%* dos ossos."
+    ]
+   ]
+  ],
+  [
+   "Naquela noite, o acampamento comemorou tocando Lucy in the Sky with Diamonds sem parar, e o fóssil virou Lucy. Na Etiópia, ela se chama Dinkinesh: você é maravilhosa.",
+   [
+    [
+     "text",
+     "Festa com os *Beatles* no acampamento."
+    ],
+    [
+     "text",
+     "Na Etiópia: *Dinkinesh*."
+    ],
+    [
+     "text",
+     "Significa *você é maravilhosa*."
+    ],
+    [
+     "icons",
+     [
+      "📼"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Ela tinha só um metro de altura, mas o quadril provou que já andava de pé. E a data também lembra o livro A Origem das Espécies, de Darwin, publicado em vinte e quatro de novembro de mil oitocentos e cinquenta e nove. Você sabia? Comenta e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "Cerca de *1 metro* de altura."
+    ],
+    [
+     "title",
+     "DE PÉ!"
+    ],
+    [
+     "text",
+     "*1859*: A Origem das Espécies."
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}

@@ -1,0 +1,150 @@
+{
+ "name": "heigl",
+ "theme": "generic",
+ "mkind": "hosp",
+ "label": "KATHERINE HEIGL: 48",
+ "theme_cfg": {
+  "acc": [
+   120,
+   220,
+   255
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   10,
+   35,
+   45,
+   228
+  ],
+  "border": [
+   120,
+   220,
+   255
+  ],
+  "mascot": [
+   245,
+   210,
+   180
+  ],
+  "accessory": "none",
+  "bpm": 104,
+  "ped": [
+   150,
+   170,
+   180
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   25,
+   60,
+   100
+  ],
+  "sky_bot": [
+   80,
+   150,
+   190
+  ],
+  "stars": false,
+  "hills": [
+   120,
+   190,
+   170
+  ],
+  "ground": [
+   170,
+   190,
+   200
+  ],
+  "cloud": [
+   200,
+   225,
+   240
+  ]
+ },
+ "cards": [
+  [
+   "A Izzie de Grey's Anatomy ganhou um Emmy... e no ano seguinte se recusou a concorrer de novo! Hoje, Katherine Heigl faz quarenta e oito anos.",
+   [
+    [
+     "hook",
+     "Ganhou um Emmy e *recusou concorrer* de novo!"
+    ],
+    [
+     "kicker",
+     "24 DE NOVEMBRO DE 1978"
+    ],
+    [
+     "kicker",
+     "PARABÉNS,"
+    ],
+    [
+     "title",
+     "KATHERINE"
+    ]
+   ]
+  ],
+  [
+   "Ela nasceu em Washington e começou como modelo infantil, com só nove anos. Em dois mil e cinco, virou a interna Izzie Stevens em Grey's Anatomy.",
+   [
+    [
+     "text",
+     "Nasceu em *Washington*."
+    ],
+    [
+     "text",
+     "Modelo desde os *9 anos*."
+    ],
+    [
+     "text",
+     "*2005*: vira a *Izzie*!"
+    ]
+   ]
+  ],
+  [
+   "Em dois mil e sete, levou o Emmy de atriz coadjuvante. No discurso, brincou que nem a própria mãe achava que ela ia ganhar!",
+   [
+    [
+     "text",
+     "*2007*: ganha o Emmy."
+    ],
+    [
+     "title",
+     "EMMY!"
+    ],
+    [
+     "text",
+     "Nem a *mãe* achava que ela ia ganhar!"
+    ]
+   ]
+  ],
+  [
+   "Em dois mil e oito, ela tirou o próprio nome da disputa, dizendo que o material daquela temporada não merecia. Dois anos depois, deixou a série. Você sente falta da Izzie? Comenta e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "*2008*: tirou o nome da disputa."
+    ],
+    [
+     "text",
+     "*2010*: deixou a série."
+    ],
+    [
+     "text",
+     "Você sente falta da *Izzie*?"
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}

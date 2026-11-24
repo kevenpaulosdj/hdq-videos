@@ -1488,3 +1488,117 @@ def _tim_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
     place(cv, d, spr, MX, y0)
 
 KINDS.update({'liberta': (wrap(_lib_mascot), lib_setup), 'onibus': (wrap(_oni_mascot), oni_setup), 'timbal': (wrap(_tim_mascot), tim_setup)})
+
+# ---------- 24/11: ROCK (palco com amplificadores), HOSP (hospital genérico), FOSSIL (escavação no deserto) ----------
+def rock_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('FREDDIE', 'TOPO DE NOVO!'))
+    for i, tt in enumerate(ctx['hits']): ev('applause', tt)
+    P = 60/100; k = 0
+    while k*P < ctx['total'] - 1: ev('drum', k*P, k=k); k += 1
+
+def _rock_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    sad = ci == 1
+    # amplificadores
+    for x0 in (150, 210):
+        for r in range(2):
+            y0_ = G - 40 - r*38
+            d.rectangle((x0, y0_, x0 + 52, y0_ + 36), fill=(30, 30, 32)); d.rectangle((x0 + 3, y0_ + 3, x0 + 49, y0_ + 33), fill=(55, 55, 58))
+            for cx_ in (x0 + 14, x0 + 38):
+                pulse = 2 if (int(beat*2) % 2 and not sad) else 0
+                d.ellipse((cx_ - 9 - pulse, y0_ + 9 - pulse, cx_ + 9 + pulse, y0_ + 27 + pulse), fill=(20, 20, 22))
+                d.ellipse((cx_ - 3, y0_ + 15, cx_ + 3, y0_ + 21), fill=(90, 90, 95))
+    # holofotes coloridos no alto
+    cols = [(255, 80, 120), (255, 210, 60), (90, 160, 255)]
+    for k in range(3):
+        if sad and k != 1: continue
+        lx = 140 + k*50
+        on = (int(beat) + k) % 3 != 0 or sad
+        if on:
+            for j in range(0, 60, 3):
+                f = j/60; xa = int(lx - 4 - f*20); xb = int(lx + 4 + f*20)
+                if (j//3 + int(t*6)) % 2 == 0: d.line([(xa, G - 190 + j*2), (xb, G - 190 + j*2)], fill=cols[k] if not sad else (200, 200, 230), width=1)
+    # pedestal de microfone
+    mx = MX + 64
+    d.rectangle((mx, G - 64, mx + 2, G), fill=(170, 170, 175)); d.rectangle((mx - 8, G - 3, mx + 10, G), fill=(170, 170, 175))
+    d.ellipse((mx - 3, G - 74, mx + 5, G - 62), fill=(40, 40, 45))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*16)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (0 if sad else (2 if int(beat) % 2 else 0))
+    place(cv, d, spr, MX, y0)
+
+def hosp_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('KATHERINE', 'EMMY!'))
+    for tt in ctx['hits']: ev('ding', tt)
+    P = 60/104*2; k = 0
+    while k*P < ctx['total'] - 1: ev('tick', k*P, k=k); k += 1
+
+def _hosp_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    # monitor cardíaco
+    mx0, my0 = 166, G - 110
+    d.rectangle((mx0, my0, mx0 + 70, my0 + 46), fill=(60, 64, 70)); d.rectangle((mx0 + 4, my0 + 4, mx0 + 66, my0 + 40), fill=(10, 25, 20))
+    pts = []
+    for x in range(62):
+        ph = (x + int(t*40)) % 31
+        yy = 22 + (-14 if ph == 10 else (10 if ph == 12 else (-4 if ph == 8 else 0)))
+        pts.append((mx0 + 4 + x, my0 + yy))
+    d.line(pts, fill=(80, 255, 120), width=1)
+    d.rectangle((mx0 + 32, my0 + 46, mx0 + 36, G), fill=(120, 124, 130)); d.rectangle((mx0 + 20, G - 3, mx0 + 48, G), fill=(120, 124, 130))
+    # cruz vermelha
+    d.rectangle((250, G - 150, 258, G - 126), fill=(230, 50, 60)); d.rectangle((242, G - 142, 266, G - 134), fill=(230, 50, 60))
+    # troféu dourado genérico
+    tx, ty = 246, G - 36
+    d.rectangle((tx + 6, ty + 26, tx + 20, ty + 36), fill=(120, 90, 40))
+    d.rectangle((tx + 11, ty + 14, tx + 15, ty + 26), fill=(240, 200, 70))
+    d.ellipse((tx + 3, ty, tx + 23, ty + 18), fill=(250, 210, 80))
+    if int(t*3) % 2: d.rectangle((tx + 7, ty + 4, tx + 9, ty + 6), fill=(255, 255, 220))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*16)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+    # estetoscópio no pescoço
+    d.arc((MX + 14, y0 + 62, MX + 46, y0 + 88), 0, 180, fill=(60, 60, 70), width=2)
+    d.ellipse((MX + 40, y0 + 80, MX + 48, y0 + 88), fill=(180, 180, 190))
+
+def fos_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('LUCY', 'DE PÉ!'))
+    for tt in ctx['hits']: ev('chime', tt)
+    P = 60/96*2; k = 0
+    while k*P < ctx['total'] - 1: ev('tick', k*P, k=k); k += 1
+
+def _fos_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    # dunas e cacto
+    d.polygon([(110, G), (170, G - 40), (230, G - 10), (270, G - 50), (270, G)], fill=(210, 160, 100))
+    # ossos no chão (revelados aos poucos)
+    s0 = ctx['cards'][min(ci, len(ctx['cards']) - 1)][0]
+    rev = min(1.0, (t - s0)/2.0) if ci >= 1 else 0.3
+    bx, by = 172, G - 14
+    bones = [(0, 0, 22, 4), (26, -4, 40, 0), (6, -10, 18, -6), (44, 0, 64, 4), (30, 6, 46, 10)]
+    for k, (a, b, c, e) in enumerate(bones):
+        if k/len(bones) <= rev:
+            d.rectangle((bx + a, by + b, bx + c, by + e), fill=(245, 235, 210))
+            d.ellipse((bx + a - 2, by + b - 2, bx + a + 3, by + e + 2), fill=(245, 235, 210)); d.ellipse((bx + c - 3, by + b - 2, bx + c + 2, by + e + 2), fill=(245, 235, 210))
+    # pincel de arqueólogo balançando
+    sw = int(math.sin(t*6)*6)
+    d.line([(bx + 30 + sw, by - 30), (bx + 36 + sw, by - 6)], fill=(140, 90, 50), width=2)
+    d.rectangle((bx + 34 + sw, by - 8, bx + 40 + sw, by - 2), fill=(230, 200, 120))
+    # gravador de fita (tela 2)
+    if ci == 2:
+        rx, ry = 236, G - 22
+        d.rectangle((rx, ry, rx + 30, ry + 18), fill=(50, 50, 55)); d.ellipse((rx + 4, ry + 4, rx + 12, ry + 12), fill=(200, 200, 200)); d.ellipse((rx + 18, ry + 4, rx + 26, ry + 12), fill=(200, 200, 200))
+        nx = rx + 10 + int((t*20) % 20); ny = ry - 10 - int((t*15) % 20)
+        d.rectangle((nx, ny, nx + 3, ny + 3), fill=(255, 220, 90)); d.rectangle((nx + 3, ny - 7, nx + 4, ny), fill=(255, 220, 90))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*16)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+
+KINDS.update({'rock': (wrap(_rock_mascot), rock_setup), 'hosp': (wrap(_hosp_mascot), hosp_setup), 'fossil': (wrap(_fos_mascot), fos_setup)})

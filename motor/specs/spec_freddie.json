@@ -1,0 +1,152 @@
+{
+ "name": "freddie",
+ "theme": "generic",
+ "mkind": "rock",
+ "label": "35 ANOS SEM FREDDIE",
+ "theme_cfg": {
+  "acc": [
+   255,
+   210,
+   70
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   30,
+   10,
+   40,
+   228
+  ],
+  "border": [
+   255,
+   210,
+   70
+  ],
+  "mascot": [
+   235,
+   200,
+   170
+  ],
+  "accessory": "none",
+  "bpm": 100,
+  "ped": [
+   40,
+   35,
+   45
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   20,
+   10,
+   35
+  ],
+  "sky_bot": [
+   90,
+   30,
+   80
+  ],
+  "stars": true,
+  "hills": [
+   50,
+   25,
+   60
+  ],
+  "ground": [
+   45,
+   40,
+   50
+  ],
+  "cloud": [
+   190,
+   150,
+   200
+  ]
+ },
+ "cards": [
+  [
+   "Ele contou ao mundo que tinha AIDS... e morreu só vinte e quatro horas depois. Há exatos trinta e cinco anos, o rock perdia Freddie Mercury.",
+   [
+    [
+     "hook",
+     "Revelou a doença e partiu *24 horas depois*."
+    ],
+    [
+     "kicker",
+     "24 DE NOVEMBRO DE 1991"
+    ],
+    [
+     "kicker",
+     "O ADEUS A"
+    ],
+    [
+     "title",
+     "FREDDIE"
+    ]
+   ]
+  ],
+  [
+   "O vocalista do Queen descobriu a doença em mil novecentos e oitenta e sete e guardou segredo por anos, até da família. Só em vinte e três de novembro de noventa e um ele publicou um comunicado confirmando.",
+   [
+    [
+     "text",
+     "Diagnóstico em *1987*."
+    ],
+    [
+     "text",
+     "Segredo por *anos*."
+    ],
+    [
+     "text",
+     "*23/11/1991*: confirma ao mundo."
+    ]
+   ]
+  ],
+  [
+   "No dia seguinte, ele morreu em casa, em Londres, aos quarenta e cinco anos. E Bohemian Rhapsody foi relançada e voltou ao topo das paradas britânicas, dezesseis anos depois da estreia!",
+   [
+    [
+     "text",
+     "Partiu aos *45 anos*, em Londres."
+    ],
+    [
+     "title",
+     "TOPO DE NOVO!"
+    ],
+    [
+     "text",
+     "*Bohemian Rhapsody*: 16 anos depois!"
+    ]
+   ]
+  ],
+  [
+   "Em mil novecentos e noventa e dois, a banda fez um show tributo em Wembley pra conscientizar sobre a AIDS. Qual é a sua música favorita do Queen? Comenta e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "*1992*: tributo em *Wembley*."
+    ],
+    [
+     "text",
+     "Qual sua *música favorita* do Queen?"
+    ],
+    [
+     "icons",
+     [
+      "🎤"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}
