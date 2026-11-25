@@ -1,0 +1,154 @@
+{
+ "name": "baiana",
+ "theme": "generic",
+ "mkind": "acaraje",
+ "label": "DIA DA BAIANA DE ACARAJÉ",
+ "theme_cfg": {
+  "acc": [
+   255,
+   200,
+   60
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   45,
+   20,
+   10,
+   228
+  ],
+  "border": [
+   255,
+   200,
+   60
+  ],
+  "mascot": [
+   120,
+   75,
+   45
+  ],
+  "accessory": "none",
+  "bpm": 104,
+  "ped": [
+   120,
+   85,
+   50
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   40,
+   100,
+   170
+  ],
+  "sky_bot": [
+   255,
+   180,
+   90
+  ],
+  "stars": false,
+  "hills": [
+   70,
+   130,
+   70
+  ],
+  "ground": [
+   150,
+   110,
+   70
+  ],
+  "cloud": [
+   255,
+   235,
+   210
+  ]
+ },
+ "cards": [
+  [
+   "Sabia que acarajé quer dizer comer bola de fogo? Hoje é o Dia Nacional da Baiana de Acarajé, e a história desse ofício é mais antiga que o Brasil independente!",
+   [
+    [
+     "hook",
+     "Acarajé significa *comer bola de fogo*!"
+    ],
+    [
+     "kicker",
+     "25 DE NOVEMBRO"
+    ],
+    [
+     "kicker",
+     "DIA NACIONAL DA"
+    ],
+    [
+     "title",
+     "BAIANA"
+    ]
+   ]
+  ],
+  [
+   "O nome vem do iorubá: akará é bola de fogo, e jé é comer. A receita veio com os africanos escravizados, e vender acarajé no tabuleiro foi uma das primeiras profissões exercidas por mulheres no país.",
+   [
+    [
+     "text",
+     "Iorubá: *akará* + *jé*."
+    ],
+    [
+     "text",
+     "Veio com os *africanos escravizados*."
+    ],
+    [
+     "text",
+     "Uma das *primeiras profissões* de mulheres!"
+    ]
+   ]
+  ],
+  [
+   "O ofício das baianas é patrimônio cultural do Brasil, registrado pelo Iphan, e a data virou lei nacional em dois mil e dez. No tabuleiro, além do acarajé, tem abará, cocada e mingau.",
+   [
+    [
+     "text",
+     "Registrado pelo *Iphan*."
+    ],
+    [
+     "title",
+     "PATRIMÔNIO"
+    ],
+    [
+     "text",
+     "Lei nacional em *2010*."
+    ],
+    [
+     "icons",
+     [
+      "🥘"
+     ]
+    ]
+   ]
+  ],
+  [
+   "E você, come o acarajé quente ou frio? Comenta aqui e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "Acarajé *quente* ou *frio*?"
+    ],
+    [
+     "icons",
+     [
+      "🌶️"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}

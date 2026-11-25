@@ -1,0 +1,156 @@
+{
+ "name": "maradona",
+ "theme": "generic",
+ "mkind": "pele",
+ "label": "6 ANOS SEM MARADONA",
+ "theme_cfg": {
+  "acc": [
+   110,
+   190,
+   255
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   10,
+   25,
+   45,
+   228
+  ],
+  "border": [
+   110,
+   190,
+   255
+  ],
+  "mascot": [
+   230,
+   190,
+   150
+  ],
+  "accessory": "none",
+  "bpm": 108,
+  "ped": [
+   40,
+   110,
+   50
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   20,
+   30,
+   60
+  ],
+  "sky_bot": [
+   90,
+   150,
+   210
+  ],
+  "stars": true,
+  "hills": [
+   40,
+   60,
+   100
+  ],
+  "ground": [
+   50,
+   140,
+   60
+  ],
+  "cloud": [
+   200,
+   220,
+   240
+  ]
+ },
+ "cards": [
+  [
+   "O mesmo jogador fez o gol mais polêmico e o gol mais bonito da história das Copas... no mesmo jogo! Há exatos seis anos, o mundo perdia Diego Maradona.",
+   [
+    [
+     "hook",
+     "O gol *mais polêmico* e o *mais bonito*!"
+    ],
+    [
+     "kicker",
+     "25 DE NOVEMBRO DE 2020"
+    ],
+    [
+     "kicker",
+     "O ADEUS A"
+    ],
+    [
+     "title",
+     "MARADONA"
+    ]
+   ]
+  ],
+  [
+   "Foi em mil novecentos e oitenta e seis, contra a Inglaterra. Primeiro, a famosa mão de Deus. Minutos depois, ele driblou meio time e marcou o gol do século. E a Argentina foi campeã.",
+   [
+    [
+     "text",
+     "*1986*, contra a *Inglaterra*."
+    ],
+    [
+     "text",
+     "Primeiro: a *mão de Deus*."
+    ],
+    [
+     "title",
+     "GOOOL!"
+    ],
+    [
+     "text",
+     "Depois: o *gol do século*."
+    ]
+   ]
+  ],
+  [
+   "Em vinte e cinco de novembro de dois mil e vinte, ele morreu aos sessenta anos, em casa, em Tigre, enquanto se recuperava de uma cirurgia no cérebro.",
+   [
+    [
+     "text",
+     "Partiu aos *60 anos*."
+    ],
+    [
+     "text",
+     "Se recuperava de uma *cirurgia*."
+    ],
+    [
+     "icons",
+     [
+      "🕯️"
+     ]
+    ]
+   ]
+  ],
+  [
+   "A equipe médica foi acusada de negligência e nega as acusações. Um novo julgamento começou em abril deste ano. Maradona ou Pelé: quem foi o maior? Comenta e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "Equipe médica *acusada*; ela *nega*."
+    ],
+    [
+     "text",
+     "Novo julgamento em *abril de 2026*."
+    ],
+    [
+     "text",
+     "*Maradona* ou *Pelé*?"
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}
