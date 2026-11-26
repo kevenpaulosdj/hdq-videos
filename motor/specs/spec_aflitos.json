@@ -1,0 +1,150 @@
+{
+ "name": "aflitos",
+ "theme": "generic",
+ "mkind": "pele",
+ "label": "BATALHA DOS AFLITOS",
+ "theme_cfg": {
+  "acc": [
+   90,
+   170,
+   255
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   10,
+   20,
+   40,
+   228
+  ],
+  "border": [
+   90,
+   170,
+   255
+  ],
+  "mascot": [
+   230,
+   190,
+   150
+  ],
+  "accessory": "none",
+  "bpm": 112,
+  "ped": [
+   40,
+   110,
+   50
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   15,
+   20,
+   45
+  ],
+  "sky_bot": [
+   60,
+   90,
+   150
+  ],
+  "stars": true,
+  "hills": [
+   30,
+   45,
+   80
+  ],
+  "ground": [
+   50,
+   140,
+   60
+  ],
+  "cloud": [
+   190,
+   210,
+   240
+  ]
+ },
+ "cards": [
+  [
+   "Um time com sete jogadores, dois pênaltis contra... e mesmo assim venceu! Há exatos vinte e um anos acontecia a Batalha dos Aflitos.",
+   [
+    [
+     "hook",
+     "*7 contra 11* e *2 pênaltis* contra... e venceu!"
+    ],
+    [
+     "kicker",
+     "26 DE NOVEMBRO DE 2005"
+    ],
+    [
+     "kicker",
+     "A BATALHA DOS"
+    ],
+    [
+     "title",
+     "AFLITOS"
+    ]
+   ]
+  ],
+  [
+   "Náutico e Grêmio decidiam a vaga na Série A, no estádio dos Aflitos, em Recife. Na reta final, o juiz marcou pênalti pro Náutico. O primeiro foi desperdiçado. Veio outro, e o Grêmio teve quatro jogadores expulsos na confusão.",
+   [
+    [
+     "text",
+     "Valia a vaga na *Série A*."
+    ],
+    [
+     "text",
+     "Pênalti *desperdiçado*!"
+    ],
+    [
+     "text",
+     "*4 expulsos* no Grêmio!"
+    ]
+   ]
+  ],
+  [
+   "Com sete em campo, o goleiro Galatto defendeu o segundo pênalti. Pouco mais de um minuto depois, o garoto Anderson, de dezessete anos, arrancou sozinho e fez o gol.",
+   [
+    [
+     "text",
+     "*Galatto* defende!"
+    ],
+    [
+     "title",
+     "GOOOL!"
+    ],
+    [
+     "text",
+     "*Anderson*, 17 anos."
+    ]
+   ]
+  ],
+  [
+   "Um a zero, Grêmio campeão da Série B. O jogo virou até filme. Qual foi o jogo mais louco que você já viu? Comenta e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "*1 a 0*: Grêmio campeão!"
+    ],
+    [
+     "text",
+     "Virou até *filme*."
+    ],
+    [
+     "text",
+     "Qual o jogo *mais louco* que você viu?"
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}
