@@ -1,0 +1,152 @@
+{
+ "name": "blackfriday",
+ "theme": "generic",
+ "mkind": "bfriday",
+ "label": "BLACK FRIDAY 2026",
+ "theme_cfg": {
+  "acc": [
+   255,
+   210,
+   60
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   10,
+   10,
+   12,
+   232
+  ],
+  "border": [
+   255,
+   210,
+   60
+  ],
+  "mascot": [
+   240,
+   200,
+   70
+  ],
+  "accessory": "none",
+  "bpm": 118,
+  "ped": [
+   40,
+   35,
+   45
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   10,
+   10,
+   15
+  ],
+  "sky_bot": [
+   45,
+   35,
+   60
+  ],
+  "stars": true,
+  "hills": [
+   30,
+   25,
+   40
+  ],
+  "ground": [
+   60,
+   55,
+   65
+  ],
+  "cloud": [
+   120,
+   110,
+   140
+  ]
+ },
+ "cards": [
+  [
+   "Hoje é Black Friday! Mas você sabe por que se chama sexta-feira preta? A explicação mais famosa tem a ver com a cor da tinta nos livros de contabilidade.",
+   [
+    [
+     "hook",
+     "Por que *sexta-feira preta*?"
+    ],
+    [
+     "kicker",
+     "27 DE NOVEMBRO DE 2026"
+    ],
+    [
+     "kicker",
+     "HOJE É"
+    ],
+    [
+     "title",
+     "BLACK FRIDAY"
+    ]
+   ]
+  ],
+  [
+   "Nos Estados Unidos, prejuízo era anotado em vermelho e lucro em preto. A sexta depois do Dia de Ação de Graças era quando as lojas saíam do vermelho e entravam no preto.",
+   [
+    [
+     "text",
+     "Prejuízo: *tinta vermelha*."
+    ],
+    [
+     "text",
+     "Lucro: *tinta preta*."
+    ],
+    [
+     "text",
+     "Dia de *sair do vermelho*!"
+    ]
+   ]
+  ],
+  [
+   "No Brasil, a primeira edição foi em dois mil e dez, só pela internet e com umas cinquenta lojas. Em dois mil e vinte e seis, a previsão é de mais de treze bilhões de reais só no comércio online.",
+   [
+    [
+     "text",
+     "Brasil: *2010*, umas *50 lojas*."
+    ],
+    [
+     "title",
+     "DESCONTO!"
+    ],
+    [
+     "text",
+     "Previsão: *R$ 13 bilhões* online."
+    ]
+   ]
+  ],
+  [
+   "Dica de ouro: confira o histórico de preço antes de comprar, pra não cair em metade do dobro. E você, já comprou alguma coisa? Comenta e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "Confira o *histórico de preço*!"
+    ],
+    [
+     "icons",
+     [
+      "🛒"
+     ]
+    ],
+    [
+     "text",
+     "Já comprou *alguma coisa*?"
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}

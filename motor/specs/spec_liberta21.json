@@ -1,0 +1,152 @@
+{
+ "name": "liberta21",
+ "theme": "generic",
+ "mkind": "pele",
+ "label": "FINAL DA LIBERTADORES 2021",
+ "theme_cfg": {
+  "acc": [
+   255,
+   210,
+   80
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   20,
+   18,
+   8,
+   230
+  ],
+  "border": [
+   255,
+   210,
+   80
+  ],
+  "mascot": [
+   230,
+   190,
+   150
+  ],
+  "accessory": "none",
+  "bpm": 112,
+  "ped": [
+   40,
+   110,
+   50
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   15,
+   15,
+   35
+  ],
+  "sky_bot": [
+   70,
+   70,
+   120
+  ],
+  "stars": true,
+  "hills": [
+   35,
+   35,
+   60
+  ],
+  "ground": [
+   50,
+   140,
+   60
+  ],
+  "cloud": [
+   200,
+   200,
+   230
+  ]
+ },
+ "cards": [
+  [
+   "O herói da final saiu do banco e decidiu tudo na prorrogação! Há exatos cinco anos, Palmeiras e Flamengo fizeram a final da Libertadores.",
+   [
+    [
+     "hook",
+     "O herói *saiu do banco*!"
+    ],
+    [
+     "kicker",
+     "27 DE NOVEMBRO DE 2021"
+    ],
+    [
+     "kicker",
+     "FINAL DA"
+    ],
+    [
+     "title",
+     "LIBERTADORES"
+    ]
+   ]
+  ],
+  [
+   "Foi no Estádio Centenário, em Montevidéu. Raphael Veiga abriu o placar pro Palmeiras logo no comecinho. No segundo tempo, Gabigol empatou pro Flamengo.",
+   [
+    [
+     "text",
+     "*Montevidéu*, Estádio Centenário."
+    ],
+    [
+     "text",
+     "*Raphael Veiga*: 1 a 0."
+    ],
+    [
+     "text",
+     "*Gabigol* empata: 1 a 1!"
+    ]
+   ]
+  ],
+  [
+   "Na prorrogação, Deyverson, que tinha entrado no lugar do Veiga, roubou a bola, entrou na área e marcou. Dois a um, Palmeiras campeão!",
+   [
+    [
+     "text",
+     "*Deyverson* rouba a bola..."
+    ],
+    [
+     "title",
+     "GOOOL!"
+    ],
+    [
+     "text",
+     "*2 a 1*: Palmeiras campeão!"
+    ]
+   ]
+  ],
+  [
+   "Foi o terceiro título do Palmeiras e o segundo seguido. Você lembra onde assistiu essa final? Comenta e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "Tri do Palmeiras, *bi seguido*."
+    ],
+    [
+     "icons",
+     [
+      "🏆"
+     ]
+    ],
+    [
+     "text",
+     "Onde você *assistiu*?"
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}

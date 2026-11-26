@@ -1680,3 +1680,70 @@ def _acar_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
     d.rectangle((MX + 10, y0 - 2, MX + 50, y0 + 2), fill=(230, 200, 120))
 
 KINDS.update({'best': (wrap(_best_mascot), best_setup), 'acaraje': (wrap(_acar_mascot), acar_setup)})
+
+# ---------- 27/11: BLACK FRIDAY (vitrine), DOJO (artes marciais) ----------
+def bf_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('BLACK FRIDAY', 'DESCONTO!'))
+    for tt in ctx['hits']: ev('chime', tt)
+    P = 60/118/2; k = 0
+    while k*P < ctx['total'] - 1: ev('tick', k*P, k=k); k += 1
+
+def _bf_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    # vitrine
+    d.rectangle((150, G - 70, 266, G), fill=(25, 25, 30)); d.rectangle((154, G - 66, 262, G - 4), fill=(45, 40, 55))
+    blink = int(t*3) % 2
+    d.rectangle((150, G - 84, 266, G - 70), fill=(230, 40, 60) if blink else (200, 30, 50))
+    # sacolas
+    for k, col in enumerate([(240, 200, 40), (220, 60, 90), (60, 160, 230)]):
+        bx = 162 + k*32; by = G - 34 - (k % 2)*6
+        d.rectangle((bx, by, bx + 24, G - 4), fill=col); d.arc((bx + 6, by - 8, bx + 18, by + 4), 180, 360, fill=(30, 30, 30), width=2)
+    # etiquetas % caindo
+    for k in range(5):
+        fy = G - 150 + int((t*30 + k*23) % 60)
+        fx = 120 + k*30 + int(math.sin(t*2 + k)*6)
+        d.rectangle((fx, fy, fx + 16, fy + 10), fill=(255, 230, 80)); d.text((fx + 4, fy), "%", fill=(200, 30, 40))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*16)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+    # carrinho
+    cx = MX + 66
+    d.rectangle((cx, G - 30, cx + 34, G - 12), outline=(200, 200, 210), width=2)
+    d.line([(cx, G - 30), (cx - 8, G - 40)], fill=(200, 200, 210), width=2)
+    d.ellipse((cx + 3, G - 10, cx + 9, G - 4), fill=(200, 200, 210)); d.ellipse((cx + 25, G - 10, cx + 31, G - 4), fill=(200, 200, 210))
+
+def dojo_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('BRUCE LEE', 'KIAI!'))
+    for tt in ctx['hits']: ev('thud', tt)
+    P = 60/100; k = 0
+    while k*P < ctx['total'] - 1: ev('drum', k*P, k=k); k += 1
+
+def _dojo_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    # parede de madeira e pergaminho
+    for k in range(6):
+        d.line([(110 + k*28, G - 170), (110 + k*28, G)], fill=(90, 55, 30), width=1)
+    d.rectangle((196, G - 110, 222, G - 66), fill=(240, 230, 200)); d.rectangle((194, G - 112, 224, G - 108), fill=(110, 60, 30)); d.rectangle((194, G - 68, 224, G - 64), fill=(110, 60, 30))
+    for k in range(3): d.rectangle((204, G - 102 + k*11, 214, G - 99 + k*11), fill=(30, 30, 30))
+    # boneco de madeira
+    wx = 236
+    d.rectangle((wx, G - 80, wx + 18, G), fill=(140, 90, 50)); d.rectangle((wx - 12, G - 60, wx, G - 54), fill=(120, 75, 40)); d.rectangle((wx - 10, G - 40, wx, G - 35), fill=(120, 75, 40))
+    # tábua quebrando nos hits
+    broke = any(0 <= t - h < 1.2 for h in ctx['hits'])
+    bx, by = 150, G - 50
+    if broke:
+        d.rectangle((bx, by, bx + 14, by + 8), fill=(200, 160, 100)); d.rectangle((bx + 22, by + 4, bx + 36, by + 12), fill=(200, 160, 100))
+    else:
+        d.rectangle((bx, by, bx + 36, by + 8), fill=(200, 160, 100))
+    d.rectangle((bx + 4, by + 8, bx + 8, G), fill=(80, 50, 30)); d.rectangle((bx + 28, by + 8, bx + 32, G), fill=(80, 50, 30))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*18)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+
+KINDS.update({'bfriday': (wrap(_bf_mascot), bf_setup), 'dojo': (wrap(_dojo_mascot), dojo_setup)})

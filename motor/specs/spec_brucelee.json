@@ -1,0 +1,152 @@
+{
+ "name": "brucelee",
+ "theme": "generic",
+ "mkind": "dojo",
+ "label": "BRUCE LEE",
+ "theme_cfg": {
+  "acc": [
+   255,
+   200,
+   70
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   30,
+   12,
+   8,
+   230
+  ],
+  "border": [
+   255,
+   200,
+   70
+  ],
+  "mascot": [
+   230,
+   190,
+   150
+  ],
+  "accessory": "none",
+  "bpm": 100,
+  "ped": [
+   100,
+   65,
+   40
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   60,
+   25,
+   15
+  ],
+  "sky_bot": [
+   170,
+   80,
+   40
+  ],
+  "stars": false,
+  "hills": [
+   90,
+   40,
+   25
+  ],
+  "ground": [
+   120,
+   80,
+   50
+  ],
+  "cloud": [
+   230,
+   170,
+   120
+  ]
+ },
+ "cards": [
+  [
+   "Ele nasceu no ano e na hora do dragão, e virou a maior lenda das artes marciais. Hoje Bruce Lee faria oitenta e seis anos!",
+   [
+    [
+     "hook",
+     "Nasceu no *ano* e na *hora do dragão*!"
+    ],
+    [
+     "kicker",
+     "27 DE NOVEMBRO DE 1940"
+    ],
+    [
+     "kicker",
+     "NASCIA"
+    ],
+    [
+     "title",
+     "BRUCE LEE"
+    ]
+   ]
+  ],
+  [
+   "Muita gente acha que ele nasceu na China, mas foi em São Francisco, nos Estados Unidos. E estreou no cinema com só três meses de vida, interpretando um bebê menina!",
+   [
+    [
+     "text",
+     "Nasceu em *São Francisco*, EUA."
+    ],
+    [
+     "text",
+     "Estreou no cinema com *3 meses*!"
+    ],
+    [
+     "icons",
+     [
+      "🎬"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Ele criou o próprio estilo, o Jeet Kune Do, o caminho do punho que intercepta, misturando kung fu, boxe e até esgrima. E deu aulas pra astros de Hollywood.",
+   [
+    [
+     "text",
+     "Criou o *Jeet Kune Do*."
+    ],
+    [
+     "title",
+     "KIAI!"
+    ],
+    [
+     "text",
+     "Kung fu + *boxe* + *esgrima*!"
+    ]
+   ]
+  ],
+  [
+   "Ele morreu em mil novecentos e setenta e três, com apenas trinta e dois anos, pouco antes da estreia do seu filme mais famoso, Operação Dragão. Qual o seu filme de luta favorito? Comenta e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "Partiu aos *32 anos*."
+    ],
+    [
+     "text",
+     "Antes da estreia de *Operação Dragão*."
+    ],
+    [
+     "text",
+     "Seu *filme de luta* favorito?"
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}
