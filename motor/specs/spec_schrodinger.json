@@ -1,0 +1,152 @@
+{
+ "name": "schrodinger",
+ "theme": "generic",
+ "mkind": "quantum",
+ "label": "O GATO DE SCHRODINGER",
+ "theme_cfg": {
+  "acc": [
+   120,
+   220,
+   255
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   8,
+   15,
+   35,
+   232
+  ],
+  "border": [
+   120,
+   220,
+   255
+  ],
+  "mascot": [
+   230,
+   190,
+   150
+  ],
+  "accessory": "none",
+  "bpm": 96,
+  "ped": [
+   45,
+   40,
+   65
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   8,
+   10,
+   30
+  ],
+  "sky_bot": [
+   40,
+   30,
+   80
+  ],
+  "stars": true,
+  "hills": [
+   30,
+   25,
+   60
+  ],
+  "ground": [
+   60,
+   50,
+   80
+  ],
+  "cloud": [
+   150,
+   140,
+   200
+  ]
+ },
+ "cards": [
+  [
+   "Um gato que está vivo e morto ao mesmo tempo? Há noventa e um anos, um físico publicou a ideia mais famosa da física quântica.",
+   [
+    [
+     "hook",
+     "Vivo *e* morto *ao mesmo tempo*?"
+    ],
+    [
+     "kicker",
+     "29 DE NOVEMBRO DE 1935"
+    ],
+    [
+     "kicker",
+     "O GATO DE"
+    ],
+    [
+     "title",
+     "SCHRODINGER"
+    ]
+   ]
+  ],
+  [
+   "A ideia: um gato numa caixa fechada, com um veneno que pode ou não ser liberado, dependendo de um átomo. Enquanto ninguém abre a caixa, a física quântica diria que o gato está nos dois estados.",
+   [
+    [
+     "text",
+     "Gato numa *caixa fechada*."
+    ],
+    [
+     "text",
+     "Um *átomo* decide o veneno."
+    ],
+    [
+     "title",
+     "VIVO E MORTO?"
+    ]
+   ]
+  ],
+  [
+   "Mas o detalhe é que Schrödinger criou o exemplo pra criticar essa interpretação. Ele achava um absurdo aplicar isso ao nosso mundo. E calma: nenhum gato de verdade foi usado!",
+   [
+    [
+     "text",
+     "Ele criou pra *criticar* a ideia!"
+    ],
+    [
+     "text",
+     "Achava um *absurdo*."
+    ],
+    [
+     "text",
+     "Nenhum gato *de verdade*!"
+    ]
+   ]
+  ],
+  [
+   "Hoje, o gato virou símbolo da computação quântica. E aí, o gato tá vivo ou morto? Comenta e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "Símbolo da *computação quântica*."
+    ],
+    [
+     "icons",
+     [
+      "🐈"
+     ]
+    ],
+    [
+     "text",
+     "Vivo ou morto?"
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}

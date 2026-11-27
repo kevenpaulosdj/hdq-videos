@@ -1,0 +1,148 @@
+{
+ "name": "chaves",
+ "theme": "generic",
+ "mkind": "vila",
+ "label": "CHESPIRITO",
+ "theme_cfg": {
+  "acc": [
+   255,
+   210,
+   90
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   30,
+   20,
+   10,
+   230
+  ],
+  "border": [
+   255,
+   210,
+   90
+  ],
+  "mascot": [
+   230,
+   190,
+   150
+  ],
+  "accessory": "none",
+  "bpm": 112,
+  "ped": [
+   120,
+   95,
+   70
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   50,
+   110,
+   180
+  ],
+  "sky_bot": [
+   240,
+   170,
+   110
+  ],
+  "stars": false,
+  "hills": [
+   90,
+   120,
+   70
+  ],
+  "ground": [
+   150,
+   120,
+   90
+  ],
+  "cloud": [
+   255,
+   240,
+   220
+  ]
+ },
+ "cards": [
+  [
+   "Ele fez a América Latina inteira rir por gerações! Há exatos doze anos, morria Roberto Gómez Bolaños, o criador do Chaves.",
+   [
+    [
+     "hook",
+     "Fez a *América Latina* inteira rir!"
+    ],
+    [
+     "kicker",
+     "28 DE NOVEMBRO DE 2014"
+    ],
+    [
+     "kicker",
+     "O ADEUS A"
+    ],
+    [
+     "title",
+     "CHESPIRITO"
+    ]
+   ]
+  ],
+  [
+   "O apelido Chespirito quer dizer pequeno Shakespeare. Ele ganhou o nome de um diretor de cinema, por escrever muito bem e por ser baixinho.",
+   [
+    [
+     "text",
+     "*Chespirito* = pequeno *Shakespeare*."
+    ],
+    [
+     "text",
+     "Escrevia muito e era *baixinho*!"
+    ],
+    [
+     "icons",
+     [
+      "✍️"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Além de interpretar o Chaves, ele criou e escreveu o Chapolin. No Brasil, o seriado estreou em mil novecentos e oitenta e quatro e virou parte da infância de muita gente.",
+   [
+    [
+     "text",
+     "Criou o *Chaves* e o *Chapolin*."
+    ],
+    [
+     "title",
+     "SUCESSO!"
+    ],
+    [
+     "text",
+     "No Brasil desde *1984*!"
+    ]
+   ]
+  ],
+  [
+   "Ele morreu em Cancún, no México, aos oitenta e cinco anos. Qual o seu episódio favorito? Comenta e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "Partiu aos *85 anos*."
+    ],
+    [
+     "text",
+     "Seu *episódio favorito*?"
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}

@@ -1,0 +1,150 @@
+{
+ "name": "thriller",
+ "theme": "generic",
+ "mkind": "thriller",
+ "label": "44 ANOS DE THRILLER",
+ "theme_cfg": {
+  "acc": [
+   255,
+   90,
+   200
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   20,
+   6,
+   26,
+   232
+  ],
+  "border": [
+   255,
+   90,
+   200
+  ],
+  "mascot": [
+   230,
+   190,
+   150
+  ],
+  "accessory": "none",
+  "bpm": 118,
+  "ped": [
+   40,
+   30,
+   50
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   10,
+   5,
+   25
+  ],
+  "sky_bot": [
+   60,
+   20,
+   70
+  ],
+  "stars": true,
+  "hills": [
+   35,
+   15,
+   45
+  ],
+  "ground": [
+   50,
+   40,
+   60
+  ],
+  "cloud": [
+   170,
+   130,
+   190
+  ]
+ },
+ "cards": [
+  [
+   "O álbum mais vendido da história da música foi lançado há exatos quarenta e quatro anos. Hoje é aniversário de Thriller, do Michael Jackson!",
+   [
+    [
+     "hook",
+     "O álbum *mais vendido* da história!"
+    ],
+    [
+     "kicker",
+     "30 DE NOVEMBRO DE 1982"
+    ],
+    [
+     "kicker",
+     "CHEGAVA ÀS LOJAS"
+    ],
+    [
+     "title",
+     "THRILLER"
+    ]
+   ]
+  ],
+  [
+   "Foram mais de setenta milhões de cópias no mundo. Das nove músicas do disco, sete viraram singles, como Billie Jean e Beat It.",
+   [
+    [
+     "text",
+     "*70 milhões* de cópias!"
+    ],
+    [
+     "text",
+     "*7* das 9 faixas viraram singles."
+    ],
+    [
+     "icons",
+     [
+      "💿"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Em mil novecentos e oitenta e quatro, ganhou oito prêmios Grammy numa noite só, um recorde. E o clipe de Thriller, um curta de terror de quase catorze minutos, mudou a história dos videoclipes.",
+   [
+    [
+     "text",
+     "*8 Grammys* numa noite só!"
+    ],
+    [
+     "title",
+     "RECORDE!"
+    ],
+    [
+     "text",
+     "Clipe de *quase 14 minutos*."
+    ]
+   ]
+  ],
+  [
+   "Qual a sua música favorita desse álbum? Comenta e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "Sua *música favorita*?"
+    ],
+    [
+     "icons",
+     [
+      "🎶"
+     ]
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}

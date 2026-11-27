@@ -1,0 +1,152 @@
+{
+ "name": "botafogo",
+ "theme": "generic",
+ "mkind": "pele",
+ "label": "BOTAFOGO NA AMÉRICA",
+ "theme_cfg": {
+  "acc": [
+   240,
+   240,
+   240
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   10,
+   10,
+   12,
+   232
+  ],
+  "border": [
+   240,
+   240,
+   240
+  ],
+  "mascot": [
+   230,
+   190,
+   150
+  ],
+  "accessory": "none",
+  "bpm": 112,
+  "ped": [
+   40,
+   110,
+   50
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   15,
+   15,
+   35
+  ],
+  "sky_bot": [
+   70,
+   70,
+   120
+  ],
+  "stars": true,
+  "hills": [
+   35,
+   35,
+   60
+  ],
+  "ground": [
+   50,
+   140,
+   60
+  ],
+  "cloud": [
+   200,
+   200,
+   230
+  ]
+ },
+ "cards": [
+  [
+   "Expulso com menos de um minuto de jogo... e mesmo assim campeão! Há dois anos, o Botafogo conquistou sua primeira Libertadores.",
+   [
+    [
+     "hook",
+     "Um a menos *desde o primeiro minuto*!"
+    ],
+    [
+     "kicker",
+     "30 DE NOVEMBRO DE 2024"
+    ],
+    [
+     "kicker",
+     "BOTAFOGO NA"
+    ],
+    [
+     "title",
+     "LIBERTADORES"
+    ]
+   ]
+  ],
+  [
+   "A final contra o Atlético Mineiro foi no Monumental de Núñez, em Buenos Aires. Logo no começo, o volante Gregore foi expulso: a expulsão mais rápida da história das finais.",
+   [
+    [
+     "text",
+     "*Buenos Aires*, Monumental."
+    ],
+    [
+     "text",
+     "*Gregore* expulso em segundos!"
+    ],
+    [
+     "text",
+     "A mais rápida da *história*."
+    ]
+   ]
+  ],
+  [
+   "Mesmo com dez, o Botafogo fez dois a zero no primeiro tempo, com Luiz Henrique e Alex Telles. O Atlético diminuiu, mas nos acréscimos Júnior Santos fechou: três a um!",
+   [
+    [
+     "text",
+     "*Luiz Henrique* e *Alex Telles*."
+    ],
+    [
+     "title",
+     "GOOOL!"
+    ],
+    [
+     "text",
+     "*Júnior Santos*: 3 a 1!"
+    ]
+   ]
+  ],
+  [
+   "Título inédito, a estrela solitária brilhando na América. Qual a final mais emocionante que você viu? Comenta e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "Título *inédito*!"
+    ],
+    [
+     "icons",
+     [
+      "⭐"
+     ]
+    ],
+    [
+     "text",
+     "A final *mais emocionante*?"
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}

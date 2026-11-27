@@ -1747,3 +1747,233 @@ def _dojo_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
     place(cv, d, spr, MX, y0)
 
 KINDS.update({'bfriday': (wrap(_bf_mascot), bf_setup), 'dojo': (wrap(_dojo_mascot), dojo_setup)})
+
+# ---------- 28-30/11: MEMORIAL, VILA, QUANTUM, STREET, THRILLER ----------
+def thr_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('THRILLER', 'RECORDE!'))
+    for i, tt in enumerate(ctx['hits']): ev('applause', tt)
+    P = 60/100; k = 0
+    while k*P < ctx['total'] - 1: ev('drum', k*P, k=k); k += 1
+
+def _thr_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    sad = False
+    # amplificadores
+    for x0 in (150, 210):
+        for r in range(2):
+            y0_ = G - 40 - r*38
+            d.rectangle((x0, y0_, x0 + 52, y0_ + 36), fill=(30, 30, 32)); d.rectangle((x0 + 3, y0_ + 3, x0 + 49, y0_ + 33), fill=(55, 55, 58))
+            for cx_ in (x0 + 14, x0 + 38):
+                pulse = 2 if (int(beat*2) % 2 and not sad) else 0
+                d.ellipse((cx_ - 9 - pulse, y0_ + 9 - pulse, cx_ + 9 + pulse, y0_ + 27 + pulse), fill=(20, 20, 22))
+                d.ellipse((cx_ - 3, y0_ + 15, cx_ + 3, y0_ + 21), fill=(90, 90, 95))
+    # holofotes coloridos no alto
+    cols = [(255, 80, 120), (255, 210, 60), (90, 160, 255)]
+    for k in range(3):
+        if sad and k != 1: continue
+        lx = 140 + k*50
+        on = (int(beat) + k) % 3 != 0 or sad
+        if on:
+            for j in range(0, 60, 3):
+                f = j/60; xa = int(lx - 4 - f*20); xb = int(lx + 4 + f*20)
+                if (j//3 + int(t*6)) % 2 == 0: d.line([(xa, G - 190 + j*2), (xb, G - 190 + j*2)], fill=cols[k] if not sad else (200, 200, 230), width=1)
+    # pedestal de microfone
+    mx = MX + 64
+    d.rectangle((mx, G - 64, mx + 2, G), fill=(170, 170, 175)); d.rectangle((mx - 8, G - 3, mx + 10, G), fill=(170, 170, 175))
+    d.ellipse((mx - 3, G - 74, mx + 5, G - 62), fill=(40, 40, 45))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*16)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (0 if sad else (2 if int(beat) % 2 else 0))
+    place(cv, d, spr, MX, y0)
+
+def hosp_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('KATHERINE', 'EMMY!'))
+    for tt in ctx['hits']: ev('ding', tt)
+    P = 60/104*2; k = 0
+    while k*P < ctx['total'] - 1: ev('tick', k*P, k=k); k += 1
+
+def _hosp_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    # monitor cardíaco
+    mx0, my0 = 166, G - 110
+    d.rectangle((mx0, my0, mx0 + 70, my0 + 46), fill=(60, 64, 70)); d.rectangle((mx0 + 4, my0 + 4, mx0 + 66, my0 + 40), fill=(10, 25, 20))
+    pts = []
+    for x in range(62):
+        ph = (x + int(t*40)) % 31
+        yy = 22 + (-14 if ph == 10 else (10 if ph == 12 else (-4 if ph == 8 else 0)))
+        pts.append((mx0 + 4 + x, my0 + yy))
+    d.line(pts, fill=(80, 255, 120), width=1)
+    d.rectangle((mx0 + 32, my0 + 46, mx0 + 36, G), fill=(120, 124, 130)); d.rectangle((mx0 + 20, G - 3, mx0 + 48, G), fill=(120, 124, 130))
+    # cruz vermelha
+    d.rectangle((250, G - 150, 258, G - 126), fill=(230, 50, 60)); d.rectangle((242, G - 142, 266, G - 134), fill=(230, 50, 60))
+    # troféu dourado genérico
+    tx, ty = 246, G - 36
+    d.rectangle((tx + 6, ty + 26, tx + 20, ty + 36), fill=(120, 90, 40))
+    d.rectangle((tx + 11, ty + 14, tx + 15, ty + 26), fill=(240, 200, 70))
+    d.ellipse((tx + 3, ty, tx + 23, ty + 18), fill=(250, 210, 80))
+    if int(t*3) % 2: d.rectangle((tx + 7, ty + 4, tx + 9, ty + 6), fill=(255, 255, 220))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*16)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+    # estetoscópio no pescoço
+    d.arc((MX + 14, y0 + 62, MX + 46, y0 + 88), 0, 180, fill=(60, 60, 70), width=2)
+    d.ellipse((MX + 40, y0 + 80, MX + 48, y0 + 88), fill=(180, 180, 190))
+
+def fos_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('LUCY', 'DE PÉ!'))
+    for tt in ctx['hits']: ev('chime', tt)
+    P = 60/96*2; k = 0
+    while k*P < ctx['total'] - 1: ev('tick', k*P, k=k); k += 1
+
+def _fos_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    # dunas e cacto
+    d.polygon([(110, G), (170, G - 40), (230, G - 10), (270, G - 50), (270, G)], fill=(210, 160, 100))
+    # ossos no chão (revelados aos poucos)
+    s0 = ctx['cards'][min(ci, len(ctx['cards']) - 1)][0]
+    rev = min(1.0, (t - s0)/2.0) if ci >= 1 else 0.3
+    bx, by = 172, G - 14
+    bones = [(0, 0, 22, 4), (26, -4, 40, 0), (6, -10, 18, -6), (44, 0, 64, 4), (30, 6, 46, 10)]
+    for k, (a, b, c, e) in enumerate(bones):
+        if k/len(bones) <= rev:
+            d.rectangle((bx + a, by + b, bx + c, by + e), fill=(245, 235, 210))
+            d.ellipse((bx + a - 2, by + b - 2, bx + a + 3, by + e + 2), fill=(245, 235, 210)); d.ellipse((bx + c - 3, by + b - 2, bx + c + 2, by + e + 2), fill=(245, 235, 210))
+    # pincel de arqueólogo balançando
+    sw = int(math.sin(t*6)*6)
+    d.line([(bx + 30 + sw, by - 30), (bx + 36 + sw, by - 6)], fill=(140, 90, 50), width=2)
+    d.rectangle((bx + 34 + sw, by - 8, bx + 40 + sw, by - 2), fill=(230, 200, 120))
+    # gravador de fita (tela 2)
+    if ci == 2:
+        rx, ry = 236, G - 22
+        d.rectangle((rx, ry, rx + 30, ry + 18), fill=(50, 50, 55)); d.ellipse((rx + 4, ry + 4, rx + 12, ry + 12), fill=(200, 200, 200)); d.ellipse((rx + 18, ry + 4, rx + 26, ry + 12), fill=(200, 200, 200))
+        nx = rx + 10 + int((t*20) % 20); ny = ry - 10 - int((t*15) % 20)
+        d.rectangle((nx, ny, nx + 3, ny + 3), fill=(255, 220, 90)); d.rectangle((nx + 3, ny - 7, nx + 4, ny), fill=(255, 220, 90))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*16)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+
+def mem_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('CHAPECOENSE', 'HOMENAGEM'))
+    for tt in ctx['hits']: ev('chime', tt)
+
+def _mem_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    # bandeira verde e branca ondulando
+    fx, fy = 206, G - 96
+    d.rectangle((fx - 2, fy, fx, G), fill=(200, 200, 205))
+    for j in range(0, 50, 2):
+        w = int(math.sin(t*3 + j*0.15)*3)
+        col = (20, 140, 70) if (j//10) % 2 == 0 else (240, 240, 240)
+        d.rectangle((fx + j, fy + w, fx + j + 2, fy + 24 + w), fill=col)
+    # velas acesas
+    for k in range(5):
+        vx = 140 + k*24; vy = G - 22 - (k % 2)*4
+        d.rectangle((vx, vy, vx + 6, G), fill=(245, 240, 225))
+        fl = 1 if int(t*7 + k) % 2 else 0
+        d.ellipse((vx, vy - 9 - fl, vx + 6, vy - 1), fill=(255, 180, 60)); d.ellipse((vx + 2, vy - 6 - fl, vx + 4, vy - 2), fill=(255, 250, 210))
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + jumpoff(jump)
+    place(cv, d, spr, MX, y0)
+    # fita de luto verde no peito
+    d.polygon([(MX + 26, y0 + 58), (MX + 34, y0 + 58), (MX + 38, y0 + 72), (MX + 30, y0 + 64), (MX + 22, y0 + 72)], fill=(20, 140, 70))
+
+def vila_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('CHESPIRITO', 'SUCESSO!'))
+    for tt in ctx['hits']: ev('applause', tt)
+    P = 60/112; k = 0
+    while k*P < ctx['total'] - 1: ev('blip', k*P, k=k); k += 1
+
+def _vila_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    # muro de tijolos do pátio
+    for r in range(6):
+        for c in range(6):
+            bx = 130 + c*24 + (12 if r % 2 else 0); by = G - 120 + r*12
+            if bx < 268: d.rectangle((bx, by, min(bx + 22, 268), by + 10), fill=(180, 110, 80))
+    # barril de madeira
+    bx, by = 196, G - 56
+    d.rectangle((bx, by, bx + 40, G), fill=(150, 95, 50))
+    for k in range(4): d.line([(bx + 6 + k*9, by), (bx + 6 + k*9, G)], fill=(110, 70, 35), width=1)
+    for yy in (by + 8, G - 10): d.rectangle((bx - 2, yy, bx + 42, yy + 4), fill=(90, 90, 95))
+    d.ellipse((bx, by - 6, bx + 40, by + 6), fill=(120, 75, 40))
+    # sanduíche pulando nos hits
+    hop2 = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.8: hop2 = int(-abs(math.sin((t - h)*math.pi*2.5))*14)
+    sx, sy = 150, G - 20 + hop2
+    d.rectangle((sx, sy, sx + 22, sy + 5), fill=(225, 180, 110)); d.rectangle((sx, sy + 5, sx + 22, sy + 8), fill=(240, 150, 150)); d.rectangle((sx, sy + 8, sx + 22, sy + 13), fill=(225, 180, 110))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*16)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+
+def qua_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('SCHRODINGER', 'VIVO E MORTO?'))
+    for tt in ctx['hits']: ev('ding', tt)
+    P = 60/96; k = 0
+    while k*P < ctx['total'] - 1: ev('tick', k*P, k=k); k += 1
+
+def _qua_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    # caixa fechada
+    bx, by = 178, G - 60
+    d.rectangle((bx, by, bx + 70, G), fill=(170, 125, 70)); d.rectangle((bx - 4, by - 8, bx + 74, by), fill=(150, 105, 55))
+    d.line([(bx, by + 20), (bx + 70, by + 20)], fill=(140, 100, 50), width=1)
+    # simbolo de alerta
+    d.polygon([(bx + 35, by + 26), (bx + 47, by + 48), (bx + 23, by + 48)], fill=(250, 210, 40)); d.rectangle((bx + 34, by + 32, bx + 36, by + 41), fill=(30, 30, 30)); d.rectangle((bx + 34, by + 43, bx + 36, by + 45), fill=(30, 30, 30))
+    # orelhas de gato aparecendo e sumindo (superposição)
+    vis = (math.sin(t*2.2) > 0)
+    alpha_col = (60, 60, 65) if vis else (110, 110, 140)
+    for ex in (bx + 22, bx + 42):
+        d.polygon([(ex, by - 8), (ex + 6, by - 22), (ex + 12, by - 8)], fill=alpha_col if vis or int(t*10) % 2 else (40, 40, 60))
+    # pontos de interrogação flutuando
+    for k in range(3):
+        qx = 140 + k*40; qy = G - 140 - int(((t*20 + k*25) % 50))
+        d.text((qx, qy), "?", fill=(150, 220, 255))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*16)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 80 + hop + jumpoff(jump) + (2 if int(beat) % 2 else 0)
+    place(cv, d, spr, MX, y0)
+
+def str_setup(ctx):
+    ctx['hits'] = _title_times(ctx, ('PAUL WALKER', 'LEGADO'))
+    for tt in ctx['hits']: ev('chime', tt)
+    for k in range(int(ctx['total']//3)): ev('engine', 1.0 + k*3, dur=1.2)
+
+def _str_mascot(cv, d, base, th, t, talking, jump, ci, ctx, md=None):
+    beat = t*th['bpm']/60
+    # palmeiras
+    for px in (150, 236):
+        d.rectangle((px, G - 110, px + 4, G), fill=(110, 75, 40))
+        for k in range(5):
+            ang = -1.2 + k*0.6
+            d.line([(px + 2, G - 110), (px + 2 + int(math.cos(ang)*22), G - 110 + int(math.sin(ang)*10) + 6)], fill=(40, 140, 70), width=3)
+    # estrada com faixa
+    d.rectangle((0, G - 6, 270, G), fill=(50, 50, 55))
+    for k in range(9):
+        lx = int((k*36 - t*120) % 300) - 30
+        d.rectangle((lx, G - 4, lx + 16, G - 3), fill=(240, 220, 90))
+    # carro esportivo passando
+    cx = int((t*90) % 420) - 120
+    d.rectangle((cx, G - 20, cx + 54, G - 10), fill=(230, 50, 50)); d.polygon([(cx + 12, G - 20), (cx + 20, G - 30), (cx + 38, G - 30), (cx + 46, G - 20)], fill=(200, 40, 40))
+    d.rectangle((cx + 22, G - 28, cx + 36, G - 21), fill=(160, 210, 240))
+    for wx in (cx + 8, cx + 40): d.ellipse((wx, G - 14, wx + 10, G - 4), fill=(25, 25, 25))
+    hop = 0
+    for h in ctx['hits']:
+        if 0 <= t - h < 0.9: hop = q(-abs(math.sin((t - h)*math.pi*3.3))*12)
+    spr = face_sprite(base, t, talking)
+    y0 = G - 86 + hop + jumpoff(jump)
+    place(cv, d, spr, MX, y0)
+
+KINDS.update({'thriller': (wrap(_thr_mascot), thr_setup), 'memorial': (wrap(_mem_mascot), mem_setup), 'vila': (wrap(_vila_mascot), vila_setup), 'quantum': (wrap(_qua_mascot), qua_setup), 'street': (wrap(_str_mascot), str_setup)})

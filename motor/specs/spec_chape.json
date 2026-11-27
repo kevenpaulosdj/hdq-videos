@@ -1,0 +1,152 @@
+{
+ "name": "chape",
+ "theme": "generic",
+ "mkind": "memorial",
+ "label": "10 ANOS SEM OS GUERREIROS",
+ "theme_cfg": {
+  "acc": [
+   90,
+   220,
+   140
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   8,
+   30,
+   18,
+   232
+  ],
+  "border": [
+   90,
+   220,
+   140
+  ],
+  "mascot": [
+   230,
+   190,
+   150
+  ],
+  "accessory": "none",
+  "bpm": 72,
+  "ped": [
+   30,
+   70,
+   45
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   10,
+   20,
+   30
+  ],
+  "sky_bot": [
+   30,
+   70,
+   60
+  ],
+  "stars": true,
+  "hills": [
+   20,
+   50,
+   40
+  ],
+  "ground": [
+   40,
+   90,
+   55
+  ],
+  "cloud": [
+   170,
+   200,
+   190
+  ]
+ },
+ "cards": [
+  [
+   "Há exatos dez anos, o futebol viveu sua maior tragédia. O avião que levava a Chapecoense para a final da Copa Sul-Americana caiu perto de Medellín, na Colômbia.",
+   [
+    [
+     "hook",
+     "Há *10 anos*, o futebol parou."
+    ],
+    [
+     "kicker",
+     "28 DE NOVEMBRO DE 2016"
+    ],
+    [
+     "kicker",
+     "O VOO DA"
+    ],
+    [
+     "title",
+     "CHAPECOENSE"
+    ]
+   ]
+  ],
+  [
+   "Setenta e uma pessoas morreram, entre jogadores, comissão técnica, dirigentes, jornalistas e tripulantes. Só seis sobreviveram. A investigação apontou que o avião ficou sem combustível.",
+   [
+    [
+     "text",
+     "*71* vítimas."
+    ],
+    [
+     "text",
+     "Só *6* sobreviventes."
+    ],
+    [
+     "text",
+     "O avião ficou *sem combustível*."
+    ]
+   ]
+  ],
+  [
+   "O adversário na final, o Atlético Nacional, pediu que o título fosse dado à Chape. A Conmebol aceitou, e a Chapecoense virou campeã da Sul-Americana.",
+   [
+    [
+     "text",
+     "O rival *abriu mão* do título."
+    ],
+    [
+     "title",
+     "HOMENAGEM"
+    ],
+    [
+     "text",
+     "Chapecoense, *campeã eterna*."
+    ]
+   ]
+  ],
+  [
+   "Uma história de um time pequeno que chegou longe e virou símbolo de solidariedade no mundo inteiro. Deixa sua homenagem nos comentários e segue pra saber o que se comemora amanhã.",
+   [
+    [
+     "text",
+     "Símbolo de *solidariedade*."
+    ],
+    [
+     "icons",
+     [
+      "💚"
+     ]
+    ],
+    [
+     "text",
+     "Deixa sua *homenagem*."
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}

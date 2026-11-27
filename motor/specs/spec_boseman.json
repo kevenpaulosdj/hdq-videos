@@ -1,0 +1,154 @@
+{
+ "name": "boseman",
+ "theme": "generic",
+ "mkind": "scarlett",
+ "label": "CHADWICK BOSEMAN",
+ "theme_cfg": {
+  "acc": [
+   190,
+   140,
+   255
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   18,
+   10,
+   30,
+   232
+  ],
+  "border": [
+   190,
+   140,
+   255
+  ],
+  "mascot": [
+   150,
+   100,
+   70
+  ],
+  "accessory": "none",
+  "bpm": 104,
+  "ped": [
+   45,
+   35,
+   60
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   20,
+   10,
+   40
+  ],
+  "sky_bot": [
+   80,
+   40,
+   120
+  ],
+  "stars": true,
+  "hills": [
+   40,
+   25,
+   60
+  ],
+  "ground": [
+   60,
+   45,
+   80
+  ],
+  "cloud": [
+   190,
+   160,
+   230
+  ]
+ },
+ "cards": [
+  [
+   "Ele gravou alguns dos maiores filmes do mundo enquanto lutava em segredo contra um câncer. Hoje, Chadwick Boseman faria cinquenta anos.",
+   [
+    [
+     "hook",
+     "Gravou tudo lutando *em segredo*."
+    ],
+    [
+     "kicker",
+     "29 DE NOVEMBRO DE 1976"
+    ],
+    [
+     "kicker",
+     "NASCIA"
+    ],
+    [
+     "title",
+     "CHADWICK"
+    ]
+   ]
+  ],
+  [
+   "Nascido na Carolina do Sul, nos Estados Unidos, ele começou escrevendo peças de teatro. Depois fez cinebiografias famosas, como a de James Brown.",
+   [
+    [
+     "text",
+     "Nasceu na *Carolina do Sul*."
+    ],
+    [
+     "text",
+     "Começou escrevendo *teatro*."
+    ],
+    [
+     "icons",
+     [
+      "🎭"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Em dois mil e dezoito, estrelou Pantera Negra, que passou de um bilhão de dólares e foi o primeiro filme de super-herói indicado ao Oscar de melhor filme.",
+   [
+    [
+     "text",
+     "*Pantera Negra*: US$ 1 bilhão!"
+    ],
+    [
+     "text",
+     "Indicado a *melhor filme* no Oscar."
+    ],
+    [
+     "icons",
+     [
+      "🏆"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Ele descobriu o câncer em dois mil e dezesseis e não contou pro público. Morreu em dois mil e vinte, aos quarenta e três anos. Qual filme dele você mais gosta? Comenta e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "Câncer descoberto em *2016*."
+    ],
+    [
+     "text",
+     "Partiu aos *43 anos*."
+    ],
+    [
+     "text",
+     "Qual filme dele você *mais gosta*?"
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}

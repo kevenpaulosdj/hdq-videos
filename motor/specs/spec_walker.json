@@ -1,0 +1,152 @@
+{
+ "name": "walker",
+ "theme": "generic",
+ "mkind": "street",
+ "label": "PAUL WALKER",
+ "theme_cfg": {
+  "acc": [
+   255,
+   170,
+   80
+  ],
+  "kick": [
+   255,
+   255,
+   255
+  ],
+  "panel": [
+   30,
+   15,
+   8,
+   232
+  ],
+  "border": [
+   255,
+   170,
+   80
+  ],
+  "mascot": [
+   230,
+   190,
+   150
+  ],
+  "accessory": "none",
+  "bpm": 116,
+  "ped": [
+   60,
+   60,
+   65
+  ],
+  "brand": [
+   255,
+   255,
+   255
+  ],
+  "sky_top": [
+   40,
+   40,
+   90
+  ],
+  "sky_bot": [
+   250,
+   140,
+   90
+  ],
+  "stars": false,
+  "hills": [
+   90,
+   70,
+   90
+  ],
+  "ground": [
+   70,
+   70,
+   75
+  ],
+  "cloud": [
+   255,
+   210,
+   190
+  ]
+ },
+ "cards": [
+  [
+   "O astro de uma das maiores franquias de carros do cinema morreu num acidente de carro. Há exatos treze anos, o mundo perdia Paul Walker.",
+   [
+    [
+     "hook",
+     "O astro dos *carros* do cinema."
+    ],
+    [
+     "kicker",
+     "30 DE NOVEMBRO DE 2013"
+    ],
+    [
+     "kicker",
+     "O ADEUS A"
+    ],
+    [
+     "title",
+     "PAUL WALKER"
+    ]
+   ]
+  ],
+  [
+   "Ele ficou famoso como o policial Brian em Velozes e Furiosos, a partir de dois mil e um. No dia do acidente, tinha ido a um evento beneficente pra ajudar vítimas de um tufão nas Filipinas.",
+   [
+    [
+     "text",
+     "Brian em *Velozes e Furiosos*."
+    ],
+    [
+     "text",
+     "Estava num evento *beneficente*."
+    ],
+    [
+     "icons",
+     [
+      "🤝"
+     ]
+    ]
+   ]
+  ],
+  [
+   "Ele estava no banco do passageiro de um carro esportivo, dirigido por um amigo, em Santa Clarita, na Califórnia. Os dois morreram. Paul tinha quarenta anos.",
+   [
+    [
+     "text",
+     "Era o *passageiro*."
+    ],
+    [
+     "text",
+     "*Santa Clarita*, Califórnia."
+    ],
+    [
+     "text",
+     "Tinha *40 anos*."
+    ]
+   ]
+  ],
+  [
+   "Ele estava no meio das filmagens do sétimo filme, que foi concluído com a ajuda dos irmãos dele. Qual sua cena favorita da franquia? Comenta e segue pra saber o que se comemora amanhã!",
+   [
+    [
+     "text",
+     "Os *irmãos* ajudaram a terminar o filme."
+    ],
+    [
+     "title",
+     "LEGADO"
+    ],
+    [
+     "text",
+     "Sua *cena favorita*?"
+    ],
+    [
+     "text",
+     "Comenta e segue pra saber *o que se comemora amanhã*!"
+    ]
+   ]
+  ]
+ ]
+}
